@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://wsd/oms"
+           xmlns="http://wsd/oms"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]([a-zA-]*)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z0-9\._]+)@([a-z\-]+)(\.([a-z\-]+))+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Will change for something more password-like later -->
+    <xs:simpleType name="password">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z0-9]+)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="phoneNo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{10})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="city">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z\s]+)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="state">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Z]{2,3})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="postCode">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{4})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="firstName" type="name"/>
+                            <xs:element name="lastName" type="name"/>
+                            <xs:element name="email" type="email"/>
+                            <xs:element name="password" type="password"/>
+                            <xs:element name="phoneNo" type="phoneNo"/>
+                            <xs:element name="address" type="xs:string"/>
+                            <xs:element name="city" type="city"/>
+                            <xs:element name="state" type="state"/>
+                            <xs:element name="postCode" type="postCode"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

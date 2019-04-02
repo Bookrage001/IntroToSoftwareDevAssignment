@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<movies>
+    <movie category="Action">
+        <title>Name of movie</title>
+        <releaseDate>2018</releaseDate>
+        <price>$20</price>
+        <copies>3</copies>
+    </movie>
+</movies>
