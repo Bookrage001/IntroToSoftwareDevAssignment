@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://uts/wsd/oms"
+    xmlns="http://uts/wsd/oms"
+    xmlns:common="http://uts/wsd/oms/common"
+    elementFormDefault="qualified"> 
+    
+    <xs:import namespace="http://uts/wsd/oms/common" 
+           schemaLocation="commonTypes.xsd"/>
+    
+    <xs:element name="order">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="orderID" type="common:orderID"/>
+                <xs:element name="movies">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="movie" type="movieType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="firstName" type="common:name"/>
+                <xs:element name="lastName" type="common:name"/>
+                <xs:element name="email" type="common:email"/>
+                <xs:element name="paymentMethod" type="xs:string"/>
+                <xs:element name="saleTotal" type="xs:double"/>
+                <xs:element name="orderStatus" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="movieType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="title"/>
+            <xs:element type="xs:string" name="genre"/>
+            <xs:element type="common:date" name="releaseDate"/>
+            <xs:element type="xs:double" name="price"/>
+            <xs:element type="xs:integer" name="copies"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

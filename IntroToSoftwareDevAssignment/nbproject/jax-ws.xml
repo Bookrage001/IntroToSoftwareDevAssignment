@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="LoginSoap">
+      <implementation-class>uts.wsd.oms.soap.LoginSoap</implementation-class>
+    </service>
+    <service name="HistorySoap">
+      <implementation-class>uts.wsd.oms.soap.HistorySoap</implementation-class>
+    </service>
+    <service name="PlaceOrder">
+      <implementation-class>uts.wsd.oms.soap.PlaceOrder</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

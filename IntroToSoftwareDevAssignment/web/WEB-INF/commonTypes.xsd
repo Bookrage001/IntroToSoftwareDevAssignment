@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://uts/wsd/oms/common"
+    xmlns="http://uts/wsd/oms/common"
+    elementFormDefault="qualified"> 
+    
+    <xs:simpleType name="date">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1900"/>
+            <xs:maxInclusive value="2100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="orderID">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="100"/>
+            <xs:maxInclusive value="999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-z][A-z\._]*@[A-z]+(\.[A-z]+)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]([a-zA-]*)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Will change for something more password-like later -->
+    <!-- if updated also update in MovieStoreApplication.validatePassword() -->
+    <xs:simpleType name="password">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z0-9]{8,})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="phoneNo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{10})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="city">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z\s]+)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="state">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Z]{2,3})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="postCode">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{4})"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
