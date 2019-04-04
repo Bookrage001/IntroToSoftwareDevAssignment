@@ -38,49 +38,23 @@ $(document).ready(function () {
         });
     });
 </script>
-<body bgcolor="#bdbdbd">
-    <div id="Title" style="text-align: right;">
-        <h1>Movies</h1>
+<body bgcolor="#f2f2f2">
+    <div style="background-color: #C18C5D">
+        <img src="Images/RaiMovieLogo.png" height="115.25" width="320" style="Padding:20px;padding-left: 50px;">
+    </div>
+    <div id="Title" style="text-align: right;background-color: #C18C5D">
         <%@include file="/Modules/navbar.jspf" %>
     </div>
-    <div id="Search" style="margin: auto; width: 50%; padding: 10px;">
-        <form action="index.jsp" method="Post" id="MovieSearch">
-            <table>
-                <tr>
-                    <td align="center">
-                        <label for="Title">Title
-                            <input name="Title" type="text" value="" autocomplete="false">
-                            </td>
-                            <td align="center">
-                                <label for="Genre">Genre
-                                    <select name="Genre">
-                                        <option value="" name=""></option>
-                                        <option value="Action" name="Action">Action</option>
-                                        <option value="Sci-Fi" name="Sci-Fi">Sci-Fi</option>
-                                        <option value="Horror" name="Horror">Horror</option>
-                                        <option value="Comedy" name="Comedy">Comedy</option>
-                                    </select>
-                                </label>
-                            </td>
-                    </td>
-                    <td align="center">
-                        <label for="YearS">Start Year
-                            <input name="YearS" type="number"  value="" autocomplete="false" min="1900" max="2020" maxlength="4" minlength="4">
-                        </label>
-                    </td>
-                    <td align="center">
-                        <label for="YearF">End
-                            <input name="YearF" type="number" value="" autocomplete="false" min="1900" max="2020" maxlength="4" minlength="4"> <!-- TODO Use todays Date -->
-                        </label>
-                    </td>
-                    <td style="vertical-align: bottom">
-                        <button>Search</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div><div id="Movies">
-        <%--movies should apear here--%>
+        <div align="left" style="max-width: 400px;height: 80%" >
+            <%@include file="/Modules/refignSearch.jspf" %>
+    </div>
+    <div id="Search" style="margin: auto; width: 100%; padding: 10px;">
+            <%@include file="/Modules/search.jspf" %>
+        </div>
+
+        <div id="Movies">
+            <%--movies should apear here--%>
+        </div>
 
 </body>
 </html>
