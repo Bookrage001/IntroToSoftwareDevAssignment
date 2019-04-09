@@ -53,6 +53,7 @@ $(document).ready(function () {
         </div>
 
         <div id="Movies">
+            <h3>The thing</h3>
             <%--movies should apear here--%>
         </div>
 
