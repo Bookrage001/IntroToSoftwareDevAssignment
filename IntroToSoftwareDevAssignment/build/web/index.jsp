@@ -39,20 +39,25 @@ $(document).ready(function () {
     });
 </script>
 <body class="body">
-    <div id="Search">
+    <div id="Logo">
         <img src="Images/RaiMovieLogo.png" height="115.25" width="320">
-        <%@include file="/Modules/search.jspf" %>
     </div>
-    <div id="Title" style="text-align: right">
+    
+    <div id="Search">
+        <%@include file="/Modules/search.jspf"%>
+    </div>
+    
+    <div id="Title">
         <%@include file="/Modules/navbar.jspf" %>
     </div>
-        <div align="left" style="max-width: 400px;height: 80%" >
+    
+    <div align="left" style="max-width: 400px;height: 80%" >
             <%@include file="/Modules/refignSearch.jspf" %>
     </div>
-
-        <div id="Movies">
+    
+    <div id="Movies">
             <h3>The thing</h3>
             <%--movies should apear here--%>
-        </div>
+    </div>
 </body>
 </html>

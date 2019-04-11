@@ -8,15 +8,29 @@ and open the template in the editor.
     Author     : sean
 */
 .body {
-    background-color: white;
+    background-color: #F3E0DC;
     font-family: Arial;
     font-size: 1em;
 }
+#Logo {
+    display:inline-block;
+}
+
+#Search {
+    display:inline-block;
+    position:relative;
+    left:25px;    
+    bottom:15px;
+}
+
+#Title {
+    text-align: right;
+}
+
 
 .nav {
     background-color: #7D0741; 
     overflow: hidden;
-    
 }
 
 .nav a{
