@@ -47,17 +47,24 @@ $(document).ready(function () {
         <%@include file="/Modules/search.jspf"%>
     </div>
     
-    <div id="Title">
+    <div id="Navbar">
         <%@include file="/Modules/navbar.jspf" %>
     </div>
     
-    <div id ="RefineSearch" align="left">
-            <%@include file="/Modules/refignSearch.jspf" %>
-    </div>
-    
-    <div id="Movies">
-            <h3>The thing</h3>
-            <%--movies should apear here--%>
-    </div>
+    <table id="CollectionTable">
+        <tr>
+            <th>
+                <div id ="RefineSearch">
+                    <%@include file="/Modules/refignSearch.jspf" %>
+                </div>
+            </th>
+            <th>
+                <div id="Movies"> dem movies
+                    <%--movies should apear here--%>
+                </div>
+            </th>
+        </tr>
+   
+    </table>
 </body>
 </html>

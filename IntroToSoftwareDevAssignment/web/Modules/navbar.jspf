@@ -7,7 +7,7 @@
 %>
 
 <link rel="stylesheet" href="css/homepage.css"/>
-<div align="right">Logged in as: 
+<div>Logged in as: 
     <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
 </div>
 

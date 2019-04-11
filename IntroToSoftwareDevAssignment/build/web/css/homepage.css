@@ -8,10 +8,14 @@ and open the template in the editor.
     Author     : sean
 */
 .body {
-    //background-color: #F3E0DC;
     font-family:Verdana;
     font-size: 1em;
     background-image: url('.../Images/funky-lines.png');
+}
+
+#CollectionTable{
+    border:1px solid black;
+    width:100%;
 }
 #Logo {
     display:inline-block;
@@ -24,7 +28,7 @@ and open the template in the editor.
     bottom:6px;
 }
 
-#Title {
+#Navbar {
     text-align: right;
 }
 
@@ -49,8 +53,11 @@ and open the template in the editor.
 }
 
 #RefineSearch {
-    max-width: 400px;
-    height: 80%
+    width: 300px;
+}
+
+#Movies {
+    background-color: white;
 }
 
 .nav {
@@ -75,4 +82,13 @@ and open the template in the editor.
 
 .nav-right{
     float: right;
+}
+
+.refinesearch {
+    background-color: #BC4639;
+    font-family: Verdana;
+    color: white;
+    padding: 0.1em;
+    text-align: left;
+    margin-left: 10px;
 }
