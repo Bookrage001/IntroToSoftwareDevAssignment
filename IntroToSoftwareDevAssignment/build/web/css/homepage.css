@@ -20,13 +20,37 @@ and open the template in the editor.
     display:inline-block;
     position:relative;
     left:25px;    
-    bottom:15px;
+    bottom:6px;
 }
 
 #Title {
     text-align: right;
 }
 
+#MovieSearch {
+    background-color: #BC4639;
+    padding: 0.5em;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#MovieSearch table button {
+    background-color: #7D0741;
+    font-family: Arial;
+    color: white;
+    padding: 0.3em;
+    border: none;
+}
+
+#MovieSearch table {
+    font-family: Arial;
+    color: white;
+}
+
+#RefineSearch {
+    max-width: 400px;
+    height: 80%
+}
 
 .nav {
     background-color: #7D0741; 
@@ -44,7 +68,7 @@ and open the template in the editor.
 }
 
 .nav a:hover{
-    background-color: black;
+    background-color: #660000;
 }
 
 .nav-right{

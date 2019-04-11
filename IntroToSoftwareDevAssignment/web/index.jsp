@@ -40,7 +40,7 @@ $(document).ready(function () {
 </script>
 <body class="body">
     <div id="Logo">
-        <img src="Images/RaiMovieLogo.png" height="115.25" width="320">
+        <img src="Images/RaiMovieLogo.png" height="90" width="250">
     </div>
     
     <div id="Search">
@@ -51,7 +51,7 @@ $(document).ready(function () {
         <%@include file="/Modules/navbar.jspf" %>
     </div>
     
-    <div align="left" style="max-width: 400px;height: 80%" >
+    <div id ="RefineSearch" align="left">
             <%@include file="/Modules/refignSearch.jspf" %>
     </div>
     
