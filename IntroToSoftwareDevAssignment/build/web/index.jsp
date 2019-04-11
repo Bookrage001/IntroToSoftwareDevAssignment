@@ -10,7 +10,7 @@
 <%@ page contentType="text/html"%>
 <%@ page import="java.io.*" %>
 <% String msFilePath = application.getRealPath("WEB-INF");%>
-<link rel="stylesheet" href="styles.css"/>
+<link  rel="stylesheet" href="css/homepage.css">
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
@@ -38,24 +38,21 @@ $(document).ready(function () {
         });
     });
 </script>
-<body bgcolor="#f2f2f2">
-    <div style="background-color: #C18C5D">
-        <img src="Images/RaiMovieLogo.png" height="115.25" width="320" style="Padding:20px;padding-left: 50px;">
+<body class="body">
+    <div id="Search">
+        <img src="Images/RaiMovieLogo.png" height="115.25" width="320">
+        <%@include file="/Modules/search.jspf" %>
     </div>
-    <div id="Title" style="text-align: right;background-color: #C18C5D">
+    <div id="Title" style="text-align: right">
         <%@include file="/Modules/navbar.jspf" %>
     </div>
         <div align="left" style="max-width: 400px;height: 80%" >
             <%@include file="/Modules/refignSearch.jspf" %>
     </div>
-    <div id="Search" style="margin: auto; width: 100%; padding: 10px;">
-            <%@include file="/Modules/search.jspf" %>
-        </div>
 
         <div id="Movies">
             <h3>The thing</h3>
             <%--movies should apear here--%>
         </div>
-
 </body>
 </html>

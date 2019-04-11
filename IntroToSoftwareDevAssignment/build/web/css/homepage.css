@@ -7,6 +7,11 @@ and open the template in the editor.
     Created on : 11/04/2019, 6:09:39 PM
     Author     : sean
 */
+.body {
+    background-color: white;
+    font-family: Arial;
+    font-size: 1em;
+}
 
 .nav {
     background-color: #7D0741; 
@@ -16,7 +21,7 @@ and open the template in the editor.
 
 .nav a{
     font-family: Arial;
-    font-size: 2.0em;
+    font-size: 1.2em;
     text-align: center;
     color: white;
     padding:0.5em;
