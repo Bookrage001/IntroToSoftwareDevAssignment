@@ -8,8 +8,26 @@ and open the template in the editor.
     Author     : sean
 */
 
-nav {
-    background-color: #ECC8AF; 
-    font-size: 2.5em;
-    font-family: Palatino;
+.nav {
+    background-color: #7D0741; 
+    overflow: hidden;
+    
+}
+
+.nav a{
+    font-family: Arial;
+    font-size: 2.0em;
+    text-align: center;
+    color: white;
+    padding:0.5em;
+    text-decoration: none;
+    float:left;
+}
+
+.nav a:hover{
+    background-color: black;
+}
+
+.nav-right{
+    float: right;
 }
