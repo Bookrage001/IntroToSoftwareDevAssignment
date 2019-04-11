@@ -13,10 +13,6 @@ and open the template in the editor.
     background-image: url('.../Images/funky-lines.png');
 }
 
-#CollectionTable{
-    border:1px solid black;
-    width:100%;
-}
 #Logo {
     display:inline-block;
 }
@@ -52,12 +48,26 @@ and open the template in the editor.
     border: none;
 }
 
+#CollectionTableContainer{
+    border:1px solid black;
+    border-top: 0;
+    border-collapse:collapse;
+    position:relative;
+    overflow:hidden;
+}
+
+#CollectionTableContainer td {
+    vertical-align:top;
+}
+
 #RefineSearch {
+    vertical-align: top;
     width: 300px;
 }
 
 #Movies {
     background-color: white;
+    overflow:hidden;
 }
 
 .nav {
@@ -69,7 +79,6 @@ and open the template in the editor.
 .nav a{
     font-family: Verdana;
     font-size: 1.2em;
-    text-align: center;
     color: white;
     padding:0.5em;
     text-decoration: none;
@@ -88,7 +97,9 @@ and open the template in the editor.
     background-color: #BC4639;
     font-family: Verdana;
     color: white;
-    padding: 0.1em;
+    padding-left: 0.5em;
+    padding-bottom:0.5em;
     text-align: left;
-    margin-left: 10px;
+    border: 2px solid black;
+    border-top: 0;
 }

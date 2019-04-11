@@ -6,7 +6,7 @@
     if (true) {
 %>
 
-<link rel="stylesheet" href="css/homepage.css"/>
+<link rel="stylesheet" href="css/stylesheet.css"/>
 <div>Logged in as: 
     <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
 </div>

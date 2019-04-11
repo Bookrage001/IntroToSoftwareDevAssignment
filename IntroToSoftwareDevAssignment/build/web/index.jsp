@@ -10,7 +10,7 @@
 <%@ page contentType="text/html"%>
 <%@ page import="java.io.*" %>
 <% String msFilePath = application.getRealPath("WEB-INF");%>
-<link  rel="stylesheet" href="css/homepage.css">
+<link  rel="stylesheet" href="css/stylesheet.css">
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
@@ -51,18 +51,18 @@ $(document).ready(function () {
         <%@include file="/Modules/navbar.jspf" %>
     </div>
     
-    <table id="CollectionTable">
+    <table id="CollectionTableContainer" cellspacing="0" cellpadding="0">
         <tr>
-            <th>
+            <td>
                 <div id ="RefineSearch">
                     <%@include file="/Modules/refignSearch.jspf" %>
                 </div>
-            </th>
-            <th>
+            </td>
+            <td style="background-color:white">
                 <div id="Movies"> dem movies
                     <%--movies should apear here--%>
                 </div>
-            </th>
+            </td>
         </tr>
    
     </table>
