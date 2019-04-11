@@ -1,33 +1,58 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
 <div class="refinesearch">
-    <H1>Refine By:</H1>
+    <h1>Refine:</h1>
+    <div class="refineGenre">
     <h3>
         Genre:
     </h3>
     <li>
-        Genre2
+        Action
     </li>
     <li>
-        Genre3
+        Sci-Fi
     </li>
     <li>
-        Genre4
+        Horror
     </li>
     <li>
-        Genre5
+        Comedy
+    </li>
+    </div>
+    <h3>
+        Price:
+    </h3>
+    <li>
+        All Prices
     </li>
     <li>
-        Genre6
+        $0-$20
     </li>
     <li>
-        Genre7
+        $20-$40
     </li>
     <li>
-        Genre8
+        $40-$60
+    </li>
+    <li>
+        Over $60
     </li>
     <h3>
-
+        Classification
     </h3>
-
+    <li>
+        G
+    </li>
+    <li>
+        PG
+    </li>
+    <li>
+        M
+    </li>
+    <li>
+        MA15+
+    </li>
+    <li>
+        R18+
+    </li>
 </div>

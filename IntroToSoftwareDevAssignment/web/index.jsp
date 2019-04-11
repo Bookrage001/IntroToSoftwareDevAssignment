@@ -59,7 +59,9 @@ $(document).ready(function () {
                 </div>
             </td>
             <td id="Movies">
-                <div> lmao dem movies Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non euismod lectus. Donec placerat leo eget ipsum fermentum feugiat. Fusce a dapibus velit, interdum euismod ipsum. Nunc vitae consectetur orci, eget mollis lectus. In nec dui tristique, viverra ipsum sit amet, feugiat dui. Cras pulvinar nisl varius lorem gravida, et ultrices nulla dapibus. Nam feugiat, nulla at pretium efficitur, urna elit vulputate felis, a accumsan tellus ligula ut magna. Sed pulvinar, eros non auctor convallis, lacus arcu hendrerit odio, tempus ultrices purus sapien id dolor. Nunc ligula nulla, tristique eget quam ut, eleifend efficitur arcu.
+                <div> Movies go here
+                    
+                    <%--dem movies Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non euismod lectus. Donec placerat leo eget ipsum fermentum feugiat. Fusce a dapibus velit, interdum euismod ipsum. Nunc vitae consectetur orci, eget mollis lectus. In nec dui tristique, viverra ipsum sit amet, feugiat dui. Cras pulvinar nisl varius lorem gravida, et ultrices nulla dapibus. Nam feugiat, nulla at pretium efficitur, urna elit vulputate felis, a accumsan tellus ligula ut magna. Sed pulvinar, eros non auctor convallis, lacus arcu hendrerit odio, tempus ultrices purus sapien id dolor. Nunc ligula nulla, tristique eget quam ut, eleifend efficitur arcu.
 
                     Suspendisse potenti. Donec vulputate aliquet mauris, quis laoreet enim placerat non. Nulla eget turpis quam. Sed varius volutpat mi, ut lobortis turpis rhoncus vel. Mauris hendrerit volutpat ultricies. Nulla mollis, diam et molestie posuere, elit nisl sagittis nisl, in tempor lectus diam sit amet est. Nullam finibus turpis sit amet rhoncus laoreet. Vivamus tincidunt ac enim a pretium. Cras semper tortor id pretium sagittis.
 
@@ -69,6 +71,7 @@ $(document).ready(function () {
 
                     Ut lacinia, augue ac finibus porta, neque lectus pharetra dui, maximus fringilla diam magna sit amet magna. Etiam egestas augue nec nunc hendrerit, vel egestas lorem posuere. Nulla fermentum nunc at ipsum efficitur, eget aliquam ipsum convallis. Etiam porta quam scelerisque ex rutrum viverra. Nulla facilisi. Donec in justo lorem. Sed sodales porttitor neque. Vestibulum lobortis, quam ac lobortis mollis, lectus eros aliquet dui, tincidunt sodales risus magna at arcu. Cras ac suscipit tortor. Sed condimentum cursus volutpat. Sed ipsum eros, scelerisque eget nunc eget, pulvinar sodales velit. Praesent elementum neque et odio pharetra, eu blandit orci vestibulum
                     <%--movies should apear here--%>
+                    
                 </div>
             </td>
         </tr>
