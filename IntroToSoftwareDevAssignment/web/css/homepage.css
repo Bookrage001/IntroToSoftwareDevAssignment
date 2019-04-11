@@ -8,9 +8,10 @@ and open the template in the editor.
     Author     : sean
 */
 .body {
-    background-color: #F3E0DC;
-    font-family: Arial;
+    //background-color: #F3E0DC;
+    font-family:Verdana;
     font-size: 1em;
+    background-image: url('.../Images/funky-lines.png');
 }
 #Logo {
     display:inline-block;
@@ -34,17 +35,17 @@ and open the template in the editor.
     border-radius: 20px;
 }
 
+#MovieSearch table {
+    font-family: Verdana;
+    color: white;
+}
+
 #MovieSearch table button {
     background-color: #7D0741;
-    font-family: Arial;
+    font-family: Verdana;
     color: white;
     padding: 0.3em;
     border: none;
-}
-
-#MovieSearch table {
-    font-family: Arial;
-    color: white;
 }
 
 #RefineSearch {
@@ -55,10 +56,11 @@ and open the template in the editor.
 .nav {
     background-color: #7D0741; 
     overflow: hidden;
+    border: 2px solid black;
 }
 
 .nav a{
-    font-family: Arial;
+    font-family: Verdana;
     font-size: 1.2em;
     text-align: center;
     color: white;
@@ -68,7 +70,7 @@ and open the template in the editor.
 }
 
 .nav a:hover{
-    background-color: #660000;
+    background-color: #57042c;
 }
 
 .nav-right{

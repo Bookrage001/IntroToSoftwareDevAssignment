@@ -5,11 +5,11 @@
         <form action="index.jsp" method="Post" id="MovieSearch">
     <table>
         <tr>
-            <td align="center">
+            <td>
                 <label for="Title">Title
                     <input name="Title" type="text" value="" autocomplete="false">
                     </td>
-                    <td align="center">
+                    <td>
                         <label for="Genre">Genre
                             <select name="Genre">
                                 <option value="" name=""></option>
@@ -21,17 +21,17 @@
                         </label>
                     </td>
             </td>
-            <td align="center">
+            <td>
                 <label for="YearS">Start Year
                     <input name="YearS" type="number"  value="" autocomplete="false" min="1900" max="2020" maxlength="4" minlength="4">
                 </label>
             </td>
-            <td align="center">
+            <td>
                 <label for="YearF">End
                     <input name="YearF" type="number" value="" autocomplete="false" min="1900" max="2020" maxlength="4" minlength="4"> <!-- TODO Use todays Date -->
                 </label>
             </td>
-            <td style="vertical-align: bottom">
+            <td>
                 <button>Search</button>
             </td>
         </tr>
