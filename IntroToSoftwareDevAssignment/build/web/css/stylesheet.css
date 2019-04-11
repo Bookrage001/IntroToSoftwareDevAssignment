@@ -116,9 +116,5 @@ and open the template in the editor.
 .refineGenre {
 }
 
-
 .refinesearch h3 {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    background-image: linear-gradient(to right,#BC4639, #7D0741);
 }

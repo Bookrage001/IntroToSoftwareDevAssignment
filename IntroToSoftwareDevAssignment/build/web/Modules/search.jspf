@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <label for="Title">Title
-                    <input name="Title" type="text" value="" autocomplete="false" placeholder="Search for Movies...">
+                    <input name="Title" type="text" value="" autocomplete="false">
                     </td>
                     <td>
                         <label for="Genre">Genre
