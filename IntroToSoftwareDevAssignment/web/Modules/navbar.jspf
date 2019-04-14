@@ -9,22 +9,18 @@
 <link rel="stylesheet" href="css/stylesheet.css"/>
 
 
-<div class="navcontainer">
-    <div align="right" style="padding-bottom: 1px">Logged in as: 
+    <div align="right" class="loginStatus">Logged in as: 
     <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
     </div>
 <div class="nav">
     <a href="index.jsp"> Home</a> 
     <a href="bestsellers.jsp"> Best Sellers </a> 
     <a href="newreleases.jsp"> New Releases </a> 
-    <a href="comingsoon.jsp"> Coming Soon </a> 
     <div class="nav-right">
-    <a href="account.jsp">My Account</a>
+    <a href="account.jsp" style="border-left: 1px solid black">My Account</a>
     <a href="logout.jsp">Logout</a>
-    <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a>    
-    <%-- <a href="main.jsp">Main Page</a> (hidden because not sure if we need this)--%>
+    <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
-</div>
 </div>
     
 

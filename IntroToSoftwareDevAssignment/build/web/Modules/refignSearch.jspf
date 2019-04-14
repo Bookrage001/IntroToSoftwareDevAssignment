@@ -2,23 +2,6 @@
 <%@ page pageEncoding="UTF-8" %>
 <div class="refinesearch">
     <h1>Refine:</h1>
-    <div class="refineGenre">
-    <h3>
-        Genre:
-    </h3>
-    <li>
-        Action
-    </li>
-    <li>
-        Sci-Fi
-    </li>
-    <li>
-        Horror
-    </li>
-    <li>
-        Comedy
-    </li>
-    </div>
     <h3>
         Price:
     </h3>
@@ -37,22 +20,5 @@
     <li>
         Over $60
     </li>
-    <h3>
-        Classification
-    </h3>
-    <li>
-        G
-    </li>
-    <li>
-        PG
-    </li>
-    <li>
-        M
-    </li>
-    <li>
-        MA15+
-    </li>
-    <li>
-        R18+
-    </li>
 </div>
+    
