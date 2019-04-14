@@ -25,4 +25,5 @@ hs_err_pid*
 /Tutorial/build/
 /IntroToSoftwareDevAssignment/nbproject/private/
 nbproject
-/build/*
+/build/
+build/
