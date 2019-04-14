@@ -1,0 +1,22 @@
+<!-- any content can be specified here e.g.: -->
+<%@ page pageEncoding="UTF-8" %>
+<%
+//    User loggedInUser = (User) session.getAttribute("user");
+//    if (loggedInUser != null) {
+    if (true) {
+%>
+
+
+<div align="right">Logged in as: 
+    <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
+
+    <a href="account.jsp">My Account</a> | <a href="logout.jsp">Logout</a></div>
+</div>
+
+<div align="center" style="background-color: #ECC8AF; font-size: 2.5em;font-family: Palatino;"><a href="index.jsp"> Index Page</a> | <a href="checkout.jsp">Checkout Page</a> | <a href="main.jsp">Main Page</a>
+
+<% } else {%>
+
+<div align="center"><a href="index.jsp">Index Page</a> | <a href="checkout.jsp">Checkout Page</a> | <a href="register.jsp">Register</a> | <a href="login.jsp">Login</a></div>
+
+<% }%>
