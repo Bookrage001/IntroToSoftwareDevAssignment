@@ -26,3 +26,5 @@ hs_err_pid*
 /IntroToSoftwareDevAssignment/nbproject/private/
 nbproject
 /build/
+nbbuild.xml
+/dist/
