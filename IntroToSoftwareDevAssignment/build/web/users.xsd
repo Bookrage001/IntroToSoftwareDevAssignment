@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Insert your type declarations here -->
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="gender">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="age">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Insert your element declarations here -->
+    <xs:element name="users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence> 
+                            <xs:element name="name" type="name"/>                  
+                            <xs:element name="gender" type="radio"/>
+                            <xs:element name="age" type="number"/>
+                            <xs:element name="password" type="number"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

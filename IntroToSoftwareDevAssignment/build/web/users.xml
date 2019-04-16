@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="movies.xsl"?>
+
+<users    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="users.xsd">
+          
+    <user id="1">
+        <name>Tom</name>
+        <gender>male</gender>
+        <age>23</age>
+        <password>123456</password>
+    </user>
+    <user id="2">
+        <name>Alva</name>
+        <gender>female</gender>
+        <age>20</age>
+        <password>234567</password>
+    </user>
+    <user id="3">
+        <name>Bob</name>
+        <gender>male</gender>
+        <age>22</age>
+        <password>345678</password>
+    </user>
+    <user id="3">
+        <name>Annablle</name>
+        <gender>female</gender>
+        <age>34</age>
+        <password>456789</password>
+    </user>
+    <user id="4">
+        <name>Edward</name>
+        <gender>male</gender>
+        <age>32</age>
+        <password>567890</password>
+    </user>
+    <user id="5">
+        <name>Cherry</name>
+        <gender>female</gender>
+        <age>30</age>
+        <password>134566</password>
+    </user>
+    <user id="6">
+        <name>Alan</name>
+        <gender>male</gender>
+        <age>29</age>
+        <password>563386</password>
+    </user>
+    <user id="7">
+        <name>Claire</name>
+        <gender>female</gender>
+        <age>33</age>
+        <password>239568</password>
+    </user>
+     <user id="8">
+        <name>Daisy</name>
+        <gender>female</gender>
+        <age>25</age>
+        <password>263568</password>
+    </user>
+     <user id="9">
+        <name>Tony</name>
+        <gender>male</gender>
+        <age>24</age>
+        <password>133567</password>
+    </user>
+     <user id="10">
+        <name>Helen</name>
+        <gender>female</gender>
+        <age>21</age>
+        <password>324587</password>
+    </user>
+</users>
