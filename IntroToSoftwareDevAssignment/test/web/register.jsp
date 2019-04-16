@@ -7,52 +7,81 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <html lang="zh-CN">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>register</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.jsp">login</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
+    <body bgcolor="#f2f2f2">
 
-            <form class="form-signin" action="reg-submit.jsp" method="post">
-                <div id="info">
-
-                </div>
-                <label for="">username</label>
-                <input type="text" name="username" id="username" class="form-control" placeholder="please enter user name" required autofocus><br>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Please enter your password" required><br>
-                <label for="">password</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Please enter your password" required><br>
-                <label for="">password</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Please enter your password" required><br>
-                <label for="">Repeated password</label>
-                <input type="password" name="password2" id="password2" class="form-control" placeholder="Please enter your password again" required maxLength="16"><br>
-                <button type="submit" class="btn btn-primary" id="btn-reg">register</button>
-                <a href="login.jsp" class="btn btn-default" id="btn-reg">return login</a>
+        <div style="background-color: #C18C5D">
+            <img src="Images/RaiMovieLogo.png" height="115.25" width="320" style="padding:20px;padding-left: 50px;">
+        </div>
+        <div id="Title" style="text-align: right;background-color: #C18C5D">
+            <%@include file="/Modules/navbar.jspf" %>
+        </div>
+        
+        
+        
+         <div align="center"> 
+            <h2>Register a new account</h2>
+            <form method="post" action="RegisterAction.jsp">
+                <table>
+                    <tr>
+                        <td><label>Username</label></td>
+                        <td><input type="text" name="username" placeholder="Username" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Firstname</label></td>
+                        <td><input type="text" name="fisrstname" placeholder="Firstname" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Lastname</label></td>
+                        <td><input type="text" name="lastname" placeholder="Lastname" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email</label></td>
+                        <td><input type="text" name="email" placeholder="Email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Address</label></td>
+                        <td><input type="text" name="address" placeholder="Address" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>ContactNum</label></td>
+                        <td><input type="password" name="ContactNum" placeholder="ContactNum" required></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="submit" value="Register"></td>
+                    </tr>
+                    <tr>
+                    <td>Agree to TOS</td>
+                    <td>
+                   <input type="submit" name="Agree to TOS" value=""/>
+                   </td>
+                   </tr>
+                </table>            
             </form>
         </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-</body>                    
-</html>
+       
+        
+        <%
+               String username = request.getParameter("username");
+               String firstname= request.getParameter("firstname");
+               String lastname = request.getParameter("lastname");
+               String email = request.getParameter("email");
+               String address = request.getParameter("address");
+               String ContactNum = request.getParameter("ContactNum");
+        %>
+        <% if (tos!=null){%>
+        {
+        <h1>Welcome, <%=username %></h1>
+        <p>You firstname is<%=firstname%></p>
+        <p>You lastname is <%=lastname%></p>
+        <p>You email is: <%=email%></p>
+        <p>You address is:<%=address%> </p>
+        <p>You ContactNum is <%=ContactNum%></p>
+        <%}else{%>
+        <p>Sorry! you must agree to the Terms of Service.Click here<a href="register.jsp">  Register</a></p>
+        <%}%>
+    </body>>
+        
+        
+</html>>
+    
 
