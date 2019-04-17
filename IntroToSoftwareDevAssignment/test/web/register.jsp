@@ -27,11 +27,11 @@
                         <td><input type="text" name="username" placeholder="Username" required></td>
                     </tr>
                     <tr>
-                        <td><label>Firstname</label></td>
+                        <td><label>First name</label></td>
                         <td><input type="text" name="fisrstname" placeholder="Firstname" required></td>
                     </tr>
                     <tr>
-                        <td><label>Lastname</label></td>
+                        <td><label>Last name</label></td>
                         <td><input type="text" name="lastname" placeholder="Lastname" required></td>
                     </tr>
                     <tr>
@@ -43,18 +43,13 @@
                         <td><input type="text" name="address" placeholder="Address" required></td>
                     </tr>
                     <tr>
-                        <td><label>ContactNum</label></td>
+                        <td><label>Contact Number</label></td>
                         <td><input type="password" name="ContactNum" placeholder="ContactNum" required></td>
                     </tr>
                     <tr>
                         <td><input class="button" type="submit" value="Register"></td>
                     </tr>
-                    <tr>
-                    <td>Agree to TOS</td>
-                    <td>
-                   <input type="submit" name="Agree to TOS" value=""/>
-                   </td>
-                   </tr>
+                    
                 </table>            
             </form>
         </div>
@@ -71,11 +66,11 @@
         <% if (tos!=null){%>
         {
         <h1>Welcome, <%=username %></h1>
-        <p>You firstname is<%=firstname%></p>
-        <p>You lastname is <%=lastname%></p>
+        <p>You first name is<%=firstname%></p>
+        <p>You last name is <%=lastname%></p>
         <p>You email is: <%=email%></p>
         <p>You address is:<%=address%> </p>
-        <p>You ContactNum is <%=ContactNum%></p>
+        <p>You Contact Number is <%=ContactNum%></p>
         <%}else{%>
         <p>Sorry! you must agree to the Terms of Service.Click here<a href="register.jsp">  Register</a></p>
         <%}%>
