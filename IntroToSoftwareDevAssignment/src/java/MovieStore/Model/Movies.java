@@ -6,14 +6,20 @@
 
 package MovieStore.Model;
 
+import java.io.*;
 import java.util.ArrayList;
+import javax.xml.bind.annotation.*;
 
 /**
  *
  * @author Mark Galulu
  */
-public class Movies {
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="Movies")
+public class Movies implements Serializable{
+
+    @XmlElement(name="movie")
     private ArrayList<Movie> list = new ArrayList<Movie>();
 
     public Movies() {

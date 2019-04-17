@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package MovieStore.Model;
+
+import javax.xml.bind.annotation.*;
 
 /**
  *
  * @author Mark Galulu
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement()
 public class Movie {
 
+    @XmlAttribute 
     private int id;
     private String title;
     private String genre;
@@ -93,5 +97,4 @@ public class Movie {
     public String toString() {
         return "Movie{" + "id=" + id + ", title=" + title + ", genre=" + genre + ", releaseDate=" + releaseDate + ", price=" + price + ", copies=" + copies + '}';
     }
-    
 }
