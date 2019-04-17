@@ -3,7 +3,6 @@
     Created on : 04/04/2019, 12:32:01 PM
     Author     : caleb
 --%>
-// this is a message
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -43,18 +42,19 @@ $(document).ready(function () {
         <img src="Images/RaiMovieLogo.png" height="115.25" width="320" style="Padding:20px;padding-left: 50px;">
     </div>
     <div id="Title" style="text-align: right;background-color: #C18C5D">
-        <%@include file="/Modules/navbar.jspf" %>
+        <%@include file="/WEB-INF/Modules/navbar.jspf" %>
     </div>
         <div align="left" style="max-width: 400px;height: 80%" >
-            <%@include file="/Modules/refignSearch.jspf" %>
-    </div>
-    <div id="Search" style="margin: auto; width: 100%; padding: 10px;">
-            <%@include file="/Modules/search.jspf" %>
+            <%@include file="/WEB-INF/Modules/refignSearch.jspf" %>
         </div>
+    <div id="Search" style="margin: auto; width: 100%; padding: 10px;">
+        <%@include file="/WEB-INF/Modules/search.jspf" %>
+    </div>
 
         <div id="Movies">
             <h3>The thing</h3>
             <%--movies should apear here--%>
+            <%@include file="/WEB-INF/Modules/movies.jspf" %>
         </div>
 
 </body>
