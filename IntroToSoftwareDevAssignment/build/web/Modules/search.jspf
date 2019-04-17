@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <div>
     <center>
-        <form action="index.jsp" method="Post" id="MovieSearch">
+        <form action="index.jsp" method="Post" class="MovieSearch">
     <table>
         <tr>
             <td>

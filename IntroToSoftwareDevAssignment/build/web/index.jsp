@@ -39,6 +39,7 @@ $(document).ready(function () {
     });
 </script>
 <body align="center">
+    <div class="container">
     <header align="left">
     <div id="Logoposition">
         <img src="Images/RaiMovieLogoBlue.png" id="Logo">
@@ -47,9 +48,12 @@ $(document).ready(function () {
     <div id="Search">
         <%@include file="/Modules/search.jspf"%>
     </div>
+    </div>
+    </header>
     </header>
 
 <content>
+    <div class ="container">
         <%@include file="/Modules/navbar.jspf" %>
         <div id="collection">
             <div id="refine">
@@ -59,6 +63,7 @@ $(document).ready(function () {
         <%@include file="/Modules/movies.jspf" %>
             </div>
         </div>
+    </div>
 </content>
 </body>
 </html>
