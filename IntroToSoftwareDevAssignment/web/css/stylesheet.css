@@ -1,0 +1,207 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/04/2019, 6:09:39 PM
+    Author     : sean
+*/
+
+
+body {    
+    font-family:Verdana;
+    font-size: 0.8em;
+    background-image: url('.../Images/funky-lines.png');
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+content {
+}
+
+header{
+    background-color: white;
+    border-bottom: 0;
+}
+
+#Logo {
+    max-width: 200px;
+}
+
+#Logoposition {
+    display:inline;
+}
+
+#movies {
+    background-color: white;
+    border: 1px solid black;
+    display:inline-block;
+    float: right;
+    width:79%;
+    margin-top: 10px;
+}
+
+.MovieSearch {
+    padding: 0.3em;
+    background-color: #222831;
+    border-radius: 10px;
+    font-family: Verdana;
+    font-size: 0.8em;
+}
+
+.MovieSearch table button {
+    background-color: #00adb5;
+    color: white;
+    padding: 0.3em;
+    border: none;
+}
+
+.MovieSearch input, select {
+    border: 1px solid black;
+}
+
+.MovieSearch label {
+    color: white;
+    font-size: 0.8em;
+}
+
+#Navbar {
+    
+}
+
+#refine {
+    width:20%;
+    float:left;
+    border: 1px solid #dfdcdc;
+    display:inline-block;
+}
+
+#RefineSearch {
+}
+
+#Search {
+    display:inline-block;
+    position:relative;
+    margin-left: 3%;
+}
+
+.caption {
+    padding:10px;
+}
+
+.price {
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: yellow;
+    font-size: 0.7em;
+    font-family: Verdana;
+    padding: 5px;
+    width:50px;
+    position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.collection {
+    display: inline-block;
+	width: 100%;
+	float: left;
+	position: relative;
+}
+
+.collectioncontainer{
+    width: 80%;
+    background-color: white;
+    color:white;
+}
+
+.loginStatus {
+    padding-bottom: 1px;
+    background-color: white;
+    font-family: Verdana;
+}
+
+.navcontainer {
+    background-color: white;
+}
+
+.nav {
+    background-color: #393E46; 
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+.nav a{
+    font-family: Verdana;
+    color: white;
+    padding:0.5em;
+    text-decoration: none;
+    float:left;
+    border-right: 1px solid black;
+}
+
+.nav a:hover{
+    background-color: #00adb5;
+}
+
+.nav-right{
+    float: right;
+}
+
+.movie-area {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    padding:0.5%;
+}
+
+.movie-area .columns{
+	width: 18.5%;
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	margin: 0.5%;
+        border: 0.5px solid black;
+        position: relative;
+}
+
+.movie-area img {
+    padding: 5px;
+    text-align: center;
+    height: 160px;
+    width: 130px;
+    border-radius: 5px;
+}
+
+.MovieAddbtn {
+    padding: 1px;
+}
+
+.MovieDetailsbtn {
+    padding: 1px;
+}
+
+.refinesearch {
+    color: white;
+    text-align: left;
+    background-color: #393E46;
+    padding:1em;
+    border: 1px solid black;
+    margin-top: 1%;
+    font-family: Arial;
+}
+
+.refinesearch li {
+    font-size: 0.8em;
+}
+
+.refinesearch h3 {
+    font-size: 1.2em;
+
+}
+

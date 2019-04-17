@@ -1,34 +1,24 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<div style="background-color: #E7AD99">
-    <br></br>
-    <H1>Refign By:</H1>
+<div class="refinesearch">
+    <h1>Refine:</h1>
     <h3>
-        Genre:
+        Price:
     </h3>
     <li>
-        Genre2
+        All Prices
     </li>
     <li>
-        Genre3
+        $0-$20
     </li>
     <li>
-        Genre4
+        $20-$40
     </li>
     <li>
-        Genre5
+        $40-$60
     </li>
     <li>
-        Genre6
+        Over $60
     </li>
-    <li>
-        Genre7
-    </li>
-    <li>
-        Genre8
-    </li>
-    <h3>
-
-    </h3>
-
 </div>
+    

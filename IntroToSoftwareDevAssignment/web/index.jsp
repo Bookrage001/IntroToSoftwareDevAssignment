@@ -10,11 +10,11 @@
 <%@ page contentType="text/html"%>
 <%@ page import="java.io.*" %>
 <% String msFilePath = application.getRealPath("WEB-INF");%>
-<link rel="stylesheet" href="styles.css"/>
+<link  rel="stylesheet" href="css/stylesheet.css">
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
-        <title>index</title>
+        <title>Index</title>
     <datalist id="Genres">
         <option value="Action">
         <option value="Sci-Fi">
@@ -38,24 +38,32 @@ $(document).ready(function () {
         });
     });
 </script>
-<body bgcolor="#f2f2f2">
-    <div style="background-color: #C18C5D">
-        <img src="Images/RaiMovieLogo.png" height="115.25" width="320" style="Padding:20px;padding-left: 50px;">
+<body align="center">
+    <div class="container">
+    <header align="left">
+    <div id="Logoposition">
+        <img src="Images/RaiMovieLogoBlue.png" id="Logo">
     </div>
-    <div id="Title" style="text-align: right;background-color: #C18C5D">
+    
+    <div id="Search">
+        <%@include file="/Modules/search.jspf"%>
+    </div>
+    </div>
+    </header>
+    </header>
+
+<content>
+    <div class ="container">
         <%@include file="/Modules/navbar.jspf" %>
-    </div>
-        <div align="left" style="max-width: 400px;height: 80%" >
-            <%@include file="/Modules/refignSearch.jspf" %>
-    </div>
-    <div id="Search" style="margin: auto; width: 100%; padding: 10px;">
-            <%@include file="/Modules/search.jspf" %>
+        <div id="collection">
+            <div id="refine">
+        <%@include file="/Modules/refignSearch.jspf" %>
+            </div>
+            <div id="movies">
+        <%@include file="/Modules/movies.jspf" %>
+            </div>
         </div>
-
-        <div id="Movies">
-            <h3>The thing</h3>
-            <%--movies should apear here--%>
-        </div>
-
+    </div>
+</content>
 </body>
 </html>
