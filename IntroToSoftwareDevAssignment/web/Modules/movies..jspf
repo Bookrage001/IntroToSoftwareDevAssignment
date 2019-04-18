@@ -1,8 +1,0 @@
-<%-- any content can be specified here e.g.: --%>
-<%@ page contentType="text/html"%>
-<%@ page import="java.io.*" %>
-
-<%@ page pageEncoding="UTF-8" %>
-<%-- <c:import url="WEB-INF/movies.xml" var="moviesxml"/>
-<c:import url="xsl/movies.xsl" var="Moviesxslt"/>
-<c:import url="xsl/movies.xsl" var="Moviesxslt"/> --%>
