@@ -12,7 +12,7 @@ and open the template in the editor.
 body {    
     font-family:Verdana;
     font-size: 0.8em;
-    background-image: url('.../Images/funky-lines.png');
+    background-image: url('../Design/Images/funky-lines.png');
     text-align: center;
 }
 
