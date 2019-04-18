@@ -58,36 +58,36 @@ public final class movieListing_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Movie List</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        \n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>Movie List</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        \r\n");
       out.write("        ");
       if (_jspx_meth_c_import_0(_jspx_page_context))
         return;
-      out.write("\n");
+      out.write("\r\n");
       out.write("        ");
       if (_jspx_meth_c_import_1(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("        \n");
+      out.write("\r\n");
+      out.write("        \r\n");
       out.write("        ");
 
             String title = request.getParameter("title");
             String price = request.getParameter("price");
             
-      out.write("\n");
-      out.write("            \n");
+      out.write("\r\n");
+      out.write("            \r\n");
       out.write("            ");
       //  x:transform
       org.apache.taglibs.standard.tag.rt.xml.TransformTag _jspx_th_x_transform_0 = (org.apache.taglibs.standard.tag.rt.xml.TransformTag) _jspx_tagPool_x_transform_xslt_xml.get(org.apache.taglibs.standard.tag.rt.xml.TransformTag.class);
@@ -103,7 +103,7 @@ public final class movieListing_jsp extends org.apache.jasper.runtime.HttpJspBas
           _jspx_th_x_transform_0.doInitBody();
         }
         do {
-          out.write("\n");
+          out.write("\r\n");
           out.write("                ");
           //  x:param
           org.apache.taglibs.standard.tag.rt.xml.ParamTag _jspx_th_x_param_0 = (org.apache.taglibs.standard.tag.rt.xml.ParamTag) _jspx_tagPool_x_param_value_name_nobody.get(org.apache.taglibs.standard.tag.rt.xml.ParamTag.class);
@@ -117,7 +117,7 @@ public final class movieListing_jsp extends org.apache.jasper.runtime.HttpJspBas
             return;
           }
           _jspx_tagPool_x_param_value_name_nobody.reuse(_jspx_th_x_param_0);
-          out.write("\n");
+          out.write("\r\n");
           out.write("                ");
           //  x:param
           org.apache.taglibs.standard.tag.rt.xml.ParamTag _jspx_th_x_param_1 = (org.apache.taglibs.standard.tag.rt.xml.ParamTag) _jspx_tagPool_x_param_value_name_nobody.get(org.apache.taglibs.standard.tag.rt.xml.ParamTag.class);
@@ -131,7 +131,7 @@ public final class movieListing_jsp extends org.apache.jasper.runtime.HttpJspBas
             return;
           }
           _jspx_tagPool_x_param_value_name_nobody.reuse(_jspx_th_x_param_1);
-          out.write("\n");
+          out.write("\r\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_x_transform_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -145,8 +145,8 @@ public final class movieListing_jsp extends org.apache.jasper.runtime.HttpJspBas
         return;
       }
       _jspx_tagPool_x_transform_xslt_xml.reuse(_jspx_th_x_transform_0);
-      out.write("\n");
-      out.write("    </body>\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
