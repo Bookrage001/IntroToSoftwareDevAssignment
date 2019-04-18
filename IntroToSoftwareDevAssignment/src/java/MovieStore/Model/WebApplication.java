@@ -17,7 +17,11 @@ public class WebApplication implements Serializable{
 
     public Movies movies;
     
+    public Users users;
+    
     private String movieFilePath;
+    
+    private String userFilePath;
     
     public WebApplication() {
         super();
@@ -33,6 +37,10 @@ public class WebApplication implements Serializable{
         return movieFilePath;
     }
 
+    public String getUserFilePath() {
+        return userFilePath;
+    }
+    
     public void setMovieFilePath(String movieFilePath) throws JAXBException, IOException {
         this.movieFilePath = movieFilePath;
         
@@ -45,6 +53,19 @@ public class WebApplication implements Serializable{
         movies = (Movies)u.unmarshal(fin);
         fin.close();
     }
+    
+    public void setUserFilePath(String userFilePath) throws JAXBException, IOException {
+        this.userFilePath = userFilePath;
+        
+        //Create the unmarshaller
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Unmarshaller u = jc.createUnmarshaller();
+        
+        //Now unmarshal the object from the file
+        FileInputStream fin = new FileInputStream(userFilePath);
+        users = (Users)u.unmarshal(fin);
+        fin.close();
+    }
 
     public Movies getMovies() {
         return movies;
@@ -53,6 +74,16 @@ public class WebApplication implements Serializable{
     public void setMovies(Movies movies) {
         this.movies = movies;
     }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+    
+    
 
     
 }
