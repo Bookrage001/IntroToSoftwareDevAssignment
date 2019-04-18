@@ -3,7 +3,6 @@
     Created on : 04/04/2019, 12:32:01 PM
     Author     : caleb
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -46,24 +45,19 @@ $(document).ready(function () {
     </div>
     
     <div id="Search">
-        <%@include file="/Modules/search.jspf"%>
-    </div>
+        <%@include file="WEB-INF/Modules/search.jspf"%>
     </div>
     </header>
-    </header>
-
-<content>
     <div class ="container">
-        <%@include file="/Modules/navbar.jspf" %>
+        <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="collection">
             <div id="refine">
-        <%@include file="/Modules/refignSearch.jspf" %>
+        <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
             </div>
             <div id="movies">
-        <%@include file="/Modules/movies.jspf" %>
+        <%@include file="WEB-INF/Modules/movies.jspf" %>
             </div>
         </div>
     </div>
-</content>
 </body>
 </html>
