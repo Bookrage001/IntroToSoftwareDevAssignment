@@ -239,3 +239,13 @@ header{
 
 }
 
+.Registerbtn {
+        margin-top: 20px;
+        
+}
+
+.SigninLogo {
+    border: 2px solid black;
+    background-color: white;
+    width: 20%;
+}
