@@ -12,25 +12,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
     </head>
-    <body>
-        
-        <%
-        String submitted = request.getParameter("submitted");
-
-        if (submitted != null && submitted.equals("yes")) {
-            String name = request.getParameter("name");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            String gender = request.getParameter("gender");
-            String favouriteColour = request.getParameter("favcol");
-    %>
-    
+    <body>    
         <div style="margin-top:5%"></div>
         <div id="Logoposition">
             <img src="Design/Images/RaiMovieLogoBlue.png" class="SigninLogo">
         </div>
         <div>
-            <form>
+            <form action="index.jsp" method="POST">
                 <h1>Registration</h1>
                 <table align="center">
                     <tr>
@@ -64,8 +52,13 @@
                         <td>Suburb:<input type="text" name="username" style="width: 60px"> </td>
                     </tr>
                 </table>
+                <br>
+                <br>
+                <tr>
+                    <td></td><td><input type="submit" value="Register"</td>
+                </tr> 
             </form>
-            <button class="Registerbtn">Next</button>
+            
         </div>
 
 

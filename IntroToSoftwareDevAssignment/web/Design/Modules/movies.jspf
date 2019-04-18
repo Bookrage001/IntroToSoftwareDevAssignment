@@ -2,7 +2,7 @@
 <div> 
     <div class="movie-area">
         <div class="columns">
-            <img src="../Design/Images/Posters/blackpanther.jpg" class="movieimg"/>
+            <img src="../Images/Posters/blackpanther.jpg" class="movieimg"/>
             <div caption align="center">
                 Black Panther
                 <div class="price">
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/suicidesquad.jpg" class="movieimg">
+            <img src="../Images/Posters/suicidesquad.jpg" class="movieimg">
             <div caption align="center">
                 Suicide Squad
                 <div class="price">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/darkknight.jpg" class="movieimg">
+            <img src="../Images/Posters/darkknight.jpg" class="movieimg">
             <div caption align="center">
                 The Dark Knight
                 <div class="price">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/suicidesquad2.jpg" class="movieimg">
+            <img src="../Images/Posters/suicidesquad2.jpg" class="movieimg">
             <div caption align="center">
                 Suicide Squad 2
                 <div class="price">
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/avengers3.jpg" class="movieimg">
+            <img src="../Images/Posters/avengers3.jpg" class="movieimg">
             <div caption align="center">
                 Avengers: Infinity War
                 <div class="price">
@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/avengers.jpg" class="movieimg">
+            <img src="../Images/Posters/avengers.jpg" class="movieimg">
             <div caption align="center">
                 The Avengers
                 <div class="price">
@@ -92,7 +92,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/shapeofwater.jpg" class="movieimg">
+            <img src="../Images/Posters/shapeofwater.jpg" class="movieimg">
             <div caption align="center">
                 The Shape of Water
                 <div class="price">
@@ -107,7 +107,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/titanic.jpg" class="movieimg">
+            <img src="../Images/Posters/titanic.jpg" class="movieimg">
             <div caption align="center">
                 Titanic
                 <div class="price">
@@ -122,7 +122,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/newhope.jpg" class="movieimg">
+            <img src="../Images/Posters/newhope.jpg" class="movieimg">
             <div caption align="center">
                 Star Wars: Episode IV
                 <div class="price">
@@ -137,7 +137,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/venom.jpg" class="movieimg">
+            <img src="../Images/Posters/venom.jpg"  class="movieimg">
             <div caption align="center">
                 Venom
                 <div class="price">
@@ -152,7 +152,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/godfather.jpg" class="movieimg">
+            <img src="../Images/Posters/godfather.jpg"  class="movieimg">
             <div caption align="center">
                 Godfather
                 <div class="price">
@@ -167,7 +167,7 @@
             </div>
         </div>
         <div class="columns">
-            <img src="../Design/Images/Posters/starisborn.jpg" class="movieimg">
+            <img src="../Images/Posters/starisborn.jpg" class="movieimg">
             <div caption align="center">
                 A Star is born
                 <div class="price">
