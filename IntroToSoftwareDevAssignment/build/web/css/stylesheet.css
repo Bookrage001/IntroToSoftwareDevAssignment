@@ -97,8 +97,9 @@ header{
 .price {
     border-radius: 5px;
     border: 1px solid black;
-    background-color: yellow;
-    font-size: 0.7em;
+    background-color: #00adb5;
+    color:white;
+    font-size: 1em;
     font-family: Verdana;
     padding: 5px;
     width:50px;
@@ -166,24 +167,57 @@ header{
 	display: inline-block;
 	overflow: hidden;
 	margin: 0.5%;
-        border: 0.5px solid black;
         position: relative;
 }
 
-.movie-area img {
-    padding: 5px;
+.movie-area .columns:hover{
+    background-color:#c7ebe8;
+}
+
+.Moviebtncontainer {
+    width:100%;
+    padding:5px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.movieimg {
+    margin: 5px;
     text-align: center;
     height: 160px;
     width: 130px;
-    border-radius: 5px;
+    border: 1px solid black;
 }
 
 .MovieAddbtn {
-    padding: 1px;
+    background-color:#66cc00;
+    color: white;
+    padding: 5px;
+    border: none;
+}
+
+.MovieAddbtn:hover {
+    background-color:#669900;
+    cursor:pointer;
+}
+
+.MovieAddbtn img {
+    height:15px;
+    width:15px;
 }
 
 .MovieDetailsbtn {
-    padding: 1px;
+    background-color:#cccccc;
+    color: white;
+    border: none;
+    height: 25px;
+    width: auto;
+}
+
+.MovieDetailsbtn:hover {
+    background-color:#999999;
+    cursor:pointer;
 }
 
 .refinesearch {
