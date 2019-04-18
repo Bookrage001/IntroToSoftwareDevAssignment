@@ -23,31 +23,35 @@
                 <table align="center">
                     <tr>
                         <td>
-                            Username :
+                            Username: <input type="text" name="username">
                         </td>
-                        <td>
-                            <input type="text" name="username">
-                        </td>
+                        <td>Email: <input type="text" name="Email"> </td>
                     </tr>
+                    <table align="center">
                     <tr>
                         <td>
-                            Password :
+                            Password: <input type="text" name="Password">
                         </td>
                         <td>
-                            <input type="text" name="Password">
+                            Confirm password: <input type="text" name="ConfirmPassword">
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            Confirm password :
-                        </td>
-                        <td>
-                            <input type="text" name="ConfirmPassword">
-                        </td>
-                    </tr>
+                    </table>
 
                 </table>
+                    <table align="center">
+                        <tr>
+                            <td>First Name: <input type="text" name="FirstName"> Last Name: <input type="text" name="LastName"> </td>
 
+                        </tr>
+                    </table>
+                    <table align="center">
+                        <tr>
+                            <td>Address: <input type="text" name="Address"> </td>
+                            <td>Post Code:<input type="text" name="PostCode" style="width:50px"> 
+                                <td>Suburb:<input type="text" name="username" style="width: 60px"> </td>
+                        </tr>
+                    </table>
             </form>
             <button class="Registerbtn">Next</button>
         </div>
