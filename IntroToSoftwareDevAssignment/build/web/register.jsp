@@ -13,6 +13,18 @@
         <title>Register</title>
     </head>
     <body>
+        
+        <%
+        String submitted = request.getParameter("submitted");
+
+        if (submitted != null && submitted.equals("yes")) {
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            String gender = request.getParameter("gender");
+            String favouriteColour = request.getParameter("favcol");
+    %>
+    
         <div style="margin-top:5%"></div>
         <div id="Logoposition">
             <img src="Design/Images/RaiMovieLogoBlue.png" class="SigninLogo">

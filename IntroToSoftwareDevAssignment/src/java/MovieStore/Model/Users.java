@@ -40,4 +40,12 @@ public class Users implements Serializable {
         }
         return null;
     }
+    
+    public User login(String email, String password){
+        for(User user : list){
+            if(user.getEmail().equals(email) && user.getPassword().equals(password))
+                return user;
+        }
+        return null;
+    }
 }
