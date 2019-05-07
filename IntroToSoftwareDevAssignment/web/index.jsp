@@ -1,19 +1,20 @@
 <%-- 
     Document   : index
     Created on : 04/04/2019, 12:32:01 PM
-    Author     : caleb
+    Author     : Sean
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html"%>
 <%@ page import="java.io.*" %>
+
 <% String msFilePath = application.getRealPath("WEB-INF");%>
-<link  rel="stylesheet" href="css/stylesheet.css">
+<link href="Design/stylesheet.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
-        <title>Index</title>
+        <title>Home Page</title>
     <datalist id="Genres">
         <option value="Action">
         <option value="Sci-Fi">
@@ -22,9 +23,9 @@
     </datalist>
 </head>
 <script>
-$(document).ready(function () {
-    $('.order tr').click(function (event) {
-        if (event.target.type !== 'checkbox') {
+    $(document).ready(function () {
+        $('.order tr').click(function (event) {
+            if (event.target.type !== 'checkbox') {
                 $(':checkbox', this).trigger('click');
             }
         });
@@ -39,25 +40,30 @@ $(document).ready(function () {
 </script>
 <body align="center">
     <div class="container">
-    <header align="left">
-    <div id="Logoposition">
-        <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+        <header align="left">
+            <div id="Logoposition">
+                <img src="Design/Images/RaiMovieLogoBlue.png" id="Logo">
+            </div>
+
+            <div id="Search">
+                <%@include file="Design/Modules/search.jspf"%>
+            </div>
     </div>
-    
-    <div id="Search">
-        <%@include file="WEB-INF/Modules/search.jspf"%>
-    </div>
-    </header>
+</header>
+</header>
+
+<content>
     <div class ="container">
-        <%@include file="WEB-INF/Modules/navbar.jspf" %>
+        <%@include file="Design/Modules/navbar.jspf" %>
         <div id="collection">
             <div id="refine">
-        <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
+                <%@include file="Design/Modules/refignSearch.jspf" %>
             </div>
             <div id="movies">
-        <%@include file="WEB-INF/Modules/movies.jspf" %>
+                <%@include file="Design/Modules/movies.jspf" %>
             </div>
         </div>
     </div>
+</content>
 </body>
 </html>
