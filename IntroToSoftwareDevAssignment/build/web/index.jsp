@@ -10,7 +10,7 @@
 <%@ page import="java.io.*" %>
 
 <% String msFilePath = application.getRealPath("WEB-INF");%>
-<link href="Design/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
@@ -42,11 +42,11 @@
     <div class="container">
         <header align="left">
             <div id="Logoposition">
-                <img src="Design/Images/RaiMovieLogoBlue.png" id="Logo">
+                <img src="WEB-INF/Design/Images/RaiMovieLogoBlue.png" id="Logo">
             </div>
 
             <div id="Search">
-                <%@include file="Design/Modules/search.jspf"%>
+                <%@include file="WEB-INF/Design/Modules/search.jspf"%>
             </div>
     </div>
 </header>
@@ -54,13 +54,13 @@
 
 <content>
     <div class ="container">
-        <%@include file="Design/Modules/navbar.jspf" %>
+        <%@include file="WEB-INF/Design/Modules/navbar.jspf" %>
         <div id="collection">
             <div id="refine">
-                <%@include file="Design/Modules/refignSearch.jspf" %>
+                <%@include file="WEB-INF/Design/Modules/refignSearch.jspf" %>
             </div>
             <div id="movies">
-                <%@include file="Design/Modules/movies.jspf" %>
+                <%@include file="WEB-INF/Design/Modules/movies.jspf" %>
             </div>
         </div>
     </div>
