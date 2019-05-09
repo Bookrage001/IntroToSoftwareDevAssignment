@@ -153,7 +153,7 @@ select {
 
 .movie-area {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, 200px);
     background-color: #2196F3;
     padding: 10px;
     padding: 0.5%;
@@ -161,10 +161,11 @@ select {
 }
 
 .movie-area .columns {
-    display: inline-grid;
     overflow: hidden;
     border: 0.5px solid black;
     position: relative;
+    grid-column-start: auto;
+    grid-row-start: auto;
 }
 
 .movie-area img {
@@ -176,7 +177,6 @@ select {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
 }
 
 .MovieAddbtn {
@@ -186,12 +186,31 @@ select {
 
 .MovieAddbtn>img {
     background-color: gray;
+    display: inline-grid;
+    float: right;
     height: 1em;
     width: 1em;
 }
 
+.Moviebtncontainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Moviebtncontainer>.MovieAddbtn {
+    display: inline-grid;
+}
+
 .MovieDetailsbtn {
+    float: left;
     padding: 1px;
+}
+
+.movieimg img.resize {
+    width: 130px;
+    height: 160px;
 }
 
 .refinesearch {

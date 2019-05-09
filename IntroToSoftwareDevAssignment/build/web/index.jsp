@@ -42,7 +42,7 @@
     <div class="container">
         <header align="left">
             <div id="Logoposition">
-                <img src="WEB-INF//Images/RaiMovieLogoBlue.png" id="Logo">
+                <img src="Images/RaiMovieLogoBlue.png" id="Logo">
             </div>
 
             <div id="Search">

@@ -9,10 +9,12 @@
                     $25
                 </div>
                 <div class="Moviebtncontainer">
-                <button class="MovieAddbtn">
-                    <img src="Images/Cart.png"/>
-                </button>
-                <button class="MovieDetailsbtn">More Details</button>
+                    <div class="MovieAddbtn">
+                        <img src="Images/Cart.png"/>
+                    </div>
+                    <div>
+                        <button class="MovieDetailsbtn">More Details</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,9 +26,9 @@
                     $30
                 </div>
                 <div class="Moviebtncontainer">
-                <button class="MovieAddbtn">
+                <div class="MovieAddbtn">
                     <img src="Images/Cart.png"/>
-                </button>
+                </div>
                 <button class="MovieDetailsbtn">More Details</button>
                 </div>
             </div>
