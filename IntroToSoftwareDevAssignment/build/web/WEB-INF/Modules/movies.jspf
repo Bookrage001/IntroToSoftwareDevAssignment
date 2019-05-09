@@ -4,7 +4,6 @@
 <%@ page contentType="text/html"%>
 <%@ page import="java.io.*" %>
 <div> 
-
         <c:import url="WEB-INF/Data/movies.xml" var="moviesxml"/>
         <c:import url="WEB-INF/Data/movies.xsl" var="Moviesxslt"/>
 
