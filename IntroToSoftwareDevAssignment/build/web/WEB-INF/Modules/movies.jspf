@@ -1,7 +1,26 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html"%>
+<%@ page import="java.io.*" %>
 <div> 
-    <div class="movie-area">
-        <div class="columns">
+
+        <c:import url="WEB-INF/Data/movies.xml" var="moviesxml"/>
+        <c:import url="WEB-INF/Data/movies.xsl" var="Moviesxslt"/>
+
+        <%
+            String genre = request.getParameter("Genre");
+            String title = request.getParameter("Title");
+            String startY = request.getParameter("YearS");
+            String endY = request.getParameter("YearF");
+        %>
+        <x:transform xml="${moviesxml}" xslt="${Moviesxslt}">
+            <x:param name="Genre" value="<%= genre %>" />
+            <x:param name="Title" value="<%= title %>" />
+            <x:param name="StartYear" value="<%= startY %>" />
+            <x:param name="EndYear" value="<%= endY %>" />
+        </x:transform>
+        <%-- <div class="columns">
             <img src="Images/posters/blackpanther.jpg" class="movieimg"/>
             <div caption align="center">
                 Black Panther
@@ -183,5 +202,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --%>
 </div>

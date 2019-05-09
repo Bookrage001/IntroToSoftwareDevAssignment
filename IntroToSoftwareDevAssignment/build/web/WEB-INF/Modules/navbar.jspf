@@ -5,7 +5,7 @@
 //    if (loggedInUser != null) {
     if (true) {
 %>
-<link href="../stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 
     <div align="right" class="loginStatus">Logged in as: 
     <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
@@ -17,7 +17,7 @@
     <div class="nav-right">
     <a href="login.jsp" style="border-left: 1px solid black">My Account</a>
     <a href="logout.jsp">Logout</a>
-    <a href="#" ><img src="../Images/Cart.png" height="15" width="15"> Cart </a> 
+    <a href="#" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
 </div>
     
