@@ -153,7 +153,7 @@ select {
 
 .movie-area {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     background-color: #2196F3;
     padding: 10px;
     padding: 0.5%;
@@ -176,7 +176,14 @@ select {
 }
 
 .MovieAddbtn {
+    height: 1em;
     padding: 1px;
+}
+
+.MovieAddbtn>img {
+    background-color: gray;
+    height: 1em;
+    width: 1em;
 }
 
 .MovieDetailsbtn {

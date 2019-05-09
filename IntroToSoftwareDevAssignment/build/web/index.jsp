@@ -42,11 +42,11 @@
     <div class="container">
         <header align="left">
             <div id="Logoposition">
-                <img src="WEB-INF/Design/Images/RaiMovieLogoBlue.png" id="Logo">
+                <img src="WEB-INF//Images/RaiMovieLogoBlue.png" id="Logo">
             </div>
 
             <div id="Search">
-                <%@include file="WEB-INF/Design/Modules/search.jspf"%>
+                <%@include file="WEB-INF/Modules/search.jspf"%>
             </div>
     </div>
 </header>
@@ -54,13 +54,13 @@
 
 <content>
     <div class ="container">
-        <%@include file="WEB-INF/Design/Modules/navbar.jspf" %>
+        <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="collection">
             <div id="refine">
-                <%@include file="WEB-INF/Design/Modules/refignSearch.jspf" %>
+                <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
             </div>
             <div id="movies">
-                <%@include file="WEB-INF/Design/Modules/movies.jspf" %>
+                <%@include file="WEB-INF/Modules/movies.jspf" %>
             </div>
         </div>
     </div>
