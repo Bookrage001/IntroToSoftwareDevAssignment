@@ -14,8 +14,6 @@
                     <xsl:value-of select="poster"/>
                 </xsl:attribute>
             </img>
-            <!-- <img src="<xsl:value-of select="poster"/>" class="movieimg"/> -->
-            <!-- <img src="<xsl:value-of select="poster"/>" /> -->
             <div align="center">
                 <xsl:value-of select="title"/>
                 <div class="price">
