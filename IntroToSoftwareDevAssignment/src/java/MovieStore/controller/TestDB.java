@@ -42,8 +42,8 @@ public class TestDB {
             System.out.print("Movie Director: ");
             String director = in.nextLine();
             
-            System.out.print("Movie Sympnosis: ");
-            String sympnosis = in.nextLine();
+            System.out.print("Movie Synopsis: ");
+            String synopsis = in.nextLine();
             
             System.out.print("Movie Price: $");
             String price = in.nextLine();
@@ -51,7 +51,7 @@ public class TestDB {
             System.out.print("Number of Copies: ");
             String copies = in.nextLine();
             
-            db.addMovie(ID, title, genre, releaseDate, director, sympnosis, price, copies);
+            db.addMovie(ID, title, genre, releaseDate, director, synopsis, price, copies);
             System.out.println("Movie is successfully added to the database");
             
             connector.closeConnection();
