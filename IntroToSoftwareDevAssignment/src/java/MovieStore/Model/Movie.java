@@ -16,32 +16,35 @@ import javax.xml.bind.annotation.*;
 public class Movie {
 
     @XmlAttribute 
-    private int id;
+    private String id;
     private String title;
     private String genre;
     private String releaseDate;
+    private String director;
+    private String sympnosis;
     private String price;
     private String copies;
-    private String summary;
 
     public Movie() {
     }
 
-    public Movie(int id, String title, String genre, String releaseDate, String price, String copies, String summary) {
+    public Movie(String id, String title, String genre, String releaseDate, String director, String sympnosis, String price, String copies) {
         this.id = id;
         this.title = title;
         this.genre = genre;
         this.releaseDate = releaseDate;
+        this.director = director;
+        this.sympnosis = sympnosis;
         this.price = price;
         this.copies = copies;
-        this.summary = summary;
     }
 
-    public int getId() {
+    
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -69,6 +72,22 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getSympnosis() {
+        return sympnosis;
+    }
+
+    public void setSympnosis(String sympnosis) {
+        this.sympnosis = sympnosis;
+    }
+
     public String getPrice() {
         return price;
     }
@@ -84,17 +103,6 @@ public class Movie {
     public void setCopies(String copies) {
         this.copies = copies;
     }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" + "id=" + id + ", title=" + title + ", genre=" + genre + ", releaseDate=" + releaseDate + ", price=" + price + ", copies=" + copies + '}';
-    }
+    
+       
 }

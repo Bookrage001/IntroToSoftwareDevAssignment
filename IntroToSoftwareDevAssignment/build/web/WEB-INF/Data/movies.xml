@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="movies.xsl"?>
+
+<Movies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="movies.xsd">
+
+    <movie id="1">
+        <title>The Black Panther</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>2018</releaseDate>
+        <price>25</price>
+        <copies>3</copies>
+        <summary>After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies and release the full power of Black Panther to defeat his foes and secure the safety of his people.</summary>
+    </movie>
+    <movie id="2">
+        <title>Suicide Squad</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>2016</releaseDate>
+        <price>30</price>
+        <copies>9</copies>
+        <summary>Figuring they're all expendable, a U.S. intelligence officer decides to assemble a team of dangerous, incarcerated supervillains for a top-secret mission. Now armed with government weapons, Deadshot (Will Smith), Harley Quinn (Margot Robbie), Captain Boomerang, Killer Croc and other despicable inmates must learn to work together. Dubbed Task Force X, the criminals unite to battle a mysterious and powerful entity, while the diabolical Joker (Jared Leto) launches an evil agenda of his own.</summary>
+    </movie>
+    <movie id="3">
+        <title>The Dark Knight</title>
+        <genre>Horror</genre>
+        <releaseDate>2008</releaseDate>
+        <price>15</price>
+        <copies>9</copies>
+        <summary>With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), Batman (Christian Bale) has been able to keep a tight lid on crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins to tread a fine line between heroism and vigilantism.</summary>
+    </movie>
+    <movie id="4">
+        <title>Suicide Squad 2</title>
+        <genre>Comedy</genre>
+        <releaseDate>2019</releaseDate>
+        <price>3</price>
+        <copies>9</copies>
+        <summary>unknown</summary>
+    </movie>
+    <movie id="5">
+        <title>Avengers: Infinity War</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>2018</releaseDate>
+        <price>35</price>
+        <copies>2</copies>
+        <summary>Iron Man, Thor, the Hulk and the rest of the Avengers unite to battle their most powerful enemy yet -- the evil Thanos. On a mission to collect all six Infinity Stones, Thanos plans to use the artifacts to inflict his twisted will on reality. The fate of the planet and existence itself has never been more uncertain as everything the Avengers have fought for has led up to this moment.</summary>
+    </movie>
+    <movie id="6">
+        <title>The Avengers</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>2012</releaseDate>
+        <price>15</price>
+        <copies>9</copies>
+        <summary>When Thor's evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth. Joining Fury's "dream team" are Iron Man (Robert Downey Jr.), Captain America (Chris Evans), the Hulk (Mark Ruffalo), Thor (Chris Hemsworth), the Black Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner).</summary>
+    </movie>
+    <movie id="7">
+        <title>The Shape of Water</title>
+        <genre>Horror</genre>
+        <releaseDate>2017</releaseDate>
+        <price>13</price>
+        <copies>50</copies>
+        <summary>Elisa is a mute, isolated woman who works as a cleaning lady in a hidden, high-security government laboratory in 1962 Baltimore. Her life changes forever when she discovers the lab's classified secret -- a mysterious, scaled creature from South America that lives in a water tank. As Elisa develops a unique bond with her new friend, she soon learns that its fate and very survival lies in the hands of a hostile government agent and a marine biologist.</summary>
+    </movie>
+    <movie id="8">
+        <title>Titanic</title>
+        <genre>Horror</genre>
+        <releaseDate>1997</releaseDate>
+        <price>24</price>
+        <copies>12</copies>
+        <summary>James Cameron's "Titanic" is an epic, action-packed romance set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the "ship of dreams" -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic in the early hours of April 15, 1912.</summary>
+    </movie>
+    <movie id="9">
+        <title>Inception</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>2010</releaseDate>
+        <price>27</price>
+        <copies>25</copies>
+        <summary>Dom Cobb (Leonardo DiCaprio) is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves. Cobb gets a chance at redemption when he is offered a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the perfect crime, but a dangerous enemy anticipates Cobb's every move.</summary>
+    </movie>
+    <movie id="10">
+        <title>Star Wars: Episode IV - A New Hope</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>1977</releaseDate>
+        <price>5</price>
+        <copies>80</copies>
+        <summary>The Imperial Forces -- under orders from cruel Darth Vader (David Prowse) -- hold Princess Leia (Carrie Fisher) hostage, in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker (Mark Hamill) and Han Solo (Harrison Ford), captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 (Kenny Baker) and C-3PO (Anthony Daniels) to rescue the beautiful princess, help the Rebel Alliance, and restore freedom and justice to the Galaxy.</summary>
+    </movie>
+    <movie id="11">
+        <title>Venom</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>2018</releaseDate>
+        <price>40</price>
+        <copies>14</copies>
+        <summary>Journalist Eddie Brock is trying to take down Carlton Drake, the notorious and brilliant founder of the Life Foundation. While investigating one of Drake's experiments, Eddie's body merges with the alien Venom -- leaving him with superhuman strength and power. Twisted, dark and fueled by rage, Venom tries to control the new and dangerous abilities that Eddie finds so intoxicating.</summary>
+    </movie>
+    <movie id="12">
+        <title>The Godfather</title>
+        <genre>Sci-Fi</genre>
+        <releaseDate>1972</releaseDate>
+        <price>6</price>
+        <copies>20</copies>
+        <summary>The Godfather is an American film series that consists of three crime drama films directed by Francis Ford Coppola inspired by the novel of the same name by Italian American author Mario Puzo.</summary>
+    </movie>
+    <movie id="13">
+        <title>A Star Is Born</title>
+        <genre>Comedy</genre>
+        <releaseDate>2018</releaseDate>
+        <price>20</price>
+        <copies>9</copies>
+        <summary>Seasoned musician Jackson Maine discovers -- and falls in love with -- struggling artist Ally. She has just about given up on her dream to make it big as a singer until Jackson coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jackson fights an ongoing battle with his own internal demons.</summary>
+    </movie>
+</Movies> 
