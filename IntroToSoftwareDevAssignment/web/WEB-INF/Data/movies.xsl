@@ -2,86 +2,33 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
     <xsl:template match="/">
-        <html>
-            <head>
-                <title>Movie | <xsl:value-of select="/movie/title"/>
-            </title>
-            <style>
-                    table{
-                        width: 95%;
-                        margin-left:auto; 
-                        margin-right:auto;
-                        font-size: 130%;
-                    }                            
-                    tr, td{
-                        padding: 15px;
-                    }
-            </style>
-        </head>
-        <body>
-            <ul class="breadcrumb">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Movie List</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <xsl:value-of select="/movie/title"/>
-                    </a>
-                </li>
-            </ul>
-            <table>
-                <tr>
-                    <td>
-                        <xsl:apply-templates/>
-                    </td>
-                </tr>
-            </table>
-        </body>
-    </html>
-</xsl:template>
+        <div class="movie-area">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
 
-
-
-<xsl:template match="movie">
-    <table>
-        <tr>
-            <td class="name">Title:</td>
-            <td>
-                <xsl:value-of select="title"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="name">Genre:</td>
-            <td>
-                <xsl:value-of select="genre"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="name">Release Date:</td>
-            <td>
-                <xsl:value-of select="releaseDate"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="name">Price:</td>
-            <td>
+    <xsl:template match="movie">
+        <div>
+            <div class="price">
                 <xsl:value-of select="price"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="name">Copies:</td>
-            <td>
-                <xsl:value-of select="copies"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="name">Summary:</td>
-            <td>
-                <xsl:value-of select="summary"/>
-            </td>
-        </tr>
-    </table>
-</xsl:template>    
+            </div>
+            <img class="movieimg">
+                <xsl:attribute name="src">
+                    <xsl:value-of select="poster"/>
+                </xsl:attribute>
+            </img>
+            <div align="center">
+                <xsl:value-of select="title"/>
+
+                <div class="Moviebtncontainer">
+                    <div class="MovieAddbtn">
+                        <img src="Images/Cart.png"/>
+                    </div>
+                    <div>
+                        <button class="MovieDetailsbtn">More Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </xsl:template>
+</xsl:stylesheet>
