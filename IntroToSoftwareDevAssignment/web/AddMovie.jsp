@@ -20,7 +20,7 @@
                 </tr>
                 <tr><td><label>Genre</label></td>
                     <td><div class="custom-select">
-                            <select name="categories">
+                            <select name="genre">
                                 <option value="Action">Action</option>
                                 <option value="Adventure">Adventure</option>
                                 <option value="Comedy">Comedy</option>
@@ -34,7 +34,7 @@
                     </td>
                 </tr><br>
                 <tr><td><label>Release Date</label></td>
-                    <td><input name="date" type="text" placeholder="Release Date" required></td>
+                    <td><input name="releaseDate" type="text" placeholder="Release Date" required></td>
                 </tr>
                 <tr><td><label>Director</label></td>
                     <td><input name="director" type="text" placeholder="Director's Name" required></td>

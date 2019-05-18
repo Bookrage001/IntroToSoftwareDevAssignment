@@ -4,6 +4,11 @@
     Author     : mcant
 --%>
 
+<%@page import="MovieStore.Model.Movie"%>
+<%@page import="MovieStore.Model.dao.*"%>
+<%@page import="java.util.*"%>
+<%@page import="MovieStore.controller.*"%>
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +17,31 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            String title = request.getParameter("title");
+            String genre = request.getParameter("genre");
+            String date = request.getParameter("releaseDate");
+            String director = request.getParameter("director");
+            String synopsis = request.getParameter("synopsis");
+            String price = request.getParameter("price");
+            String copies = request.getParameter("copies");
+
+            int key = (new Random()).nextInt(999999);
+            String ID = "" + key;
+        %>
+
+        <p>MovieID: <%=ID%></p>
+        <p>Title: <%=title%></p>
+        <p>Genre: <%=genre%></p>
+        <p>Price: <%=price%></p>
+        <p><b>Movie successfully added!</b></p>
+
+        <%
+            DBManager manager = (DBManager) session.getAttribute("manager");
+            Movie movie = new Movie(ID, title, genre, date, director, synopsis, price, copies);
+            manager.addMovie(ID, title, genre, date, director, synopsis, price, copies);
+            session.setAttribute("movie", movie);
+
+        %>
     </body>
 </html>

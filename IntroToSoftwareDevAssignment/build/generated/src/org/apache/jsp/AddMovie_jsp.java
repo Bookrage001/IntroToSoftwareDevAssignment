@@ -59,7 +59,7 @@ public final class AddMovie_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </tr>\n");
       out.write("                <tr><td><label>Genre</label></td>\n");
       out.write("                    <td><div class=\"custom-select\">\n");
-      out.write("                            <select name=\"categories\">\n");
+      out.write("                            <select name=\"genre\">\n");
       out.write("                                <option value=\"Action\">Action</option>\n");
       out.write("                                <option value=\"Adventure\">Adventure</option>\n");
       out.write("                                <option value=\"Comedy\">Comedy</option>\n");
@@ -73,13 +73,13 @@ public final class AddMovie_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </td>\n");
       out.write("                </tr><br>\n");
       out.write("                <tr><td><label>Release Date</label></td>\n");
-      out.write("                    <td><input name=\"date\" type=\"text\" placeholder=\"Release Date\" required></td>\n");
+      out.write("                    <td><input name=\"releaseDate\" type=\"text\" placeholder=\"Release Date\" required></td>\n");
       out.write("                </tr>\n");
       out.write("                <tr><td><label>Director</label></td>\n");
       out.write("                    <td><input name=\"director\" type=\"text\" placeholder=\"Director's Name\" required></td>\n");
       out.write("                </tr>\n");
-      out.write("                <tr><td><label>Sympnosis</label></td>\n");
-      out.write("                    <td><textarea name=\"sympnosis\" placeholder=\"Enter Brief Summary\" style=\"height: 100px\"></textarea></td>\n");
+      out.write("                <tr><td><label>Synopsis</label></td>\n");
+      out.write("                    <td><textarea name=\"synopsis\" placeholder=\"Enter Brief Summary\" style=\"height: 100px\"></textarea></td>\n");
       out.write("                </tr>\n");
       out.write("                <tr><td><label>Price</label></td>\n");
       out.write("                    <td><input name=\"price\" type=\"text\" placeholder=\"Enter Price\"></td>\n");

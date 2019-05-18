@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package MovieStore.controller;
 
-import MovieStore.Model.dao.*;
+import MovieStore.Model.dao.DBConnector;
+import MovieStore.Model.dao.DBManager;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,11 +20,11 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Mark Galulu
+ * @author mcant
  */
-public class ConnServlet  extends HttpServlet{
+public class ConnectionServlet extends HttpServlet {
 
-    private DBConnector db;
+private DBConnector db;
     private DBManager manager;
     private Connection conn;
     
@@ -33,7 +33,7 @@ public class ConnServlet  extends HttpServlet{
         try {
             db = new DBConnector();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }
   
@@ -46,7 +46,7 @@ public class ConnServlet  extends HttpServlet{
         try {
             manager = new DBManager(conn);
         } catch (SQLException ex) {
-            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }      
         //export the DB manager to the view-session (JSPs)
         session.setAttribute("manager", manager);
@@ -58,7 +58,7 @@ public class ConnServlet  extends HttpServlet{
         try {
             db.closeConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
