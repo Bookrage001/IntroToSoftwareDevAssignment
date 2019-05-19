@@ -49,7 +49,9 @@ private DBConnector db;
             Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }      
         //export the DB manager to the view-session (JSPs)
+        session.setAttribute("db", db);
         session.setAttribute("manager", manager);
+        session.setAttribute("conn", conn);
         
     }    
     

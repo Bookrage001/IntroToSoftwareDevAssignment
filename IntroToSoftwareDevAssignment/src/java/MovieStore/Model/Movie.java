@@ -5,17 +5,15 @@
  */
 package MovieStore.Model;
 
-import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+
 
 /**
  *
  * @author Mark Galulu
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement()
-public class Movie {
-
-    @XmlAttribute 
+public class Movie implements Serializable{
+ 
     private String id;
     private String title;
     private String genre;
@@ -39,7 +37,6 @@ public class Movie {
         this.copies = copies;
     }
 
-    
     public String getId() {
         return id;
     }
@@ -103,6 +100,11 @@ public class Movie {
     public void setCopies(String copies) {
         this.copies = copies;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" + "id=" + id + ", title=" + title + ", genre=" + genre + ", price=" + price + ", copies=" + copies + '}';
+    }
+
     
-       
 }

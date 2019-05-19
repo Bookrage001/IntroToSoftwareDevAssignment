@@ -22,48 +22,6 @@
         <option value="Comedy">
     </datalist>
 </head>
-<script>
-    $(document).ready(function () {
-        $('.order tr').click(function (event) {
-            if (event.target.type !== 'checkbox') {
-                $(':checkbox', this).trigger('click');
-            }
-        });
-        $("input[type='checkbox']").change(function (e) {
-            if ($(this).is(":checked")) {
-                $(this).closest('tr').addClass("highlight_row");
-            } else {
-                $(this).closest('tr').removeClass("highlight_row");
-            }
-        });
-    });
-</script>
-<body align="center">
-    <div class="container">
-        <header align="left">
-            <div id="Logoposition">
-                <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-            </div>
+<a href="AddMovie.jsp">Add Movie</a>
 
-            <div id="Search">
-                <%@include file="WEB-INF/Modules/search.jspf"%>
-            </div>
-    </div>
-</header>
-</header>
-
-<content>
-    <div class ="container">
-        <%@include file="WEB-INF/Modules/navbar.jspf" %>
-        <div id="collection">
-            <div id="refine">
-                <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
-            </div>
-            <div id="movies">
-                <%@include file="WEB-INF/Modules/movies.jspf" %>
-            </div>
-        </div>
-    </div>
-</content>
-</body>
 </html>
