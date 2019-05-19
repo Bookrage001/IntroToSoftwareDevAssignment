@@ -101,9 +101,8 @@ select {
     padding: 5px;
     width: 50px;
     position: relative;
-    top: 1px;
-    left: 1px;
-    z-index: 1;
+    top: 7%;
+    left: 8%;
 }
 
 .collection {
