@@ -27,8 +27,18 @@ public class DBManager {
                 + "','" + director + "','" + sympnosis + "','" + price + "','" + copies + "')");
     }
 
-    public void addItem(int listID, int movieId, int amount) throws SQLException {
-        st.executeUpdate("INSERT INTO ITEMSORDERD VALUES ('" + listID + "','" + movieId + "','" + amount + "')" );
+    public void addItem(int listId, int movieId, int amount) throws SQLException {
+        try {
+            System.out.println("ListID:  " + listId + " MovieId: " + movieId + " Amount: " + amount);
+            // st.executeUpdate("INSERT INTO ITEMSORDERD (ListID, MovieID, Amount )" +
+            // "VALUES (" + listId + "," + movieId
+            // + "," + amount + ")");
+            st.executeUpdate("INSERT INTO ITEMSORDERD (ListID, MovieID, Amount ) VALUES ( 7, 5, 8) ");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Cammot inset into DB: " + e);
+
+        }
     }
 
     public void executequery(String query) throws SQLException {

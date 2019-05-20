@@ -17,18 +17,18 @@ public class Order {
     public Order() {
     }
 
-    public Order(String id, String customerId, String movieListId) {
+    public Order(int id, String customerId, String movieListId) {
         this.id = id;
         this.customerId = customerId;
         this.movieListId = movieListId;
 
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -60,10 +60,8 @@ public class Order {
         return movies;
     }
 
-    public void addMovies(Movie[] movies, i
-
-    public Items item = new Items();
-
+    public void addMovies(Movie[] movies) {
+        movies = SET[... this.movies , movies ]
     }
 
     public void removeMovies(Movie[] movies) {

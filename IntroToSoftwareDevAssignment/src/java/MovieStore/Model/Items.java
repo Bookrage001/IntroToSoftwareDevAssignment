@@ -3,10 +3,10 @@ package MovieStore.Model;
 
 import MovieStore.LoggerTest;
 import MovieStore.Model.dao.*;
-import com.sun.glass.ui.Window.Level;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.*;
+
 public class Items {
 
     private final static Logger logger = Logger.getLogger(LoggerTest.class.getName());
@@ -17,10 +17,14 @@ public class Items {
     private int amount;
     private DBManager db;
 
-    public Items() throws SQLException, ClassNotFoundException {
-        DBConnector connector = new DBConnector();
-        Connection conn = connector.openConnection();
-        db = new DBManager(conn);
+    public Items() {
+        try {
+            DBConnector connector = new DBConnector();
+            Connection conn = connector.openConnection();
+            db = new DBManager(conn);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
     public Items(int id, int movieListId, Movie movie, int amount) {
@@ -59,17 +63,19 @@ public class Items {
         this.amount = amount;
     }
 
-    private void save() {
+    public void save() {
         // throws SQLException
         try {
             // if item has not been aded add
             if ("exists " != null) {
+                System.out.println("Saving Item");
                 db.addItem(this.movieListId, this.movie.getId(), this.amount);
             } else {
                 // replace the item;
             }
         } catch (Exception e) {
-            Logger.log(Level.WARNING, e);
+            System.out.println("Error Item.save(): " + e);
+            // TODO Print some error
         }
     }
 }
