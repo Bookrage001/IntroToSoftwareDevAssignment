@@ -15,8 +15,8 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement()
 public class Movie {
 
-    @XmlAttribute 
-    private String id;
+    @XmlAttribute
+    private int id;
     private String title;
     private String genre;
     private String releaseDate;
@@ -28,7 +28,8 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String id, String title, String genre, String releaseDate, String director, String sympnosis, String price, String copies) {
+    public Movie(int id, String title, String genre, String releaseDate, String director, String sympnosis,
+            String price, String copies) {
         this.id = id;
         this.title = title;
         this.genre = genre;
@@ -37,15 +38,6 @@ public class Movie {
         this.sympnosis = sympnosis;
         this.price = price;
         this.copies = copies;
-    }
-
-    
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -103,6 +95,13 @@ public class Movie {
     public void setCopies(String copies) {
         this.copies = copies;
     }
-    
-       
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 }
