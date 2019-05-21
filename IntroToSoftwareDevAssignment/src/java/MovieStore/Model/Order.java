@@ -5,12 +5,14 @@ import javax.xml.bind.annotation.*;
 
 import MovieStore.Model.Items;
 import MovieStore.Model.Movie;
+import MovieStore.Model.dao.DBManager;
 
 public class Order {
 
     private int id;
     private String customerId;
-    private String movieListId;
+    private String OrderID;
+    private String movieID;
     private String status;
     private Movie[] movies;
 
@@ -60,10 +62,13 @@ public class Order {
         return movies;
     }
 
-    public void addMovies(Movie[] movies) {
-        movies = SET[... this.movies , movies ]
+    public void addMovies(Movie[] movies) 
     }
 
     public void removeMovies(Movie[] movies) {
-		this.movies = movies;
-	}
+        this.movies = movies;
+    }
+
+    public void save() {
+        DBManager.sa
+    }
