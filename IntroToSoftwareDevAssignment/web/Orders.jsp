@@ -60,8 +60,8 @@
             <div id="refine">
                 <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
             </div>
-            <div id="movies">
-                <%@include file="WEB-INF/Modules/orders.jspf" %>
+            <div id="orders">
+                <%@include file="WEB-INF/Modules/Orders.jspf" %>
             </div>
         </div>
     </div>

@@ -3,7 +3,6 @@ package MovieStore.Model;
 
 import javax.xml.bind.annotation.*;
 
-import MovieStore.Model.Items;
 import MovieStore.Model.Movie;
 import MovieStore.Model.dao.DBManager;
 
@@ -19,10 +18,10 @@ public class Order {
     public Order() {
     }
 
-    public Order(int id, String customerId, String movieListId) {
+    public Order(int id, String movieID, String movieListId) {
         this.id = id;
         this.customerId = customerId;
-        this.movieListId = movieListId;
+        this.movieID = movieListId;
 
     }
 
@@ -42,12 +41,20 @@ public class Order {
         this.customerId = customerId;
     }
 
-    public String getMovieListId() {
-        return movieListId;
+    public String getOrderID() {
+        return OrderID;
     }
 
-    public void setMovieListId(String movieListId) {
-        this.movieListId = movieListId;
+    public void setOrderID(String orderID) {
+        OrderID = orderID;
+    }
+
+    public String getMovieID() {
+        return movieID;
+    }
+
+    public void setMovieID(String movieID) {
+        this.movieID = movieID;
     }
 
     public String getStatus() {
@@ -55,20 +62,14 @@ public class Order {
     }
 
     public void setStatus(String status) {
-
+        this.status = status;
     }
 
     public Movie[] getMovies() {
         return movies;
     }
 
-    public void addMovies(Movie[] movies) 
-    }
-
-    public void removeMovies(Movie[] movies) {
+    public void setMovies(Movie[] movies) {
         this.movies = movies;
     }
-
-    public void save() {
-        DBManager.sa
-    }
+}
