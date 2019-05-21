@@ -8,11 +8,12 @@ import MovieStore.Model.Movie;
 
 public class Order {
 
-    private int id;
+    private int id; // PK
+    private int movieID; // Secondary PK
+    private int amount;
     private String customerId;
-    private String movieListId;
     private String status;
-    private Movie[] movies;
+    private Movie[] movies; // ?
 
     public Order() {
     }
@@ -57,6 +58,7 @@ public class Order {
     }
 
     public Movie[] getMovies() {
+        Items
         return movies;
     }
 

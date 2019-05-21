@@ -24,6 +24,7 @@ public class TestAddItem {
     public static void main(String[] args) {
         Movie movie = new Movie();
         movie.setId(50);
+        movie.save();
         Items item = new Items();
         item.setMovie(movie);
         item.setAmount(1);
@@ -31,4 +32,5 @@ public class TestAddItem {
         item.save();
 
     }
+
 }

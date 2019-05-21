@@ -10,7 +10,8 @@ import java.sql.*;
 
 /**
  *
- * @author Mark Galulu
+ * @author Mark Galulu, Caleb Ardern
+ * 
  */
 public class DBManager {
 
@@ -33,7 +34,7 @@ public class DBManager {
             // st.executeUpdate("INSERT INTO ITEMSORDERD (ListID, MovieID, Amount )" +
             // "VALUES (" + listId + "," + movieId
             // + "," + amount + ")");
-            st.executeUpdate("INSERT INTO ITEMSORDERD (ListID, MovieID, Amount ) VALUES ( 7, 5, 8) ");
+            st.execute("INSERT INTO ITEMSORDERD (ListID, MovieID, Amount ) VALUES ( 7, 5, 8) ");
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("Cammot inset into DB: " + e);
