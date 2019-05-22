@@ -37,9 +37,9 @@
 
         <%
            DBManager manager = (DBManager)session.getAttribute("manager");
-           Movie movie = new Movie(ID, title, genre, releaseDate, director, synopsis, price, copies);
+           //Movie movie = new Movie(ID, title, genre, releaseDate, director, synopsis, price, copies);
            manager.addMovie(ID, title, genre, releaseDate, director, synopsis, price, copies);
-           session.setAttribute("movie", movie);
+           //session.setAttribute("movie", movie);
         %>
     </body>
 </html>

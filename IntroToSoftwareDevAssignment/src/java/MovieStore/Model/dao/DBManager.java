@@ -22,11 +22,11 @@ public class DBManager {
     }
     
     //Add a movie data into the database
-    public void addMovie(String ID, String title, String genre, String releaseDate, String director, String synopsis, String price, String copies) throws SQLException{
-        st.executeUpdate("INSERT INTO MOVIES VALUES ('" + ID + "','" + title + "','" + genre + "','" + releaseDate + "','" + director +"','" + synopsis + "','" + price + "','" + copies + "')");
+    public void addMovie(int movieID, String title, String genre, String releaseDate,
+            String director, String synopsis, double price, int copies) throws SQLException {
+
+        st.executeUpdate("INSERT INTO MOVIES VALUES (" + movieID + ",'" + title + "','" + genre + "','" + releaseDate
+                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ")");
     }
     
-    public void executequery(String query) throws SQLException{
-        st.executeUpdate(query);
-    }
 }
