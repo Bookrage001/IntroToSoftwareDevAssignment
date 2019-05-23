@@ -25,12 +25,12 @@
                         <td>
                             Username: <input type="text" name="username">
                         </td>
-                        <td>Email: <input type="text" name="Email"> </td>
+                        <td>Email: <input type="text" name="email"> </td>
                     </tr>
                     <table align="center">
                         <tr>
                             <td>
-                                Password: <input type="text" name="Password">
+                                Password: <input type="text" name="password">
                             </td>
                             <td>
                                 Confirm password: <input type="text" name="ConfirmPassword">
@@ -41,14 +41,14 @@
                 </table>
                 <table align="center">
                     <tr>
-                        <td>First Name: <input type="text" name="FirstName"> Last Name: <input type="text" name="LastName"> </td>
+                        <td>First Name: <input type="text" name="Firstname"> Last Name: <input type="text" name="Lastname"> </td>
 
                     </tr>
                 </table>
                 <table align="center">
                     <tr>
                         <td>Address: <input type="text" name="Address"> </td>
-                        <td>Suburb:<input type="text" name="username" style="width: 60px"> </td>
+                        <td>Suburb:<input type="text" name="Suburb" style="width: 60px"> </td>
                         <td>Post Code:<input type="text" name="PostCode" style="width:50px"> 
                      </tr>
                 </table>

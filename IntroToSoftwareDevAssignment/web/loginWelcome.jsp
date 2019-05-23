@@ -23,7 +23,6 @@
         <h1>Hello, <%= user.getFirstname()%></h1> 
         <p>Your username is: <%= user.getUsername()%></p>
         <p>Your email: <%= user.getEmail()%></p>
-        <>
 
                
         <%
@@ -34,6 +33,7 @@
             //manager.updateLogin(ID);
             
             session.setAttribute("user", user);
+            
             
         %>
         <button class="button" type="button" onclick="location.href = 'main.jsp'" > Main Page </button>
