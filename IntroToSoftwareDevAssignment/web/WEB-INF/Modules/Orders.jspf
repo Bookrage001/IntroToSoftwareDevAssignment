@@ -3,6 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html"%>
 <%@ page import="java.io.*" %>
+<%@page import="MovieStore.Model.dao.MovieDAO"%>
 <div> 
     <% 
+        DBManager manager = (DBManager)session.getAttribute("manager");
+        String[] orders = manager.getORders();
+        %> console.log(<%= orders %> ); <%
+        <%-- for (order: order ); --%>
+        %>
 </div>

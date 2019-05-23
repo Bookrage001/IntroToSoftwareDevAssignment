@@ -3,29 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package MovieStore.controller;
 
+import MovieStore.Model.dao.DBConnector;
+import MovieStore.Model.dao.DBManager;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import MovieStore.Model.dao.DBConnector;
-import MovieStore.Model.dao.DBManager;
-
 /**
  *
- * @author Mark Galulu
+ * @author mcant
  */
-public class ConnServlet extends HttpServlet {
+public class ConnectionServlet extends HttpServlet {
 
     private DBConnector db;
     private DBManager manager;
@@ -36,7 +33,7 @@ public class ConnServlet extends HttpServlet {
         try {
             db = new DBConnector();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -49,10 +46,12 @@ public class ConnServlet extends HttpServlet {
         try {
             manager = new DBManager(conn);
         } catch (SQLException ex) {
-            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         // export the DB manager to the view-session (JSPs)
+        session.setAttribute("db", db);
         session.setAttribute("manager", manager);
+        session.setAttribute("conn", conn);
 
     }
 
@@ -61,7 +60,7 @@ public class ConnServlet extends HttpServlet {
         try {
             db.closeConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

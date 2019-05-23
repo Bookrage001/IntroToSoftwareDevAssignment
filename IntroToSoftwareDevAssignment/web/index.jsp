@@ -65,6 +65,7 @@
         </div>
     </div>
 </content>
-<a href="Ordes.jspf" > Orders</a>
+
+    <a href="Orders.jsp" > Orders</a>
 </body>
 </html>

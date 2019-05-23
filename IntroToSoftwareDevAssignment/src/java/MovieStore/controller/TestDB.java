@@ -20,43 +20,45 @@ import java.util.logging.Logger;
 public class TestDB {
 
     private static Scanner in = new Scanner(System.in);
-    
-    public static void main(String[] args){
-        try{
+
+    public static void main(String[] args) {
+        try {
             DBConnector connector = new DBConnector();
             Connection conn = connector.openConnection();
             DBManager db = new DBManager(conn);
-            
-            int key = (new Random()).nextInt(999999);
-            String ID = "" + key;
-            
-            System.out.print("Movie Title: ");
-            String title = in.nextLine();
-            
-            System.out.print("Movie Genre: ");
-            String genre = in.nextLine();
-            
-            System.out.print("Movie Release: ");
-            String releaseDate = in.nextLine();
-            
-            System.out.print("Movie Director: ");
-            String director = in.nextLine();
-            
-            System.out.print("Movie Sympnosis: ");
-            String sympnosis = in.nextLine();
-            
-            System.out.print("Movie Price: $");
-            String price = in.nextLine();
-            
-            System.out.print("Number of Copies: ");
-            String copies = in.nextLine();
-            
-            db.addMovie(ID, title, genre, releaseDate, director, sympnosis, price, copies);
-            System.out.println("Movie is successfully added to the database");
-            
+
+            // int key = (new Random()).nextInt(999999);
+            // String ID = "" + key;
+
+            // System.out.print("Movie Title: ");
+            // String title = in.nextLine();
+
+            // System.out.print("Movie Genre: ");
+            // String genre = in.nextLine();
+
+            // System.out.print("Movie Release: ");
+            // String releaseDate = in.nextLine();
+
+            // System.out.print("Movie Director: ");
+            // String director = in.nextLine();
+
+            // System.out.print("Movie Sympnosis: ");
+            // String sympnosis = in.nextLine();
+
+            // System.out.print("Movie Price: $");
+            // Double price = 10.00;
+
+            // System.out.print("Number of Copies: ");
+            // int copies = 1;
+
+            // db.addMovie(title, genre, releaseDate, director, sympnosis, price, copies);
+            // System.out.println("Movie is successfully added to the database");
+
+            System.out.println(db.getORders());
+
             connector.closeConnection();
-            
-        }catch (ClassNotFoundException | SQLException ex) {
+
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(TestDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

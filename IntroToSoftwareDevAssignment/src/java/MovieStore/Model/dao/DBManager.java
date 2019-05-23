@@ -21,10 +21,11 @@ public class DBManager {
     }
 
     // Add a movie data into the database
-    public void addMovie(String ID, String title, String genre, String releaseDate, String director, String sympnosis,
-            String price, String copies) throws SQLException {
-        st.executeUpdate("INSERT INTO MOVIES VALUES ('" + ID + "','" + title + "','" + genre + "','" + releaseDate
-                + "','" + director + "','" + sympnosis + "','" + price + "','" + copies + "')");
+    public void addMovie(String title, String genre, String releaseDate, String director, String sympnosis,
+            Double price, int copies) throws SQLException {
+        st.executeUpdate("INSERT INTO MOVIES (TITLE,GENRE, RELEASE_DATE, DIRECTOR, SYNOPSIS, PRICE, COPIES ) VALUES ('"
+                + title + "','" + genre + "','" + releaseDate + "','" + director + "','" + sympnosis + "'," + price
+                + "," + copies + ")");
     }
 
     public void addItem(int listId, int movieId, int amount) throws SQLException {
@@ -37,8 +38,11 @@ public class DBManager {
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("Cammot inset into DB: " + e);
-
         }
+    }
+
+    public String[] getORders() {
+        return st.executeQuery("SELECT * FROM ORDERS FETCH FIRST 100 ROWS ONLY");
     }
 
     public void executequery(String query) throws SQLException {
