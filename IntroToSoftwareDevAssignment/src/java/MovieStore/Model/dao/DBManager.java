@@ -31,13 +31,13 @@ public class DBManager {
     }
 
     //Find User by username in database
-    public User findUser(String username, String password) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'");
+    public User findUser(String USERNAME, String PASSWORD) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + USERNAME + "' AND PASSWORD = '" + PASSWORD + "'");
         while (rs.next()) {
             String userid = rs.getString(1);
             String userpass = rs.getString(2);
 
-            if (userid.equals(username) && userpass.equals(password)) {             
+            if (userid.equals(USERNAME) && userpass.equals(PASSWORD)) {
                 String email = rs.getString(3);
                 String firstname = rs.getString(4);
                 String lastname = rs.getString(5);
@@ -54,4 +54,34 @@ public class DBManager {
         return null;
     }
 
+    
+    //Check if user exists
+    public boolean checkUser(String USERNAME, String PASSWORD) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + USERNAME + "' AND PASSWORD = '" + PASSWORD + "'");
+        while (rs.next()) {
+            String userid = rs.getString(1);
+            String userpass = rs.getString(2);
+
+            if (userid.equals(USERNAME) && userpass.equals(PASSWORD)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    //Timestamp Login
+    public void updateLogin(String username, String login) throws SQLException {
+        //code for update-operation
+        if (checkUser(username, login)) {
+            st.executeUpdate("UPDATE LOG SET USERNAME ='" + username + "' AND SET TIMEIN '" + login + "'");
+        }
+    }
+    
+    //Timestamp Logout
+    public void updateLogout(String username, String logout) throws SQLException {
+        //code for update-operation
+        if (checkUser(username, logout)) {
+            st.executeUpdate("UPDATE LOG SET NAME ='" + username + "' AND TIMEOUT '" + logout + "'");
+        }
+    }
 }

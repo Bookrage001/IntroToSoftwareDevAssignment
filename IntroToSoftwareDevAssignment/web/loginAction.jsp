@@ -19,8 +19,8 @@
     <%
             //Activate the database search-validate once DBManager functions are completed
             DBManager manager = (DBManager)session.getAttribute("manager");
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");            
+            String username = request.getParameter("USERNAME");
+            String password = request.getParameter("PASSWORD");            
             User user = manager.findUser(username, password);
             
             if (user != null) {
