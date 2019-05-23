@@ -26,13 +26,18 @@
         <p>Your email: <%= user.getEmail()%></p>
 
 
-        <%            session.setAttribute("user", user);
+        <%
+            session.setAttribute("user", user);
         %>
         <button class="button" type="button" onclick="location.href = 'main.jsp'" > Main Page </button>
-        <%} else {%>
+        
+        <% } else { %>
+        
         <p class="outline"> Login unsuccessful! </p>
         <button class="button" type="button" onclick="location.href = 'main.jsp'" > Main Page </button>
-        <%}%>        
+        
+        <% } %>        
+        
         <button class="button" type="button" onclick="location.href = 'index.jsp'" > Home Page </button>
     </body>
 </html>

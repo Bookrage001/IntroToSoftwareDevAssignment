@@ -69,19 +69,10 @@ public class DBManager {
         return false;
     }
     
-    //Timestamp Login
-    public void updateLogin(String username, String login) throws SQLException {
-        //code for update-operation
-        if (checkUser(username, login)) {
-            st.executeUpdate("UPDATE LOG SET USERNAME ='" + username + "' AND SET TIMEIN '" + login + "'");
-        }
+    //Add Log ID for every log in
+    public void updateLogin(String ID, String username) throws SQLException {
     }
     
-    //Timestamp Logout
-    public void updateLogout(String username, String logout) throws SQLException {
-        //code for update-operation
-        if (checkUser(username, logout)) {
-            st.executeUpdate("UPDATE LOG SET NAME ='" + username + "' AND TIMEOUT '" + logout + "'");
-        }
+    public void updateLogout(String ID, String username) throws SQLException {
     }
 }
