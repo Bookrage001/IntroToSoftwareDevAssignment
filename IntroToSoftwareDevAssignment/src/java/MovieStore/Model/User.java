@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MovieStore.Model;
+import java.io.Serializable;
 
 /**
  *
  * @author Hayley
  */
-public class Users {
+public class User implements Serializable {
 
     private String username;
     private String password;
@@ -22,7 +18,7 @@ public class Users {
     private String type;
     private String status;
 
-    public Users(String username, String password, String firstname, String lastname, String email, String address, String suburb, String postcode, String type, String status) {
+    public User(String username, String password, String firstname, String lastname, String email, String address, String suburb, String postcode, String type, String status) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
@@ -35,7 +31,15 @@ public class Users {
         this.status = status;
     }
 
-    public Users() {
+    public User() {
+    }
+    
+    public boolean matchID(String username){
+        return this.username.equals(username.trim());
+    }
+    
+    public boolean matchPassword(String password){
+        return this.password.equals(password.trim());
     }
 
     public String getUsername() {
@@ -120,3 +124,4 @@ public class Users {
     
 
 }
+
