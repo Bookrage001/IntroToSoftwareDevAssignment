@@ -1,18 +1,26 @@
-<%@ page pageEncoding="UTF-8" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.Movie"%>
+<%@page import="MovieStore.Model.dao.*"%>
+<%@ page pageEncoding="UTF-8" contentType="text/html" import="java.io.*" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html"%>
-<%@ page import="java.io.*" %>
-<div> 
-        <c:import url="WEB-INF/Data/movies.xml" var="moviesxml"/>
-        <c:import url="WEB-INF/Data/movies.xsl" var="Moviesxslt"/>
 
-        <%
-            String price = request.getParameter("price");
-            String title = request.getParameter("Title");
-        %>
-        <x:transform xml="${moviesxml}" xslt="${Moviesxslt}">
-            <x:param name="Title" value="<%= title %>" />
-            <x:param name="price" value="<%= price %>" />
-        </x:transform>
+<div> 
+    <c:set var="moviesxml">
+        <Movies>
+            <%
+                DBManager db = (DBManager) session.getAttribute("manager");
+                ArrayList<Movie> list = db.getMovies();
+                for (Movie movies : list) {
+                    request.setAttribute("movies", movies);
+            %>
+            <movie id="${movies.ID}">
+                <title>${movies.title}</title>
+                <price>${movies.price}</price>
+            </movie>
+            <%}%>
+        </Movies>
+        <c:import url="WEB-INF/Data/movies.xsl" var="moviesxslt"/>
+        <x:transform xml="${moviesxml}" xslt="${moviesxslt}"/>
+    </c:set>
 </div>
