@@ -30,14 +30,14 @@ public class DBManager {
         st.executeUpdate(query);
     }
 
-    //Find User by username in database
-    public User findUser(String USERNAME, String PASSWORD) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + USERNAME + "' AND PASSWORD = '" + PASSWORD + "'");
+    ///Find User by username in database
+    public User findUser(String username, String password) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'");
         while (rs.next()) {
             String userid = rs.getString(1);
             String userpass = rs.getString(2);
 
-            if (userid.equals(USERNAME) && userpass.equals(PASSWORD)) {
+            if (userid.equals(username) && userpass.equals(password)) {
                 String email = rs.getString(3);
                 String firstname = rs.getString(4);
                 String lastname = rs.getString(5);
@@ -69,10 +69,14 @@ public class DBManager {
         return false;
     }
     
-    //Add Log ID for every log in
-    public void updateLogin(String ID, String username) throws SQLException {
+    //Add Log ID for every login
+    public void updateLogin(String ID) throws SQLException {
+        st.executeUpdate("INSERT INTO LOG VALUES ('" + ID + "')");
     }
     
-    public void updateLogout(String ID, String username) throws SQLException {
+    //Add Log ID for every logout
+    public void updateLogout(String ID) throws SQLException {
+        st.executeUpdate("INSERT INTO LOG VALUES ('" + ID + "')");
+        
     }
 }

@@ -66,4 +66,5 @@
     </div>
 </content>
 </body>
+<jsp:include page="/ConnServlet" flush="true" />
 </html>

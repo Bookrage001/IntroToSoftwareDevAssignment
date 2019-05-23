@@ -34,7 +34,7 @@ public class User implements Serializable {
     public User() {
     }
     
-    public boolean matchID(String username){
+    public boolean matchUsername(String username){
         return this.username.equals(username.trim());
     }
     

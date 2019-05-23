@@ -5,10 +5,8 @@
 --%>
 
 <%@page import="MovieStore.Model.dao.DBManager"%>
-<%@page import="java.util.Date"%>
-<%@page import="java.sql.Timestamp"%>
 <%@page import="MovieStore.Model.User"%>
-<%@page contentType="text/html" import="MovieStore.model.*" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" import="MovieStore.Model.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +14,8 @@
         <title>JSP Page</title>
     </head>
     <%
-        User user = (User) session.getAttribute("userLog");
+        User user = (User) session.getAttribute("userLogin");
+        //String ID = "";
     %>
     <body>
 
@@ -24,10 +23,18 @@
         <h1>Hello, <%= user.getFirstname()%></h1> 
         <p>Your username is: <%= user.getUsername()%></p>
         <p>Your email: <%= user.getEmail()%></p>
+        <>
 
-
+               
         <%
+            
+            //Activate the database add-function once DBManager functions are completed
+            //DBManager manager = (DBManager)session.getAttribute("manager");
+
+            //manager.updateLogin(ID);
+            
             session.setAttribute("user", user);
+            
         %>
         <button class="button" type="button" onclick="location.href = 'main.jsp'" > Main Page </button>
         
