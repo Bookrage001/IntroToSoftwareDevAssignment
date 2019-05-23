@@ -48,9 +48,9 @@
                 <table align="center">
                     <tr>
                         <td>Address: <input type="text" name="Address"> </td>
-                        <td>Post Code:<input type="text" name="PostCode" style="width:50px"> 
                         <td>Suburb:<input type="text" name="username" style="width: 60px"> </td>
-                    </tr>
+                        <td>Post Code:<input type="text" name="PostCode" style="width:50px"> 
+                     </tr>
                 </table>
                 <br>
                 <br>

@@ -14,11 +14,8 @@
     </head>
     <body align="center">
 
-
         <div style="margin-top:10%">
-            <div>
-                <img src="Design/Images/RaiMovieLogoBlue.png" class="SigninLogo"/>
-            </div>
+           
             <h1>Log in</h1>
             <form method="post" action="loginAction.jsp">
 
