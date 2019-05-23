@@ -103,7 +103,6 @@ select {
     position: relative;
     top: 1px;
     left: 1px;
-    z-index: 1;
 }
 
 .collection {
@@ -178,7 +177,6 @@ select {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    z-index: 2;
 }
 
 .MovieAddbtn {
