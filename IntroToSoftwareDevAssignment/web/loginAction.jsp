@@ -18,10 +18,10 @@
 
 <%
     //Activate the database search-validate once DBManager functions are completed
-    DBManager manager = (DBManager) session.getAttribute("manager");
+    DBManager db = (DBManager) session.getAttribute("manager");
     String username = request.getParameter("username");
     String password = request.getParameter("password");
-    User user = manager.findUser(username, password);
+    User user = db.findUser(username, password);
 
     if (user != null) {
         session.setAttribute("userLogin", user);
