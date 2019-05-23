@@ -8,6 +8,7 @@ package MovieStore.controller;
 import MovieStore.Model.dao.DBConnector;
 import MovieStore.Model.dao.DBManager;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -22,9 +23,9 @@ import javax.servlet.http.HttpSession;
  *
  * @author mcant
  */
-public class ConnectionServlet extends HttpServlet {
+public class ConnServlet extends HttpServlet {
 
-private DBConnector db;
+    private DBConnector db;
     private DBManager manager;
     private Connection conn;
     
@@ -33,25 +34,23 @@ private DBConnector db;
         try {
             db = new DBConnector();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }
   
     @Override //Add the DBManager instance to the session 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");        
+        response.setContentType("text/html;charset=UTF-8");  
+        conn = db.openConnection();      
         HttpSession session = request.getSession();
-        conn = db.openConnection();        
         try {
             manager = new DBManager(conn);
         } catch (SQLException ex) {
-            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }      
         //export the DB manager to the view-session (JSPs)
-        session.setAttribute("db", db);
         session.setAttribute("manager", manager);
-        session.setAttribute("conn", conn);
         
     }    
     
@@ -60,7 +59,7 @@ private DBConnector db;
         try {
             db.closeConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
