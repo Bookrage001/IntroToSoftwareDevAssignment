@@ -4,6 +4,7 @@
     Author     : Hayley
 --%>
 
+<%@page import="MovieStore.Model.User"%>
 <%@page contentType="text/html" import="MovieStore.model.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,19 +13,18 @@
         <title>JSP Page</title>
     </head>
     <%
-        Users user = (Users)session.getAttribute("userLogin");
+        User user = (User)session.getAttribute("userLogin");
     %>
     <body>
         
         <% if(user != null) { %>        
-        <h1>Hello, <%= user.getName() %></h1> 
-        <p>Your ID is: <%= user.getID() %></p>
+        <h1>Hello, <%= user.getFirstname() %></h1> 
+        <p>Your username is: <%= user.getUsername() %></p>
         <p>Your email: <%= user.getEmail() %></p>
-        <p>Your DOB: <%= user.getDob() %></p>
-        <p>Your password is: <%= user.getPassword() %></p>        
-        <p>Your Favorite color is: <%= user.getFavcol() %></p>        
+       
+  
         <%            
-            session.setAttribute("student",student);
+            session.setAttribute("user", user);
         %>
         <button class="button" type="button" onclick="location.href = 'main.jsp'" > Main Page </button>
         <%}else{%>
