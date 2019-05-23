@@ -69,7 +69,7 @@ public class Items {
                 // replace the item;
             }
         } catch (Exception e) {
-            Logger.log(Level.WARNING, e);
+            System.out.println(e);
         }
     }
 }
