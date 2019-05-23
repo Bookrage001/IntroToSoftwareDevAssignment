@@ -11,6 +11,7 @@
 
 <% String msFilePath = application.getRealPath("WEB-INF");%>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
@@ -22,22 +23,6 @@
         <option value="Comedy">
     </datalist>
 </head>
-<script>
-    $(document).ready(function () {
-        $('.order tr').click(function (event) {
-            if (event.target.type !== 'checkbox') {
-                $(':checkbox', this).trigger('click');
-            }
-        });
-        $("input[type='checkbox']").change(function (e) {
-            if ($(this).is(":checked")) {
-                $(this).closest('tr').addClass("highlight_row");
-            } else {
-                $(this).closest('tr').removeClass("highlight_row");
-            }
-        });
-    });
-</script>
 <body align="center">
     <div class="container">
         <header align="left">
@@ -65,5 +50,23 @@
         </div>
     </div>
 </content>
+            
+<!--Script-->
+<script>
+    $(document).ready(function () {
+        $('.order tr').click(function (event) {
+            if (event.target.type !== 'checkbox') {
+                $(':checkbox', this).trigger('click');
+            }
+        });
+        $("input[type='checkbox']").change(function (e) {
+            if ($(this).is(":checked")) {
+                $(this).closest('tr').addClass("highlight_row");
+            } else {
+                $(this).closest('tr').removeClass("highlight_row");
+            }
+        });
+    });
+</script>
 </body>
 </html>
