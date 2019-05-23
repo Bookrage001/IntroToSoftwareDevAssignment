@@ -1,0 +1,205 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html"%>
+<%@ page import="java.io.*" %>
+<div> 
+        <c:import url="WEB-INF/Data/movies.xml" var="moviesxml"/>
+        <c:import url="WEB-INF/Data/movies.xsl" var="Moviesxslt"/>
+
+        <%
+            String genre = request.getParameter("Genre");
+            String title = request.getParameter("Title");
+            String startY = request.getParameter("YearS");
+            String endY = request.getParameter("YearF");
+        %>
+        <x:transform xml="${moviesxml}" xslt="${Moviesxslt}">
+            <x:param name="Genre" value="<%= genre %>" />
+            <x:param name="Title" value="<%= title %>" />
+            <x:param name="StartYear" value="<%= startY %>" />
+            <x:param name="EndYear" value="<%= endY %>" />
+        </x:transform>
+        <%-- <div class="columns">
+            <img src="Images/posters/blackpanther.jpg" class="movieimg"/>
+            <div caption align="center">
+                Black Panther
+                <div class="price">
+                    $25
+                </div>
+                <div class="Moviebtncontainer">
+                    <div class="MovieAddbtn">
+                        <img src="Images/Cart.png"/>
+                    </div>
+                    <div>
+                        <button class="MovieDetailsbtn">More Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/suicidesquad.jpg" class="movieimg">
+            <div caption align="center">
+                Suicide Squad
+                <div class="price">
+                    $30
+                </div>
+                <div class="Moviebtncontainer">
+                <div class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </div>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/darkknight.jpg" class="movieimg">
+            <div caption align="center">
+                The Dark Knight
+                <div class="price">
+                    $15
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/suicidesquad2.jpg" class="movieimg">
+            <div caption align="center">
+                Suicide Squad 2
+                <div class="price">
+                    TBA
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/avengers3.jpg" class="movieimg">
+            <div caption align="center">
+                Avengers: Infinity War
+                <div class="price">
+                    $35
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/avengers.jpg" class="movieimg">
+            <div caption align="center">
+                The Avengers
+                <div class="price">
+                    $35
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/shapeofwater.jpg" class="movieimg">
+            <div caption align="center">
+                The Shape of Water
+                <div class="price">
+                    $13
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/titanic.jpg" class="movieimg">
+            <div caption align="center">
+                Titanic
+                <div class="price">
+                    $24
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/newhope.jpg" class="movieimg">
+            <div caption align="center">
+                Star Wars: Episode IV
+                <div class="price">
+                    $5
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/venom.jpg"  class="movieimg">
+            <div caption align="center">
+                Venom
+                <div class="price">
+                    $35
+                </div>
+                <div class="Moviebtncontainer">
+                    <button class="MovieAddbtn">
+                        <img src="Images/Cart.png" si/>
+                    </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/godfather.jpg"  class="movieimg">
+            <div caption align="center">
+                Godfather
+                <div class="price">
+                    $6
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <img src="Images/posters/starisborn.jpg" class="movieimg">
+            <div caption align="center">
+                A Star is born
+                <div class="price">
+                    $20
+                </div>
+                <div class="Moviebtncontainer">
+                <button class="MovieAddbtn">
+                    <img src="Images/Cart.png"/>
+                </button>
+                <button class="MovieDetailsbtn">More Details</button>
+                </div>
+            </div>
+        </div>
+    </div> --%>
+</div>
