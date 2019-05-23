@@ -8,7 +8,7 @@
     <% 
         DBManager manager = (DBManager)session.getAttribute("manager");
         String[] orders = manager.getORders();
-        %> console.log(<%= orders %> ); <%
+        
         <%-- for (order: order ); --%>
         %>
 </div>

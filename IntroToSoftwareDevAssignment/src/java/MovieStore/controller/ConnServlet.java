@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author mcant
  */
-public class ConnectionServlet extends HttpServlet {
+public class ConnServlet extends HttpServlet {
 
     private DBConnector db;
     private DBManager manager;
@@ -33,7 +33,7 @@ public class ConnectionServlet extends HttpServlet {
         try {
             db = new DBConnector();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -46,7 +46,7 @@ public class ConnectionServlet extends HttpServlet {
         try {
             manager = new DBManager(conn);
         } catch (SQLException ex) {
-            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         // export the DB manager to the view-session (JSPs)
         session.setAttribute("db", db);
@@ -60,7 +60,7 @@ public class ConnectionServlet extends HttpServlet {
         try {
             db.closeConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
