@@ -1,0 +1,14 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html"%>
+<%@ page import="java.io.*" %>
+<%@page import="MovieStore.Model.dao.MovieDAO"%>
+<div> 
+    <% 
+        DBManager manager = (DBManager)session.getAttribute("manager");
+        String[] orders = manager.getORders();
+        
+        <%-- for (order: order ); --%>
+        %>
+</div>

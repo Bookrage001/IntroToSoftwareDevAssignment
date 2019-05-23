@@ -1,7 +1,8 @@
+<%-- WIP--%>
 <%-- 
     Document   : index
     Created on : 04/04/2019, 12:32:01 PM
-    Author     : Sean
+    Author     : Caleb
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
@@ -59,13 +60,11 @@
             <div id="refine">
                 <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
             </div>
-            <div id="movies">
-                <%@include file="WEB-INF/Modules/movies.jspf" %>
+            <div id="orders">
+                <%@include file="WEB-INF/Modules/Orders.jspf" %>
             </div>
         </div>
     </div>
 </content>
-
-    <a href="Orders.jsp" > Orders</a>
 </body>
 </html>

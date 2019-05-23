@@ -1,0 +1,41 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div>
+    <center>
+        <form action="index.jsp" method="Post" class="MovieSearch">
+    <table>
+        <tr>
+            <td>
+                <label for="Title">Title
+                    <input name="Title" type="text" value="" autocomplete="false" placeholder="Search for Movies...">
+                    </td>
+                    <td>
+                        <label for="Genre">Genre
+                            <select name="Genre">
+                                <option value="" name=""></option>
+                                <option value="Action" name="Action">Action</option>
+                                <option value="Sci-Fi" name="Sci-Fi">Sci-Fi</option>
+                                <option value="Horror" name="Horror">Horror</option>
+                                <option value="Comedy" name="Comedy">Comedy</option>
+                            </select>
+                        </label>
+                    </td>
+            </td>
+            <td>
+                <label for="YearS">Start Year
+                    <input name="YearS" type="number"  value="" autocomplete="false" min="1900" max="2020" maxlength="4" minlength="4">
+                </label>
+            </td>
+            <td>
+                <label for="YearF">End
+                    <input name="YearF" type="number" value="" autocomplete="false" min="1900" max="2020" maxlength="4" minlength="4"> <!-- TODO Use todays Date -->
+                </label>
+            </td>
+            <td>
+                <button>Search</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</center>
+</div>
