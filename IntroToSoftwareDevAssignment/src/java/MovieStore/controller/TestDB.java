@@ -45,7 +45,7 @@ public class TestDB {
             String synopsis = in.nextLine();
 
             System.out.print("Movie Price: $");
-            Double price = in.nextDouble();
+            double price = in.nextDouble();
 
             System.out.print("Number of Copies: ");
             int copies = in.nextInt();
