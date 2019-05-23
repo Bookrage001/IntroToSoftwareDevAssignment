@@ -15,7 +15,6 @@
     </head>
     <%
         User user = (User) session.getAttribute("userLogin");
-        //String ID = "";
     %>
     <body>
 
@@ -29,8 +28,6 @@
             
             //Activate the database add-function once DBManager functions are completed
             //DBManager manager = (DBManager)session.getAttribute("manager");
-
-            //manager.updateLogin(ID);
             
             session.setAttribute("user", user);
             

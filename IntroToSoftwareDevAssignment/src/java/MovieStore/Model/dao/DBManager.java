@@ -70,8 +70,9 @@ public class DBManager {
     }
     
     //Add Log ID for every login
-    public void updateLogin(String ID) throws SQLException {
-        st.executeUpdate("INSERT INTO LOG VALUES ('" + ID + "')");
+    public void updateLogin(String USERNAME, String TIMEIN) throws SQLException {
+        st.executeUpdate("INSERT INTO LOG VALUES ('" + USERNAME + "', '" + TIMEIN + "')");
+        
     }
     
     //Add Log ID for every logout
