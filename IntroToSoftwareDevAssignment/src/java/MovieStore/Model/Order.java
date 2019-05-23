@@ -1,6 +1,8 @@
 
 package MovieStore.Model;
 
+import java.math.BigInteger;
+
 import javax.xml.bind.annotation.*;
 
 import MovieStore.Model.Movie;
@@ -8,53 +10,65 @@ import MovieStore.Model.dao.DBManager;
 
 public class Order {
 
-    private int id;
-    private String customerId;
-    private String OrderID;
-    private String movieID;
+    private BigInteger orderId; // PK
+    private BigInteger customerId; // PK
+    private BigInteger movieId;
+    private int amount;
+    private String username;
     private String status;
-    private Movie[] movies;
+    private Movie[] movies; // if i get a chance to do a get for these ...
 
     public Order() {
     }
 
-    public Order(int id, String movieID, String movieListId) {
-        this.id = id;
+    public Order(BigInteger OrderId, BigInteger customerId, BigInteger movieID, int amount, String username,
+            String status) {
+        this.OrderId = OrderId;
         this.customerId = customerId;
         this.movieID = movieListId;
-
+        this.amount = amount;
+        this.username = username;
+        this.status = status;
     }
 
-    public int getId() {
-        return id;
+    public BigInteger getOrderId() {
+        return orderId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setOrderId(BigInteger orderId) {
+        this.orderId = orderId;
     }
 
-    public String getCustomerId() {
+    public BigInteger getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(BigInteger customerId) {
         this.customerId = customerId;
     }
 
-    public String getOrderID() {
-        return OrderID;
+    public BigInteger getMovieId() {
+        return movieId;
     }
 
-    public void setOrderID(String orderID) {
-        OrderID = orderID;
+    public void setMovieId(BigInteger movieId) {
+        this.movieId = movieId;
     }
 
-    public String getMovieID() {
-        return movieID;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setMovieID(String movieID) {
-        this.movieID = movieID;
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getStatus() {
@@ -63,13 +77,5 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Movie[] getMovies() {
-        return movies;
-    }
-
-    public void setMovies(Movie[] movies) {
-        this.movies = movies;
     }
 }

@@ -41,9 +41,48 @@ public class DBManager {
         }
     }
 
-    public String[] getORders() {
-        return st.executeQuery("SELECT * FROM ORDERS FETCH FIRST 100 ROWS ONLY");
+    public ArrayList<Order> getORders() {
+        try {
+            ResultSet rs = st.executeQuery("SELECT * FROM ORDERS FETCH FIRST 100 ROWS ONLY");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        ArrayList<Order> orders = new ArrayList();
+
+        while (rs.next()) {
+            BigInteger OrderID = rs.getInt(1);
+            BigInteger customerId = rs.getString(2);
+            int amount = rs.getString(3);
+            String username = rs.getString(4);
+            String status = rs.getString(5);
+
+            orders.add(new Order(OrderID, movieID, customerId, amount, username, status));
+        }
+        return orders;
     }
+
+    // public ArrayList<Movie> searchMovie(String keyword) throws SQLException {
+    // ResultSet rs = st.executeQuery(
+    // "SELECT * FROM MOVIES WHERE TITLE LIKE '%" + keyword + "%' OR GENRE LIKE '%"
+    // + keyword + "%'");
+
+    // ArrayList<Movie> movies = new ArrayList();
+
+    // while (rs.next()) {
+    // int movieID = rs.getInt(1);
+    // String title = rs.getString(2);
+    // String genre = rs.getString(3);
+    // String releaseDate = rs.getString(4);
+    // String director = rs.getString(5);
+    // String synopsis = rs.getString(6);
+    // double price = rs.getDouble(7);
+    // int copies = rs.getInt(8);
+
+    // movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis,
+    // price, copies));
+    // }
+    // return movies;
+    //}
 
     public void executequery(String query) throws SQLException {
         st.executeUpdate(query);
