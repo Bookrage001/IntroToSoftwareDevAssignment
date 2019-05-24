@@ -38,41 +38,7 @@
             <div id="collection">
                 <div class="container" style="padding-top: 20px">
                     <div class="row">
-                        <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
-                            <div class="sidebar">
-                                <!-- User Widget -->
-                                <div class="widget user-dashboard-profile">
-                                    <!-- User Image -->
-                                    <div class="profile-thumb">
-                                        <img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
-                                    </div>
-                                    <!-- User Name -->
-                                    <h5 class="text-center">Name of staff</h5>
-                                </div>
-                                <!-- Dashboard Links -->
-                                <div class="widget user-dashboard-menu">
-                                    <ul>
-                                        <li>
-                                            <a href="AddMovie.jsp"><i class="fa fa-user"></i>Add Movie Listing</a></li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-bookmark-o"></i> View All Movies <span>0</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-file-archive-o"></i>Manage Customers <span>20</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-bolt"></i> Orders<span>23</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-cog"></i> Logout</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-power-off"></i>Delete Account</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <%@include file="WEB-INF/Modules/staffManagement.jspf" %>
                         <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
                             <form action="AddMovieAction.jsp" method="Post">
                                 <!-- Movie Description -->
