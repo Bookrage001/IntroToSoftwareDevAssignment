@@ -3,6 +3,7 @@
     <servlet>
         <servlet-name>ConnServlet</servlet-name>
         <servlet-class>MovieStore.controller.ConnServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
