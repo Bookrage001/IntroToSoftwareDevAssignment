@@ -27,34 +27,31 @@ public class TestDB {
             Connection conn = connector.openConnection();
             DBManager db = new DBManager(conn);
 
-            // int key = (new Random()).nextInt(999999);
-            // String ID = "" + key;
+            int key = (new Random()).nextInt(999999);
 
-            // System.out.print("Movie Title: ");
-            // String title = in.nextLine();
+            System.out.print("Movie Title: ");
+            String title = in.nextLine();
 
-            // System.out.print("Movie Genre: ");
-            // String genre = in.nextLine();
+            System.out.print("Movie Genre: ");
+            String genre = in.nextLine();
 
-            // System.out.print("Movie Release: ");
-            // String releaseDate = in.nextLine();
+            System.out.print("Movie Release: ");
+            String releaseDate = in.nextLine();
 
-            // System.out.print("Movie Director: ");
-            // String director = in.nextLine();
+            System.out.print("Movie Director: ");
+            String director = in.nextLine();
 
-            // System.out.print("Movie Sympnosis: ");
-            // String sympnosis = in.nextLine();
+            System.out.print("Movie Synopsis: ");
+            String synopsis = in.nextLine();
 
-            // System.out.print("Movie Price: $");
-            // Double price = 10.00;
+            System.out.print("Movie Price: $");
+            double price = in.nextDouble();
 
-            // System.out.print("Number of Copies: ");
-            // int copies = 1;
+            System.out.print("Number of Copies: ");
+            int copies = in.nextInt();
 
-            // db.addMovie(title, genre, releaseDate, director, sympnosis, price, copies);
-            // System.out.println("Movie is successfully added to the database");
-
-            System.out.println(db.getOrders());
+            db.addMovie(key, title, genre, releaseDate, director, synopsis, price, copies);
+            System.out.println("Movie is successfully added to the database");
 
             connector.closeConnection();
 

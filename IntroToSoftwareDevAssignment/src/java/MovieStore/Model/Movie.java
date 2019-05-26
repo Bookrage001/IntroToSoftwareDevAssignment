@@ -7,12 +7,14 @@ package MovieStore.Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+
 /**
  *
  * @author Mark Galulu
  */
 public class Movie implements Serializable{
-
+ 
     private int Id;
     private String title;
     private String genre;
@@ -37,13 +39,26 @@ public class Movie implements Serializable{
         this.price = price;
         this.copies = copies;
     }
+    
+    public Movie getMovieID(int ID){
+        for(Movie movie : list){
+            if(getID() == ID){
+                return movie;
+            }
+        }
+        return null;
+    }
+    
+    public Movie(ArrayList<Movie> list){
+        this.list = list;
+    }
 
-    public int getId() {
+    public int getID() {
         return Id;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setID(int Id) {
+        this.Id = Id;
     }
 
     public String getTitle() {
@@ -101,13 +116,4 @@ public class Movie implements Serializable{
     public void setCopies(int copies) {
         this.copies = copies;
     }
-
-    public ArrayList<Movie> getList() {
-        return list;
-    }
-
-    public void setList(ArrayList<Movie> list) {
-        this.list = list;
-    }
-
 }

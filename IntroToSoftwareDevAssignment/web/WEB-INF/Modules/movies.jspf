@@ -23,4 +23,4 @@
         <c:import url="WEB-INF/Data/movies.xsl" var="moviesxslt"/>
         <x:transform xml="${moviesxml}" xslt="${moviesxslt}"/>
     </c:set>
-</div
+</div>
