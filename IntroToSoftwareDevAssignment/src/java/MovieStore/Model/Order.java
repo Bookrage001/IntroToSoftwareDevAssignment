@@ -2,32 +2,27 @@
 package MovieStore.Model;
 
 import java.math.BigInteger;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-import javax.xml.bind.annotation.*;
+public class Order implements Serializable {
 
-import MovieStore.Model.Movie;
-import MovieStore.Model.dao.DBManager;
-
-public class Order {
-
-    private BigInteger orderId; // PK
-    private BigInteger customerId; // PK
-    private BigInteger movieId;
+    private BigInteger orderId;
+    private String username; //PK
+    private BigInteger movieId; //PK
     private int amount;
-    private String username;
     private String status;
     private Movie[] movies; // if i get a chance to do a get for these ...
 
     public Order() {
     }
 
-    public Order(BigInteger OrderId, BigInteger customerId, BigInteger movieID, int amount, String username,
+    public Order(BigInteger OrderId, String username, BigInteger movieId, int amount,
             String status) {
-        this.OrderId = OrderId;
-        this.customerId = customerId;
-        this.movieID = movieListId;
-        this.amount = amount;
+        this.orderId = OrderId;
         this.username = username;
+        this.movieId = movieId;
+        this.amount = amount;
         this.status = status;
     }
 
@@ -39,12 +34,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public BigInteger getCustomerId() {
-        return customerId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setCustomerId(BigInteger customerId) {
-        this.customerId = customerId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public BigInteger getMovieId() {
@@ -63,14 +58,6 @@ public class Order {
         this.amount = amount;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -78,4 +65,5 @@ public class Order {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }

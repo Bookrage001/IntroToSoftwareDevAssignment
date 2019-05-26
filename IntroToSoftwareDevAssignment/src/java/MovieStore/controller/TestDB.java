@@ -54,7 +54,7 @@ public class TestDB {
             // db.addMovie(title, genre, releaseDate, director, sympnosis, price, copies);
             // System.out.println("Movie is successfully added to the database");
 
-            System.out.println(db.getORders());
+            System.out.println(db.getOrders());
 
             connector.closeConnection();
 

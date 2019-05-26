@@ -3,11 +3,14 @@
     Created on : 04/04/2019, 12:32:01 PM
     Author     : Sean
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%>
+<%@page import="MovieStore.Model.*"%>
+<%@page import="MovieStore.Model.dao.*"%>
+<jsp:include page="/ConnServlet" flush="true" />
+<%@ page pageEncoding="UTF-8" contentType="text/html" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html"%>
-<%@ page import="java.io.*" %>
+
 
 <% String msFilePath = application.getRealPath("WEB-INF");%>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>

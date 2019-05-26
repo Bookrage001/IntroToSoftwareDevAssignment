@@ -3,17 +3,15 @@
     Created on : 04/04/2019, 12:32:01 PM
     Author     : Sean
 --%>
-<%@page import="java.util.*"%>
-<%@page import="MovieStore.Model.*"%>
-<%@page import="MovieStore.Model.dao.*"%>
-<jsp:include page="/ConnServlet" flush="true" />
-<%@ page pageEncoding="UTF-8" contentType="text/html" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page contentType="text/html"%>
+<%@ page import="java.io.*" %>
 
 <% String msFilePath = application.getRealPath("WEB-INF");%>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="content-type" content="text/xml; charset=utf-8" />
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
@@ -56,16 +54,19 @@
 </header>
 
 <content>
-    <div class ="container">
-        <%@include file="WEB-INF/Modules/navbar.jspf" %>
-        <div id="collection">
-            <div id="refine">
-                <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
-            </div>
-            <div id="movies">
-                <%@include file="WEB-INF/Modules/movies.jspf" %>
-            </div>
-        </div>
+    <div>
+        Message:
+        <%=exception.getMessage()%>
+
+        StackTrace:
+        <%
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(stringWriter);
+        exception.printStackTrace(printWriter);
+        out.println(stringWriter);
+        printWriter.close();
+        stringWriter.close();
+        %>
     </div>
 </content>
 
