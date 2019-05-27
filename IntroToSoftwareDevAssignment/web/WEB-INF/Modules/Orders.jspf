@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.io.*" %>
 <%@page import="MovieStore.Model.dao.*"%>
-<div> 
-    <% 
-        DBManager db = (DBManager)session.getAttribute("manager");
-        ArrayList[Order] orders = db.getOrders();
-    %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.Order"%>
+<div>
+  <%
+      DBManager db = (DBManager)session.getAttribute("manager");
+      ArrayList<Order> orders = db.getOrders();
+  %>
 </div>
