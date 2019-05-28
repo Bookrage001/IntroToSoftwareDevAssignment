@@ -20,21 +20,19 @@
     </head>
     <body align="center">
         <div class="container">
-            <header align="left">
+            <div id="header">
                 <div id="Logoposition">
                     <img src="Images/RaiMovieLogoBlue.png" id="Logo">
                 </div>
-                <div id="Search">
-                    <%@include file="WEB-INF/Modules/search.jspf"%>
-                </div>
-            </header>
+                <%@include file="WEB-INF/Modules/search.jspf"%>
+            </div>
         </div>
     <content>
         <div class ="container">
             <%@include file="WEB-INF/Modules/navbar.jspf" %>
             <div id="collection">
                 <div id="refine">
-                    <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
+                    <%@include file="WEB-INF/Modules/filter.jspf" %>
                 </div>
                 <div id="movies">
                     <c:set var="Movies">

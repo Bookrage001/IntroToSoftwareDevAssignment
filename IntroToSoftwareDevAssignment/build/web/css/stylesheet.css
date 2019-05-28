@@ -4,12 +4,6 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 
-
-/* 
-    Created on : 11/04/2019, 6:09:39 PM
-    Author     : sean
-*/
-
 body {
     font-family: Verdana;
     font-size: 0.8em;
@@ -25,16 +19,17 @@ body {
 content {}
 
 header {
-    background-color: white;
+    background-color: rbga(0,0,0,1);
     border-bottom: 0;
 }
 
 #Logo {
-    max-width: 200px;
+    max-width: 250px;
 }
 
 #Logoposition {
-    display: inline;
+    display: inline-block;
+    float: left;
 }
 
 #movies {
@@ -44,31 +39,6 @@ header {
     float: right;
     width: 79%;
     margin-top: 10px;
-}
-
-.MovieSearch {
-    padding: 0.3em;
-    background-color: #222831;
-    border-radius: 10px;
-    font-family: Verdana;
-    font-size: 0.8em;
-}
-
-.MovieSearch table button {
-    background-color: #00adb5;
-    color: white;
-    padding: 0.3em;
-    border: none;
-}
-
-.MovieSearch input,
-select {
-    border: 1px solid black;
-}
-
-.MovieSearch label {
-    color: white;
-    font-size: 0.8em;
 }
 
 #Navbar {}
@@ -81,16 +51,6 @@ select {
 }
 
 #RefineSearch {}
-
-#Search {
-    display: inline-block;
-    position: relative;
-    margin-left: 3%;
-}
-
-.caption {
-    padding: 10px;
-}
 
 .price {
     border-radius: 5px;
@@ -229,4 +189,61 @@ select {
 
 .refinesearch h3 {
     font-size: 1.2em;
+}
+
+/******Style for Home.jsp******/
+* {
+    box-sizing: border-box;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 500px;
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+form.example button {
+    width: 10%;
+    padding: 10px;
+    background: #34495E;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #E67E22;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}           
+
+.search{
+    margin: 10%;
+}
+#Search {
+    display: inline;
+}
+#header {
+    grid-template-columns: 1f 1f 1f;
+    grid-template-areas:
+        "Logo Logo Search";
+}
+
+#Logoposition {
+    position: relative;
+}
+.search button {
+  border: none;
+  cursor: pointer;
+}
+.caption {
+    padding: 10px;
 }

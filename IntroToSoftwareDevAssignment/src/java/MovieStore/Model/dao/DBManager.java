@@ -51,7 +51,8 @@ public class DBManager {
     }
     
     public ArrayList<Movie> searchMovie(String keyword) throws SQLException{
-        ResultSet rs =  st.executeQuery("SELECT * FROM MOVIES WHERE TITLE LIKE '%" + keyword + "%' OR GENRE LIKE '%" + keyword + "%'");
+        keyword = keyword.toUpperCase();
+        ResultSet rs =  st.executeQuery("SELECT * FROM MOVIES WHERE UPPER(TITLE) LIKE '%" + keyword + "%' OR UPPER(GENRE) LIKE '%" + keyword + "%'");
         
         ArrayList<Movie> movies = new ArrayList();
         
