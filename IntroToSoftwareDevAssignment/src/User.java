@@ -8,28 +8,32 @@
  *
  * @author Supercheap Computer
  */
-    public class User {
+    public class User 
+{
 
     private String username;
     private String firstname;
     private String lastname;
     private String Email;
     private String Address;
-    private Int ContactNum;
+ 
 
-    public User() {
+    public User() 
+    {
     }
+    
 
-    public User(String username, String firstname, String lastname, String Email, String Address, Int ContactNum) {
+    public User(String username, String firstname, String lastname, String Email, String Address) 
+    {
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
         this.Email = Email;
         this.Address= Address;
-        this.ContactNum = ContactNum;
+       
     }
 
-    public int getusername(){
+    public String getusername(){
             return username;
     }
 
@@ -69,24 +73,15 @@
         this.Address = Address;
     }
 
-    public String getContactNum() {
-        return ContactNum;
-    }
-
-    public void setContactNum(String ContactNum) {
-        this.ContactNum = ContactNum;
-    }
-
     
 
-    @Override
     public String toString() 
       
      {
-        return "user(" +"username=" + username +", firstname=" + firstname", lastname=" + lastname+", Email=" + Email +", Address=" + Address, ContactNum=" +ContactNum + '}';
+        return "user(" +"username=" + username +", firstname=" + firstname", lastname=" + lastname+", Email=" + Email +", Address=" + Address};
     
+     }
 }
-    }
 
     
     

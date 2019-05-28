@@ -55,25 +55,6 @@
         </div>
        
         
-        <%
-               String username = request.getParameter("username");
-               String firstname= request.getParameter("firstname");
-               String lastname = request.getParameter("lastname");
-               String email = request.getParameter("email");
-               String address = request.getParameter("address");
-               String ContactNum = request.getParameter("ContactNum");
-        %>
-        <% if (tos!=null){%>
-        {
-        <h1>Welcome, <%=username %></h1>
-        <p>You first name is<%=firstname%></p>
-        <p>You last name is <%=lastname%></p>
-        <p>You email is: <%=email%></p>
-        <p>You address is:<%=address%> </p>
-        <p>You Contact Number is <%=ContactNum%></p>
-        <%}else{%>
-        <p>Sorry! you must agree to the Terms of Service.Click here<a href="register.jsp">  Register</a></p>
-        <%}%>
     </body>>
         
         

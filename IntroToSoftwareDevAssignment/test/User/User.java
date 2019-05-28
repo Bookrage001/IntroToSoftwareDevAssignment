@@ -13,9 +13,9 @@ package User;
  */
 public class User 
 {
-private String name;  //学号
-private String gender;  //姓名
-private String password;  //手机号
+private String name;  //
+private String gender;  //
+private String password;  //
 
 //getter setter
     public String getName() {
