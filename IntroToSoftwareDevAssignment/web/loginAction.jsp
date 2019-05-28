@@ -4,50 +4,34 @@
     Author     : Hayley and Mark
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" import="MovieStore.Model.*"%>
-
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="MovieStore.Model.dao.*"%>
+<%@page import="MovieStore.controller.*"%>
+<%@page import="java.util.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="MovieStore.Model.*" import="java.sql.*"%>
 <!DOCTYPE html>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Action</title>
+        <title>Login Action Page</title>
     </head>
-
-    <%
-        String userFilePath = application.getRealPath("WEB-INF/users.xml");
-    %>
-
-    <jsp:useBean id="webApp" class="MovieStore.Model.WebApplication" scope="application">
-        <jsp:setProperty name="webApp" property="userFilePath" value="<%= userFilePath%>"/>
-    </jsp:useBean>
-
-    <%
-
-        final WebApplication app = webApp;
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-    %>
-
-
-    <body>    
-        <%
-            Users users = app.getUsers();
-            User lister = users.login(email, password);
-
-            if (lister != null) {
-                session.setAttribute("user", lister);
-                response.sendRedirect("index.jsp");
-            } else {
+    <body> 
+                <%
+            //Activate the database search-validate once DBManager functions are completed
+            DBManager db = (DBManager) session.getAttribute("manager");
+    String username = request.getParameter("username");
+    String password = request.getParameter("password");
+    User user = db.findUser(username, password);
+    if (user != null) {
+        session.setAttribute("userLogin", user);
+        response.sendRedirect("loginWelcome.jsp");
+    } else {
+        session.setAttribute("existErr", "User profile does not exist!");
+        response.sendRedirect("login.jsp");
+    }       
         %>
-
-        <h4> Incorrect Email/Password input. Click <a href="login.jsp"><u>here</u></a> to try again.</h4>
-
-        <%
-            }
-        %>
+        
     </body>
 </html>

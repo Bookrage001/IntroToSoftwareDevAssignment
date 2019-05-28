@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link href="Design/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +15,7 @@
     <body>    
         <div style="margin-top:5%"></div>
         <div id="Logoposition">
-            <img src="Design/Images/RaiMovieLogoBlue.png" class="SigninLogo">
+            <img src="Images/RaiMovieLogoBlue.png" id="Logo"/>
         </div>
         <div>
             <form action="index.jsp" method="POST">

@@ -10,7 +10,8 @@
 <%@ page import="java.io.*" %>
 
 <% String msFilePath = application.getRealPath("WEB-INF");%>
-<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>/
+
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
@@ -46,14 +47,15 @@
             </div>
 
             <div id="Search">
-                <%@include file="WEB-INF/Modules/search.jspf"%>
+               <%-- <%@include file="WEB-INF/Modules/search.jspf"%> --%>
             </div>
     </div>
-</header>
-</header>
 
 <content>
-    <div class ="container">
+    <div>
+        <a class="link" href="login.jsp">Login</a>
+    </div>
+    <%--<div class ="container">
         <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="collection">
             <div id="refine">
@@ -63,7 +65,7 @@
                 <%@include file="WEB-INF/Modules/movies.jspf" %>
             </div>
         </div>
-    </div>
+    </div>--%>
 </content>
 </body>
 </html>
