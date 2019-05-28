@@ -4,6 +4,8 @@
     Author     : George
 --%>
 
+
+
 <%@page import="uts.isd.model.dao.*"%>
 <%@page import="uts.isd.controller.*"%>
 <%@page import="java.util.*"%>
@@ -22,19 +24,35 @@
             DBConnector connector = new DBConnector(); //Create a connection and initialize DB conn-field
             Connection conn = connector.openConnection(); //Get the protected connection instance from DB superclass to share for the application classes
             DBManager db = new DBManager(conn); //DBManger instance provide users with access to CRUD operations
+            Validator vd = new Validator();
+           
+              
             
             String ID = request.getParameter("username");
             String password = request.getParameter("password");
-            boolean alreadyExists = db.findUser(ID);
-            if (ID.isEmpty() || password.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || postcode.isEmpty() || suburb.isEmpty())
+            String email = request.getParameter("email");
+            String firstName = request.getParameter("firstname"); 
+            String lastName = request.getParameter("lastname"); 
+            String address = request.getParameter("address");
+            String postcode = request.getParameter("postcode");
+            String suburb = request.getParameter("suburb");
+            boolean alreadyExists = db.checkUser(ID);
+            
+           
+            
+            if (!vd.validateEmail(email)) {
+                session.setAttribute("EmptyErr", "Email format is incorrect");
+                response.sendRedirect("register.jsp");
+            } else if (ID.isEmpty() || password.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || postcode.isEmpty() || suburb.isEmpty())
             {
-                response.sendRedirect("register_fields empty.jsp");
+               session.setAttribute("EmptyErr", "One or more of the fields are empty");               
+               response.sendRedirect("register.jsp");         
             }
-            else 
-            if (alreadyExists == true){
+            else  if (alreadyExists == true){
             
-            response.sendRedirect("register_Username_in_use.jsp");
             
+               session.setAttribute("EmptyErr", "Registered Username in Use");               
+               response.sendRedirect("register.jsp");  
             }
             else
                     {

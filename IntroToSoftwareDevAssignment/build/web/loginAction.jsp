@@ -1,53 +1,51 @@
 <%-- 
     Document   : loginAction
-    Created on : 13/04/2019, 11:11:39 PM
-    Author     : Hayley and Mark
+    Created on : Aug 11, 2018, 9:34:47 PM
+    Author     : George
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" import="MovieStore.Model.*"%>
-
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-
+<%@page import="uts.isd.model.dao.*"%>
+<%@page import="uts.isd.controller.*"%>
+<%@page import="java.util.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.isd.model.*" import="java.sql.*"%>
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Action</title>
+        <title>Login Action Page</title>
     </head>
-
-    <%
-        String userFilePath = application.getRealPath("WEB-INF/users.xml");
-    %>
-
-    <jsp:useBean id="webApp" class="MovieStore.Model.WebApplication" scope="application">
-        <jsp:setProperty name="webApp" property="userFilePath" value="<%= userFilePath%>"/>
-    </jsp:useBean>
-
-    <%
-
-        final WebApplication app = webApp;
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-    %>
-
-
-    <body>    
-        <%
-            Users users = app.getUsers();
-            User lister = users.login(email, password);
-
-            if (lister != null) {
-                session.setAttribute("user", lister);
-                response.sendRedirect("index.jsp");
-            } else {
-        %>
-
-        <h4> Incorrect Email/Password input. Click <a href="login.jsp"><u>here</u></a> to try again.</h4>
+    <body>
 
         <%
+            //Activate the database search-validate once DBManager functions are completed
+            DBConnector connector = new DBConnector(); //Create a connection and initialize DB conn-field
+            Connection conn = connector.openConnection(); //Get the protected connection instance from DB superclass to share for the application classes
+            DBManager db = new DBManager(conn); //DBManger instance provide users with access to CRUD operations
+            
+            String ID = request.getParameter("username");
+            String password = request.getParameter("password");
+            boolean alreadyExists = db.findUser(ID);
+            if (ID.isEmpty() || password.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || postcode.isEmpty() || suburb.isEmpty())
+            {
+                response.sendRedirect("register_fields empty.jsp");
             }
+            else 
+            if (alreadyExists == true){
+            
+            response.sendRedirect("register_Username_in_use.jsp");
+            
+            }
+            else
+                    {
+                            db.addUser(ID, password, email,firstName,lastName,address,postcode,suburb);
+            response.sendRedirect("login.jsp"); 
+                        
+                    }
+            //addUser(String ID, String email, String password, String firstName, String lastName,String address, String postcode, String suburb)
+          
+                       
         %>
+        
     </body>
 </html>
