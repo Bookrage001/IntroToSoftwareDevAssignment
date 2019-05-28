@@ -12,24 +12,35 @@ body {
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
+    width: 95%;
+    margin: auto;
 }
-
-content {}
 
 header {
     background-color: rbga(0,0,0,1);
     border-bottom: 0;
 }
-
+.searchContainer{
+    display: auto;
+}
 #Logo {
     max-width: 250px;
 }
 
 #Logoposition {
-    display: inline-block;
     float: left;
+}
+
+.search{
+    margin: 10px;
+}
+
+.search button {
+  border: none;
+  cursor: pointer;
+}
+.caption {
+    padding: 10px;
 }
 
 #movies {
@@ -200,9 +211,10 @@ form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
-    width: 500px;
+    width: 70%;
     background: #f1f1f1;
     border-radius: 4px;
+    margin-top: 25px;
 }
 
 form.example button {
@@ -224,26 +236,3 @@ form.example::after {
     clear: both;
     display: table;
 }           
-
-.search{
-    margin: 10%;
-}
-#Search {
-    display: inline;
-}
-#header {
-    grid-template-columns: 1f 1f 1f;
-    grid-template-areas:
-        "Logo Logo Search";
-}
-
-#Logoposition {
-    position: relative;
-}
-.search button {
-  border: none;
-  cursor: pointer;
-}
-.caption {
-    padding: 10px;
-}

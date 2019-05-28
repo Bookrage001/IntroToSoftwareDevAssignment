@@ -17,17 +17,14 @@
 <html>
     <head>
         <title>Home Page</title>
-    </head>
-    <body align="center">
-        <div class="container">
-            <div id="header">
+        <div class="searchContainer">
                 <div id="Logoposition">
                     <img src="Images/RaiMovieLogoBlue.png" id="Logo">
                 </div>
                 <%@include file="WEB-INF/Modules/search.jspf"%>
-            </div>
         </div>
-    <content>
+    </head>
+    <body align="center">
         <div class ="container">
             <%@include file="WEB-INF/Modules/navbar.jspf" %>
             <div id="collection">
@@ -58,7 +55,7 @@
                 </div>
             </div>
         </div>
-    </content>
+
 </body>
 <!--Script-->
 <script>
