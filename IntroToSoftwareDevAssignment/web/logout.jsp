@@ -4,9 +4,13 @@
     Author     : Hayley
 --%>
 
+<%@page import="java.util.Random"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="MovieStore.Model.dao.DBManager"%>
+<%@page import="MovieStore.Model.User"%>
 <%@page import="MovieStore.controller.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,13 +19,20 @@
         <script type="text/javascript" src="js/script.js"></script>
         <title>Logout</title>
     </head>
+
     <body>
-        <% //  String ID = "";         
-//            DBManager manager = (DBManager)session.getAttribute("manager");
-//            manager.updateLogout(ID);
-            
-            session.invalidate();        
+        <%
+            User user = (User) session.getAttribute("userLogin");
+            String username = user.getUsername();
+
+            DBManager db = (DBManager) session.getAttribute("manager");
+            int logId = (new Random()).nextInt(999999);
+            String activity = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy").format(new java.util.Date());
+
+            db.createLogout(logId, username, "Signed Out", activity);
+        
+            session.invalidate();
         %>
-        <p class="outline">You have been logged out. Click <a class="link" href="index.jsp">here</a> to return to the welcome page.</p>
+        <p class="outline">You have been logged out. Click <a class="link" href="index.jsp">here</a> to return to the home page.</p>
     </body>
 </html>

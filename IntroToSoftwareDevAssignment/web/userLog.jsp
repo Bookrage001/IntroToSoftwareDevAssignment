@@ -46,8 +46,8 @@
                 <tr>
                     <td class="a">Log ID</td>
                     <td class="a">Username</td>
-                    <td class="a">Login Time</td>
-                    <td class="a">Logout Time</td>
+                    <td class="a">Status</td>
+                    <td class="a">Activity</td>
                 </tr>
             </thead>
             <tbody >
@@ -55,8 +55,8 @@
                     <td class="a"></td>
                     <td class="a">${log.ID}</td>
                     <td class="a" >${user.username}</td>
-                    <td class="a">${log.timestamp}</td>
                     <td class="a">${log.status}</td>
+                    <td class="a">${log.activity}</td>
                 </tr>
             </tbody>
         </table>

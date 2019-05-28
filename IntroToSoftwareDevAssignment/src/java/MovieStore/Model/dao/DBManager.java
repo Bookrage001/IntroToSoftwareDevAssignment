@@ -55,8 +55,7 @@ public class DBManager {
 
         return null;
     }
-    
-    
+
     //Check if user exists
     public boolean checkUser(String username, String password) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'");
@@ -70,9 +69,14 @@ public class DBManager {
         }
         return false;
     }
-    
+
     //Add Log ID for every login
-    public void createLog(int logId, String username, String status, String activity) throws SQLException{       
+    public void createLogin(int logId, String username, String status, String activity) throws SQLException {
+        st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
+    }
+
+    //Add Log ID for every logout
+    public void createLogout(int logId, String username, String status, String activity) throws SQLException {
         st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
     }
 }

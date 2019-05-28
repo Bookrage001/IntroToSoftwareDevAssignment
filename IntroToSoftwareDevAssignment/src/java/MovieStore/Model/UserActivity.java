@@ -5,9 +5,6 @@
  */
 package MovieStore.Model;
 
-import java.math.BigInteger;
-import java.sql.Timestamp;
-
 /**
  *
  * @author Hayley
