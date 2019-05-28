@@ -12,14 +12,14 @@ public class Order implements Serializable {
     private BigInteger movieId; //PK
     private int amount;
     private String status;
-    private Movie[] movies; // if i get a chance to do a get for these ...
+    private ArrayList<Movie> movies; // if i get a chance to do a get for these ...
 
     public Order() {
     }
 
-    public Order(BigInteger OrderId, String username, BigInteger movieId, int amount,
-            String status) {
-        this.orderId = OrderId;
+    //MARK CHANGED THIS ORDER
+    public Order(BigInteger orderId, BigInteger movieId, int amount, String username, String status) {
+        this.orderId = orderId;
         this.username = username;
         this.movieId = movieId;
         this.amount = amount;
