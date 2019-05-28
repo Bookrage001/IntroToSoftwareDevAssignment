@@ -6,6 +6,8 @@
 package MovieStore.Model.dao;
 
 import MovieStore.Model.User;
+import MovieStore.Model.UserActivity;
+import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.*;
 
@@ -53,16 +55,16 @@ public class DBManager {
 
         return null;
     }
-
+    
     
     //Check if user exists
-    public boolean checkUser(String USERNAME, String PASSWORD) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + USERNAME + "' AND PASSWORD = '" + PASSWORD + "'");
+    public boolean checkUser(String username, String password) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'");
         while (rs.next()) {
             String userid = rs.getString(1);
             String userpass = rs.getString(2);
 
-            if (userid.equals(USERNAME) && userpass.equals(PASSWORD)) {
+            if (userid.equals(username) && userpass.equals(password)) {
                 return true;
             }
         }
@@ -70,14 +72,7 @@ public class DBManager {
     }
     
     //Add Log ID for every login
-    public void updateLogin(String USERNAME, String TIMEIN) throws SQLException {
-        st.executeUpdate("INSERT INTO LOG VALUES ('" + USERNAME + "', '" + TIMEIN + "')");
-        
-    }
-    
-    //Add Log ID for every logout
-    public void updateLogout(String ID) throws SQLException {
-        st.executeUpdate("INSERT INTO LOG VALUES ('" + ID + "')");
-        
+    public void createLog(int logId, String username, String status, String activity) throws SQLException{       
+        st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
     }
 }

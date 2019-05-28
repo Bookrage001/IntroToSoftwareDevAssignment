@@ -4,6 +4,7 @@
     Author     : Hayley
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="MovieStore.Model.dao.*"%>
 <%@page import="MovieStore.controller.*"%>
 <%@page import="java.util.*"%>

@@ -53,12 +53,10 @@
             <tbody >
                 <tr>
                     <td class="a"></td>
-                    <td class="a">${user.username}</td>
-                    <td class="a" >${student.name}</td>
-                    <td class="a">${student.dob}</td>
-                    <td class="a">${student.email}</td>
-                    <td class="a">${student.password}</td>
-                    <td class="a">${student.favcol}</td>
+                    <td class="a">${log.ID}</td>
+                    <td class="a" >${user.username}</td>
+                    <td class="a">${log.timestamp}</td>
+                    <td class="a">${log.status}</td>
                 </tr>
             </tbody>
         </table>
