@@ -48,30 +48,32 @@ public class DBManager {
         return movies;
     }
 
-    public void addMovie(int movieID, String title, String genre, String releaseDate,
-            String director, String synopsis, double price, int copies) throws SQLException {
+    public void addMovie(int movieID, String title, String genre, String releaseDate, String director, String synopsis,
+            double price, int copies) throws SQLException {
 
         st.executeUpdate("INSERT INTO MOVIES VALUES (" + movieID + ",'" + title + "','" + genre + "','" + releaseDate
                 + "','" + director + "','" + synopsis + "'," + price + "," + copies + ")");
     }
+
     public ArrayList<Order> getOrders() throws SQLException {
         ArrayList<Order> orders = new ArrayList();
-            ResultSet rs = st.executeQuery("SELECT * FROM ORDERS");
-            while (rs.next()) {
-                BigInteger OrderID = BigInteger.valueOf(rs.getInt(1));
-                BigInteger movieID = BigInteger.valueOf(rs.getInt(2));
-                String username = rs.getString(4);
-                int amount = rs.getInt(3);
-                String status = rs.getString(5);
-                // user.setUserId(new BigInteger(Integer.valueOf(rs.getInt("User_Id")).toString()));
-                orders.add(new Order(OrderID, movieID, amount, username, status));
+        ResultSet rs = st.executeQuery("SELECT * FROM ORDERS");
+        while (rs.next()) {
+            BigInteger OrderID = BigInteger.valueOf(rs.getInt(1));
+            BigInteger movieID = BigInteger.valueOf(rs.getInt(2));
+            String username = rs.getString(4);
+            int amount = rs.getInt(3);
+            String status = rs.getString(5);
+            // user.setUserId(new
+            // BigInteger(Integer.valueOf(rs.getInt("User_Id")).toString()));
+            orders.add(new Order(OrderID, movieID, amount, username, status));
         }
-
         return orders;
     }
 
-    public ArrayList<Movie> searchMovie(String keyword) throws SQLException{
-        ResultSet rs =  st.executeQuery("SELECT * FROM MOVIES WHERE TITLE LIKE '%" + keyword + "%' OR GENRE LIKE '%" + keyword + "%'");
+    public ArrayList<Movie> searchMovie(String keyword) throws SQLException {
+        ResultSet rs = st.executeQuery(
+                "SELECT * FROM MOVIES WHERE TITLE LIKE '%" + keyword + "%' OR GENRE LIKE '%" + keyword + "%'");
 
         ArrayList<Movie> movies = new ArrayList();
 
@@ -90,8 +92,8 @@ public class DBManager {
         return movies;
     }
 
-    public void UpdateMovie(int movieID, String title, String genre, String releaseDate,
-            String director, String synopsis, double price, int copies) {
+    public void UpdateMovie(int movieID, String title, String genre, String releaseDate, String director,
+            String synopsis, double price, int copies) {
 
     }
 
