@@ -8,7 +8,6 @@ package MovieStore.controller;
 import MovieStore.Model.dao.DBConnector;
 import MovieStore.Model.dao.DBManager;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
