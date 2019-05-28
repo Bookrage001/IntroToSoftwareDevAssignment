@@ -15,21 +15,21 @@
         <div class="widget user-dashboard-menu">
             <ul>
                 <li>
-                    <a href="AddMovie.jsp"><i class="fa fa-user"></i>Add Movie Listing</a></li>
+                    <a href="AddMovie.jsp"><i class="fa fa-file-video-o"></i>Add Movie Listing</a></li>
                 <li>
-                    <a href="#"><i class="fa fa-bookmark-o"></i> View All Movies <span>0</span></a>
+                    <a href="#"><i class="fa fa-film"></i> View All Movies <span>0</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-file-archive-o"></i>Manage Customers <span>20</span></a>
+                    <a href="#"><i class="fa fa-group"></i>Manage Customers <span>20</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bolt"></i> Orders<span>23</span></a>
+                    <a href="#"><i class="fa fa-cart-arrow-down"></i> Orders<span>23</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-cog"></i> Logout</a>
+                    <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-power-off"></i>Delete Account</a>
+                    <a href="#"><i class="fa fa-trash"></i>Delete Account</a>
                 </li>
             </ul>
         </div>
