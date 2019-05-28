@@ -3,6 +3,7 @@
     Created on : 23/05/2019, 4:52:37 PM
     Author     : Hayley
 --%>
+<%@page import="MovieStore.Model.dao.DBManager"%>
 <%@page import="MovieStore.Model.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,6 +24,8 @@
 
             log = " &lt " + "Guest User" + " &gt";
         }
+        DBManager db = (DBManager) session.getAttribute("manager");
+        db.showActivity();
 
     %>
     <body>
@@ -52,15 +55,14 @@
             </thead>
             <tbody >
                 <tr>
-                    <td class="a"></td>
-                    <td class="a">${log.ID}</td>
+                    <td class="a">${log.logid}</td>
                     <td class="a" >${user.username}</td>
                     <td class="a">${log.status}</td>
                     <td class="a">${log.activity}</td>
                 </tr>
             </tbody>
         </table>
-        <% session.setAttribute("userLog", user); %>
+        <% session.setAttribute("user", user); %>
         <%}else{ %>
         <p class="outline">Welcome Guest Student</p>
         <%}%>
