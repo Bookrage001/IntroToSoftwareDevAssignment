@@ -9,6 +9,7 @@ import MovieStore.Model.User;
 import MovieStore.Model.UserActivity;
 import java.sql.Connection;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -66,17 +67,19 @@ public class DBManager {
     }
 
     //Show Log Database
-    public UserActivity showActivity() throws SQLException {
+    public ArrayList<UserActivity> getActivity() throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM LOG");
+
+        ArrayList<UserActivity> userAct = new ArrayList();
+
         while (rs.next()) {
             int logId = rs.getInt(1);
             String username = rs.getString(2);
             String status = rs.getString(3);
             String activity = rs.getString(4);
 
-            return new UserActivity(logId, username, status, activity);
+            userAct.add(new UserActivity(logId, username, status, activity));
         }
-        
-        return null;
+        return userAct;
     }
 }
