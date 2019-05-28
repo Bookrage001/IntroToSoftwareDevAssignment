@@ -8,18 +8,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- PLUGINS CSS STYLE -->
-        <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Font Awesome -->
-        <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <!-- Fancy Box -->
-        <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-        <!-- CUSTOM CSS -->
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
         <title>Add Movie Listing</title>
     <div class="searchContainer">
         <div id="Logoposition">
@@ -66,12 +54,6 @@
             </div>
         </div>
     </div>
-    <!-- JAVASCRIPTS -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-    <script src="js/scripts.js"></script>
 </body>
 </html>
 
