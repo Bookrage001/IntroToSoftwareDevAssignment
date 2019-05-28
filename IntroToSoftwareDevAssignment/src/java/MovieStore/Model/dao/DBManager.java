@@ -8,6 +8,9 @@ package MovieStore.Model.dao;
 
 import MovieStore.Model.Movie;
 import MovieStore.Model.Order;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.sql.Connection;
 import java.math.BigInteger;
 import java.sql.*;
@@ -46,6 +49,32 @@ public class DBManager {
             movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies));
         }
         return movies;
+    }
+
+    /*
+     *
+     * @Param BigInteger orderId
+     * 
+     * @Param String username;
+     * 
+     * @Param BigInteger movieId;
+     * 
+     * @Paramint amount
+     * 
+     * @Param String status
+     * 
+     * @Param ArrayList<Movie> movies
+     */
+    public void addOrder(BigInteger OrderId, String username, BigInteger movieId, int amount, String status)
+            throws SQLException {
+        try {
+            st.execute("INSERT INTO ORDERS VALUES(" + OrderId + ",'" + username + "','" + movieId + "','" + amount
+                    + "','" + status + ")");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println(e);
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     public void addMovie(int movieID, String title, String genre, String releaseDate, String director, String synopsis,
