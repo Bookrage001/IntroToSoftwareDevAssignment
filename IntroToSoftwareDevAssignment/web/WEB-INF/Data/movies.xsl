@@ -8,10 +8,7 @@
     </xsl:template>
 
     <xsl:template match="movie">
-        <div>
-            <div class="price">
-                <xsl:value-of select="price"/>
-            </div>
+        <div style="padding:20px">
             <img class="movieimg">
                 <xsl:attribute name="src">
                     <xsl:value-of select="poster"/>
@@ -19,14 +16,11 @@
             </img>
             <div align="center">
                 <xsl:value-of select="title"/>
-
-                <div class="Moviebtncontainer">
-                    <div class="MovieAddbtn">
-                        <img src="Images/Cart.png"/>
-                    </div>
-                    <div>
-                        <button class="MovieDetailsbtn">More Details</button>
-                    </div>
+                <div class="Moviebtncontainer" style="text-align:center">
+                    $ <xsl:value-of select="price"/>
+                </div>
+                <div>   
+                    <button class="fa fa-cart-plus"> Add to Cart</button>
                 </div>
             </div>
         </div>

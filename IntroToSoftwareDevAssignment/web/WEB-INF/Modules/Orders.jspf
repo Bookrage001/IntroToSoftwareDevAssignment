@@ -1,0 +1,40 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.io.*" %>
+<%@page import="MovieStore.Model.dao.*"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.Order"%>
+<%@page import="MovieStore.Model.Movie"%>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>ORDER ID</td>
+                <td>MOVIE ID</td>
+                <td>USERNAME</td>
+                <td>AMOUNT</td>
+                <td>STATUS</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+                DBManager db = (DBManager) session.getAttribute("manager");
+                    ArrayList<Order> orders = db.getOrders();
+                    for (Order order : orders) {
+                        request.setAttribute("order", order);
+            %>
+
+            <tr>
+                <td><%= order.getOrderId()%></td>
+                <td><%= order.getMovieId()%></td>
+                <td><%= order.getUsername()%></td>
+                <td><%= order.getAmount()%></td>
+                <td><%= order.getStatus()%></td>
+            </tr>
+            <%
+                }
+            %>
+        </tbody>
+    </table>
+</div>

@@ -154,7 +154,7 @@ select {
 .movie-area {
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
-    background-color: #2196F3;
+    background-color: inherit;
     padding: 10px;
     padding: 0.5%;
     overflow: hidden;
