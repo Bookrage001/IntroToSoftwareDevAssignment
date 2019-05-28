@@ -19,14 +19,13 @@
         </thead>
         <tbody>
             <%
-        DBManager db = (DBManager) session.getAttribute("manager");
-        ArrayList<Order> orders = db.getOrders();
-        for (Order order : orders) {
-            request.setAttribute("order", order);
+                DBManager db = (DBManager) session.getAttribute("manager");
+                    ArrayList<Order> orders = db.getOrders();
+                    for (Order order : orders) {
+                        request.setAttribute("order", order);
+            %>
 
-    %>
-
-    <tr>
+            <tr>
                 <td><%= order.getOrderId()%></td>
                 <td><%= order.getMovieId()%></td>
                 <td><%= order.getUsername()%></td>
@@ -38,7 +37,4 @@
             %>
         </tbody>
     </table>
-
-
-
 </div>
