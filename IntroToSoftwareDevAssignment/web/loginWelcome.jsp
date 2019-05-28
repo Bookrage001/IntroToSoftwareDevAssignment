@@ -22,7 +22,7 @@
 
         DBManager db = (DBManager) session.getAttribute("manager");
         int logId = (new Random()).nextInt(999999);
-        String activity = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy").format(new java.util.Date());
+        String activity = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy").format(new java.util.Date());
 
         db.createLogin(logId, username, "Signed In", activity);
     %>
@@ -41,7 +41,7 @@
         %>
 
         <button class="button" type="button" onclick="location.href = 'index.jsp'" > Main Page </button>
-        <button class="button" type="button" onclick="location.href = 'userLog.jsp'" > My Activity </button>
+        <button class="button" type="button" onclick="location.href = 'userActivity.jsp'" > My Activity </button>
 
         <% } else { %>
 

@@ -70,7 +70,7 @@ public class DBManager {
     public ArrayList<UserActivity> getActivity() throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM LOG");
 
-        ArrayList<UserActivity> userAct = new ArrayList();
+        ArrayList<UserActivity> act = new ArrayList();
 
         while (rs.next()) {
             int logId = rs.getInt(1);
@@ -78,8 +78,25 @@ public class DBManager {
             String status = rs.getString(3);
             String activity = rs.getString(4);
 
-            userAct.add(new UserActivity(logId, username, status, activity));
+            act.add(new UserActivity(logId, username, status, activity));
         }
-        return userAct;
+        return act;
     }
+    
+    //Search by date
+    public ArrayList<UserActivity> searchActivity(String keyword) throws SQLException{
+        ResultSet rs =  st.executeQuery("SELECT * FROM LOG WHERE ACTIVITY LIKE '%" + keyword + "%'");
+        
+        ArrayList<UserActivity> act = new ArrayList();
+        
+         while (rs.next()) {
+           int logId = rs.getInt(1);
+            String username = rs.getString(2);
+            String status = rs.getString(3);
+            String activity = rs.getString(4);
+
+            act.add(new UserActivity(logId, username, status, activity));
+        }
+        return act;
+    } 
 }
