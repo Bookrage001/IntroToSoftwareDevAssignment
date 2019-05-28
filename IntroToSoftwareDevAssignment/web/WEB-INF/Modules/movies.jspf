@@ -1,71 +1,26 @@
-<%@ page pageEncoding="UTF-8" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.Movie"%>
+<%@page import="MovieStore.Model.dao.*"%>
+<%@ page pageEncoding="UTF-8" contentType="text/html" import="java.io.*" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div> 
-    <div class="movie-area">
-        <div class="columns">
-            <img src="Images/posters/greatest movie of all time.jpg">
-            <div caption align="center">
-                Pacific Rim
-                <div class="price">
-                    $35
-                </div>
-                <button class="MovieAddbtn">Add to Cart</button>
-                <button class="MovieDetailsbtn">More Details</button>
-            </div>
-        </div>
-        <div class="columns">
-            <img src="Images/posters/infinitywar.jpg">
-            <div caption align="center">
-                Avengers: Infinity War
-                <div class="price">
-                    $35
-                </div>
-                <button class="MovieAddbtn">Add to Cart</button>
-                <button class="MovieDetailsbtn">More Details</button>
-            </div>
-        </div>
-        <div class="columns">
-            <img src="Images/posters/interstellar.jpg">
-            <div caption align="center">
-                Interstellar
-                <div class="price">
-                    $35
-                </div>
-                <button class="MovieAddbtn">Add to Cart</button>
-                <button class="MovieDetailsbtn">More Details</button>
-            </div>
-        </div>
-        <div class="columns">
-            <img src="Images/posters/pulpfiction.jpg">
-            <div caption align="center">
-                Pulp Fiction
-                <div class="price">
-                    $35
-                </div>
-                <button class="MovieAddbtn">Add to Cart</button>
-                <button class="MovieDetailsbtn">More Details</button>
-            </div>
-        </div>
-        <div class="columns">
-            <img src="Images/posters/tropicthunder.jpg">
-            <div caption align="center">
-                Tropic Thunder
-                <div class="price">
-                    $35
-                </div>
-                <button class="MovieAddbtn">Add to Cart</button>
-                <button class="MovieDetailsbtn">More Details</button>
-            </div>
-        </div>
-        <div class="columns">
-            <img src="Images/posters/jarjar.jpg">
-            <div caption align="center">
-                Star Wars: Episode 1
-                <div class="price">
-                    $35
-                </div>
-                <button class="MovieAddbtn">Add to Cart</button>
-                <button class="MovieDetailsbtn">More Details</button>
-            </div>
-        </div>
-    </div>
+    <c:set var="moviesxml">
+        <Movies>
+            <%
+                DBManager db = (DBManager) session.getAttribute("manager");
+                ArrayList<Movie> list = db.getMovies();
+                for (Movie movies : list) {
+                    request.setAttribute("movies", movies);
+            %>
+            <movie id="${movies.ID}">
+                <title>${movies.title}</title>
+                <price>${movies.price}</price>
+            </movie>
+            <%}%>
+        </Movies>
+        <c:import url="WEB-INF/Data/movies.xsl" var="moviesxslt"/>
+        <x:transform xml="${moviesxml}" xslt="${moviesxslt}"/>
+    </c:set>
 </div>

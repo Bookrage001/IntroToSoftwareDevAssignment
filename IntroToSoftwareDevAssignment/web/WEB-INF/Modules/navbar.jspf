@@ -5,27 +5,25 @@
 //    if (loggedInUser != null) {
     if (true) {
 %>
-
-<link rel="stylesheet" href="css/stylesheet.css"/>
-
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 
     <div align="right" class="loginStatus">Logged in as: 
     <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
     </div>
 <div class="nav">
     <a href="index.jsp"> Home</a> 
-    <a href="bestsellers.jsp"> Best Sellers </a> 
-    <a href="newreleases.jsp"> New Releases </a> 
+    <a href="#"> Best Sellers </a> 
+    <a href="#"> New Releases </a> 
     <div class="nav-right">
-    <a href="account.jsp" style="border-left: 1px solid black">My Account</a>
+    <a href="AddMovie.jsp" style="border-left: 1px solid black">Add Movie</a>
     <a href="logout.jsp">Logout</a>
-    <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+    <a href="Orders.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a>
     </div>
 </div>
     
 
 <% } else {%>
 
-<div align="center"><a href="index.jsp">Index Page</a> | <a href="checkout.jsp">Checkout Page</a> | <a href="register.jsp">Register</a> | <a href="login.jsp">Login</a></div>
+<div align="center"><a href="index.jsp">Index Page</a> | <a href="#">Checkout Page</a> | <a href="register.jsp">Register</a> | <a href="login.jsp">Login</a></div>
 
 <% }%>

@@ -5,44 +5,60 @@
  */
 package MovieStore.Model;
 
-import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+
 
 /**
  *
  * @author Mark Galulu
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement()
-public class Movie {
-
-    @XmlAttribute 
-    private int id;
+public class Movie implements Serializable{
+ 
+    private int Id;
     private String title;
     private String genre;
     private String releaseDate;
-    private String price;
-    private String copies;
-    private String summary;
+    private String director;
+    private String synopsis;
+    private double price;
+    private int copies;
 
+    private ArrayList<Movie> list = new ArrayList<Movie>();
     public Movie() {
     }
 
-    public Movie(int id, String title, String genre, String releaseDate, String price, String copies, String summary) {
-        this.id = id;
+
+    public Movie(int Id, String title, String genre, String releaseDate, String director, String synopsis, double price, int copies) {
+        this.Id = Id;
         this.title = title;
         this.genre = genre;
         this.releaseDate = releaseDate;
+        this.director = director;
+        this.synopsis = synopsis;
         this.price = price;
         this.copies = copies;
-        this.summary = summary;
+    }
+    
+    public Movie getMovieID(int ID){
+        for(Movie movie : list){
+            if(getID() == ID){
+                return movie;
+            }
+        }
+        return null;
+    }
+    
+    public Movie(ArrayList<Movie> list){
+        this.list = list;
     }
 
-    public int getId() {
-        return id;
+    public int getID() {
+        return Id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setID(int Id) {
+        this.Id = Id;
     }
 
     public String getTitle() {
@@ -69,32 +85,35 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public String getPrice() {
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getSynopsis() {
+        return synopsis;
+    }
+
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
+    }
+
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public String getCopies() {
+    public int getCopies() {
         return copies;
     }
 
-    public void setCopies(String copies) {
+    public void setCopies(int copies) {
         this.copies = copies;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" + "id=" + id + ", title=" + title + ", genre=" + genre + ", releaseDate=" + releaseDate + ", price=" + price + ", copies=" + copies + '}';
     }
 }
