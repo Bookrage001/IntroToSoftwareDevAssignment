@@ -65,6 +65,24 @@ public class DBManager {
     public void createLogout(int logId, String username, String status, String activity) throws SQLException {
         st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
     }
+    
+    //Find user log in database
+    public UserActivity getUser(String username) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE USERNAME = '" + username + "'");
+        while (rs.next()) {
+            String userid = rs.getString(2);
+
+            if (userid.equals(username)) {
+
+                int logId = rs.getInt(1);
+                String status = rs.getString(3);
+                String activity = rs.getString(4);
+
+                return new UserActivity(logId, userid, status, activity);
+            }
+        }
+        return null;
+    }
 
     //Show Log Database
     public ArrayList<UserActivity> getActivity() throws SQLException {
@@ -82,15 +100,15 @@ public class DBManager {
         }
         return act;
     }
-    
+
     //Search by date
-    public ArrayList<UserActivity> searchActivity(String keyword) throws SQLException{
-        ResultSet rs =  st.executeQuery("SELECT * FROM LOG WHERE ACTIVITY LIKE '%" + keyword + "%'");
-        
+    public ArrayList<UserActivity> searchActivity(String keyword) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE ACTIVITY LIKE '%" + keyword + "%'");
+
         ArrayList<UserActivity> act = new ArrayList();
-        
-         while (rs.next()) {
-           int logId = rs.getInt(1);
+
+        while (rs.next()) {
+            int logId = rs.getInt(1);
             String username = rs.getString(2);
             String status = rs.getString(3);
             String activity = rs.getString(4);
@@ -98,5 +116,5 @@ public class DBManager {
             act.add(new UserActivity(logId, username, status, activity));
         }
         return act;
-    } 
+    }
 }

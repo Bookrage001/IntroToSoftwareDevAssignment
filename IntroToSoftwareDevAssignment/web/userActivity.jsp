@@ -4,6 +4,7 @@
     Author     : Hayley
 --%>
 
+<%@page import="MovieStore.Model.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="MovieStore.Model.UserActivity"%>
 <%@page import="MovieStore.Model.dao.DBManager"%>
@@ -25,18 +26,18 @@
     }
 
     .beta tr:nth-child(even) {
-        background-color: #dddddd;
+        background-color: #f2f2f2;
     }
 
     .beta tr:hover{
         background-color: #dddddd;
     }
-    
+
     searchcontainer {
         margin: 25px;
     }
-    
-    
+
+
 </style>
 
 <html>
@@ -44,11 +45,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Activity Log</title>
-    
+
     </head>
 
     <body align="center">
-         <div class="container">
+        <div class="container">
             <header align="left">
                 <div id="Logoposition">
                     <img src="Images/RaiMovieLogoBlue.png" id="Logo">
@@ -64,11 +65,11 @@
             <%@include file="WEB-INF/Modules/navbar.jspf" %>
         </div>
     </content>
-    
+
     <searchcontainer>
         <%@include file="WEB-INF/Modules/searchActivity.jspf"%>
     </searchcontainer>
-            
+
     <table class="beta" align="center">
         <thead>
             <tr>
@@ -80,10 +81,11 @@
         <tbody>
 
             <%
-                DBManager db = (DBManager) session.getAttribute("manager");
+                DBManager db = (DBManager) session.getAttribute("manager");              
                 ArrayList<UserActivity> list = db.getActivity();
                 for (UserActivity activity : list) {
-                    request.setAttribute("activity", activity);
+                    request.setAttribute("activity", activity);       
+
             %>            
 
             <tr>

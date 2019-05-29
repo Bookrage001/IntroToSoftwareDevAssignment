@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Sign in
-    Created on : 13/04/2019, 11:24:14 AM
-    Author     : Hayley
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>

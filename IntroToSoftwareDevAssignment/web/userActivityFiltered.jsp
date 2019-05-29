@@ -25,7 +25,7 @@
     }
 
     .beta tr:nth-child(even) {
-        background-color: #dddddd;
+        background-color: #f2f2f2;
     }
 
     .beta tr:hover{
