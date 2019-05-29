@@ -65,7 +65,7 @@ public class DBManager {
     public void createLogout(int logId, String username, String status, String activity) throws SQLException {
         st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
     }
-    
+
     //Find user log in database
     public UserActivity getUser(String username) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE USERNAME = '" + username + "'");
@@ -101,7 +101,7 @@ public class DBManager {
         return act;
     }
 
-    //Search by date
+    // Search by date
     public ArrayList<UserActivity> searchActivity(String keyword) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE ACTIVITY LIKE '%" + keyword + "%'");
 
@@ -116,5 +116,24 @@ public class DBManager {
             act.add(new UserActivity(logId, username, status, activity));
         }
         return act;
+    }
+
+    //Check if Activity exists in database
+    public boolean checkActivity(int ID) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE LOGID = '" + ID + "'");
+        while (rs.next()) {
+            String userid = rs.getString(1);
+
+            if (userid.equals(ID)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Delete Activity from Log
+    public void deleteActivity(int logId) throws SQLException {
+        //code for delete-operation
+        st.executeQuery("DELETE FROM LOG WHERE LOGID ='" + logId + "'");
     }
 }

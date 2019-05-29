@@ -74,6 +74,7 @@
                 <table class="beta" align="center">
                     <thead>
                         <tr>
+                            <td>LOG ID</td>
                             <td>USERNAME</td>
                             <td>ACTIVITY</td>
                             <td>STATUS</td>
@@ -90,6 +91,7 @@
                         %>
 
                         <tr>
+                            <td><a <a class="link" href="viewActivity.jsp"><%= activity.getLogId()%></a></td>
                             <td><%= activity.getUsername()%></td>
                             <td><%= activity.getActivity()%></td>
                             <td><%= activity.getStatus()%></td>
