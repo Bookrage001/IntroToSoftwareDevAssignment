@@ -11,26 +11,31 @@
 <!DOCTYPE html>
 
 <style>
-    table {
+    .beta table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 75%;
+
     }
 
-    td, th {
+    .beta td, th {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
     }
 
-    tr:nth-child(even) {
+    .beta tr:nth-child(even) {
         background-color: #dddddd;
     }
-    
-    searchContainer {
+
+    .beta tr:hover{
+        background-color: #dddddd;
+    }
+
+    searchcontainer {
         margin: 25px;
     }
-    
+
 </style>
 
 <html>
@@ -48,7 +53,6 @@
                     <div id="Logoposition">
                         <img src="Images/RaiMovieLogoBlue.png" id="Logo">
                     </div>
-
                     <div id="Search">
                         <%@include file="WEB-INF/Modules/search.jspf"%>
                     </div>
@@ -61,15 +65,13 @@
             </div>
         </content>
 
-        <searchContainer>
+        <searchcontainer>
             <%@include file="WEB-INF/Modules/searchActivity.jspf"%>
         </searchcontainer>
 
-        <div class="searchContainer"/>
-        <%@include file="WEB-INF/Modules/searchActivity.jspf"%>
         <p><font color="blue"><a href="userActivity.jsp">View full log<a/>
 
-                <table align="center">
+                <table class="beta" align="center">
                     <thead>
                         <tr>
                             <td>USERNAME</td>
