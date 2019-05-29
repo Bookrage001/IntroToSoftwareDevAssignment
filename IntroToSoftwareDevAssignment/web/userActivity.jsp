@@ -14,7 +14,7 @@
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
-        width: 100%;
+        width: 75%;
     }
 
     td, th {
@@ -26,24 +26,45 @@
     tr:nth-child(even) {
         background-color: #dddddd;
     }
+    
+    searchContainer {
+        margin: 25px;
+    }
+    
 </style>
-
-
-
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>User Activity Log</title>
+        <title>Activity Log</title>
+    
     </head>
 
-    <body>
-        <input type="text" placeholder="Search.." name="keyword">
-        <button type="submit"><i class="fa fa-search"></i></button>
+    <body align="center">
+         <div class="container">
+            <header align="left">
+                <div id="Logoposition">
+                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+                </div>
 
-    </form>
-    <table>
+                <div id="Search">
+                    <%@include file="WEB-INF/Modules/search.jspf"%>
+                </div>
+            </header>
+        </div>
+
+    <content>
+        <div class ="container">
+            <%@include file="WEB-INF/Modules/navbar.jspf" %>
+        </div>
+    </content>
+    
+    <searchContainer>
+        <%@include file="WEB-INF/Modules/searchActivity.jspf"%>
+    </searchcontainer>
+            
+    <table align="center">
         <thead>
             <tr>
                 <td>USERNAME</td>
@@ -52,20 +73,20 @@
             </tr>
         </thead>
         <tbody>
+
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
                 ArrayList<UserActivity> list = db.getActivity();
                 for (UserActivity activity : list) {
                     request.setAttribute("activity", activity);
-
-
-            %>
+            %>            
 
             <tr>
                 <td><%= activity.getUsername()%></td>
                 <td><%= activity.getActivity()%></td>
                 <td><%= activity.getStatus()%></td>
             </tr>
+
             <%
                 }
             %>

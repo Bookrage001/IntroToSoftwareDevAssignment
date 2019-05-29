@@ -20,19 +20,40 @@
         <title>Logout</title>
     </head>
 
-    <body>
-        <%
-            User user = (User) session.getAttribute("userLogin");
-            String username = user.getUsername();
+    <body align="center">
 
-            DBManager db = (DBManager) session.getAttribute("manager");
-            int logId = (new Random()).nextInt(999999);
-            String activity = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy").format(new java.util.Date());
+        <div class="container">
+            <header align="left">
+                <div id="Logoposition">
+                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+                </div>
 
-            db.createLogout(logId, username, "Signed Out", activity);
-        
-            session.invalidate();
-        %>
-        <p class="outline">You have been logged out. Click <a class="link" href="index.jsp">here</a> to return to the home page.</p>
-    </body>
+                <div id="Search">
+                    <%@include file="WEB-INF/Modules/search.jspf"%>
+                </div>
+            </header>
+        </div>
+
+
+    <content>
+        <div class ="container">
+            <%@include file="WEB-INF/Modules/navbar.jspf" %>
+            <div id="collection"/>
+        </div>
+    </content>
+
+    <%
+        User user = (User) session.getAttribute("userLogin");
+        String username = user.getUsername();
+
+        DBManager db = (DBManager) session.getAttribute("manager");
+        int logId = (new Random()).nextInt(999999);
+        String activity = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy").format(new java.util.Date());
+
+        db.createLogout(logId, username, "Signed Out", activity);
+
+        session.invalidate();
+    %>
+    <p class="outline">You have been logged out. Click <a class="link" href="index.jsp">here</a> to return to the home page.</p>
+</body>
 </html>

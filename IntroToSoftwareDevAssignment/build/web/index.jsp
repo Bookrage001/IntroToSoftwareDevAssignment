@@ -9,7 +9,6 @@
 <%@ page contentType="text/html"%>
 <%@ page import="java.io.*" %>
 
-<% String msFilePath = application.getRealPath("WEB-INF");%>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
@@ -38,6 +37,7 @@
         });
     });
 </script>
+
 <body align="center">
     <div class="container">
         <header align="left">
