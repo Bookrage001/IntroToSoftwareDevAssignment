@@ -23,6 +23,8 @@ public class DBManager {
         st = conn.createStatement();
     }
 
+    //Creates an Arraylist of movies from the database and save it into a temporary
+    //list which will be then called to the jsp
     public ArrayList<Movie> getMovies() throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM MOVIES");
 
@@ -43,6 +45,7 @@ public class DBManager {
         return movies;
     }
 
+    //Add movies. simple query
     public void addMovie(int movieID, String title, String genre, String releaseDate,
             String director, String synopsis, double price, int copies) throws SQLException {
 
@@ -50,6 +53,7 @@ public class DBManager {
                 + "','" + director + "','" + synopsis + "'," + price + "," + copies + ")");
     }
     
+    //Creates an Arraylist of movies containing a specific keyword and storing it to a temporary list
     public ArrayList<Movie> searchMovie(String keyword) throws SQLException{
         keyword = keyword.toUpperCase();
         ResultSet rs =  st.executeQuery("SELECT * FROM MOVIES WHERE UPPER(TITLE) LIKE '%" + keyword + "%' OR UPPER(GENRE) LIKE '%" + keyword + "%'");
@@ -70,7 +74,10 @@ public class DBManager {
         }
         return movies;
     }   
-
+    
+    //Retrieve the Movie details using a specific movie id
+    
+    
     public void UpdateMovie(int movieID, String title, String genre, String releaseDate,
             String director, String synopsis, double price, int copies) {
 

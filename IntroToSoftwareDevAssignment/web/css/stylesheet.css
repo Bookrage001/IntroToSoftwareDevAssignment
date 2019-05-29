@@ -61,8 +61,6 @@ header {
     display: inline-block;
 }
 
-#RefineSearch {}
-
 .price {
     border-radius: 5px;
     border: 1px solid black;
@@ -192,14 +190,6 @@ header {
     border: 1px solid black;
     margin-top: 1%;
     font-family: Arial;
-}
-
-.refinesearch li {
-    font-size: 0.8em;
-}
-
-.refinesearch h3 {
-    font-size: 1.2em;
 }
 
 /******Style for Home.jsp******/

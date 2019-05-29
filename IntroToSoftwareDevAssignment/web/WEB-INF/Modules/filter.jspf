@@ -1,23 +1,33 @@
-<%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+<style>
+    h1{
+        color: #45B39D;
+    }
+
+    h3, li, a{
+        color: whitesmoke;
+    }
+
+    li:hover, a:hover{
+        color: #45B39D;
+    }
+</style>
 <div class="refinesearch">
     <h1>Refine:</h1>
-    <h3>
-        Price:
-    </h3>
-    <li>
-        All Prices
-    </li>
-    <li>
-        $0-$20
-    </li>
-    <li>
-        $20-$40
-    </li>
-    <li>
-        $40-$60
-    </li>
-    <li>
-        Over $60
-    </li>
+    <div>
+        <h3>Genres:</h3>
+        <li><a href="#">Action</a></li>
+        <li><a href="">Adventure</a></li>
+        <li><a href="">Family</a></li>
+        <li><a href="">Fantasy</a></li>
+        <li><a href="">Sci-fi</a></li>
+        <li><a href="">Thriller</a></li>
+    </div>
+    <div style="padding-top: 10px;">
+        <h3>Price:</h3>
+        <li><a href="">$0 - $10</a></li>
+        <li><a href="">$10 - $30</a></li>
+        <li><a href="">$30 - $50</a></li>
+        <li><a href="">Over $50</a></li>
+    </div>
 </div>
