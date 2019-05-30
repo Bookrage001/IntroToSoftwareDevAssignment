@@ -17,15 +17,14 @@ function updateForm() {
         console.log(value);
 
         hiddenInput.type = 'hidden'
-        hiddenInput.name = 'myarray[]'
+        hiddenInput.name = 'movieArray'
         hiddenInput.value = value
 
         myForm.appendChild(hiddenInput)
     })
-    myForm.submit();
 }
 </script>
-    <form action="checkout.jsp" method="get" id="moviesArrayForm">
+    <form action="checkout.jsp" method="POST" id="moviesArrayForm">
     </form>
     <div align="right" class="loginStatus">Logged in as: 
     <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
@@ -37,9 +36,7 @@ function updateForm() {
     <div class="nav-right">
     <a href="AddMovie.jsp" style="border-left: 1px solid black">Add Movie</a>
     <a href="logout.jsp">Logout</a>
-    <input type="image" onClick="updateForm()"  src="Images/Cart.png" form="form1" value="Submit" height="15" width="15" padding="10%" alt="check out" />
-    <%-- <a href="Orders.jsp" > --%>
-    <%-- <img type="button" src="Images/Cart.png" onClick="updateForm()" height="15" width="15"> Cart </a> --%>
+    <input type="image" onClick="updateForm()"  src="Images/Cart.png" form="moviesArrayForm" value="Submit" height="15" width="15" padding="10%" alt="check out" />
     </div>
 </div>
 
