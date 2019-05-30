@@ -117,18 +117,20 @@ public class DBManager {
         }
         return act;
     }
+    
+//  Retrive activity log details
+    public UserActivity getActivityDetails(int id) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE LOGID =" + id);
 
-    //Check if Activity exists in database
-    public boolean checkActivity(int ID) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE LOGID = '" + ID + "'");
         while (rs.next()) {
-            String userid = rs.getString(1);
+            int logId = rs.getInt(1);
+            String username = rs.getString(2);
+            String status = rs.getString(3);
+            String activity = rs.getString(4);
 
-            if (userid.equals(ID)) {
-                return true;
-            }
+            return new UserActivity(logId, username, status, activity);
         }
-        return false;
+        return null;
     }
 
     // Delete Activity from Log

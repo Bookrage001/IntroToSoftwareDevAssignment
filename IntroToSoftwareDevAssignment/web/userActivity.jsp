@@ -69,37 +69,39 @@
     <searchcontainer>
         <%@include file="WEB-INF/Modules/searchActivity.jspf"%>
     </searchcontainer>
-    
+
 
     <table class="beta" align="center">
         <thead>
             <tr>
-                <td>LOG ID</td>
                 <td>USERNAME</td>
                 <td>ACTIVITY</td>
                 <td>STATUS</td>
+                <td>DETAILS</td>
             </tr>
         </thead>
         <tbody>
 
             <%
-                DBManager db = (DBManager) session.getAttribute("manager");              
+                DBManager db = (DBManager) session.getAttribute("manager");
                 ArrayList<UserActivity> list = db.getActivity();
                 for (UserActivity activity : list) {
-                    request.setAttribute("activity", activity); 
-            %>            
+            %>
 
+        <form method="post" action="viewActivity.jsp">
             <tr>
-                <td><a <a class="link" href="viewActivity.jsp"><%= activity.getLogId()%></a></td>
                 <td><%= activity.getUsername()%></td>
                 <td><%= activity.getActivity()%></td>
                 <td><%= activity.getStatus()%></td>
+                <td><button type="submit" name="LogId" value="<%= activity.getLogId()%>">View</button></td>
             </tr>
+        </form>            
 
-            <%
-                }
-            %>
-        </tbody>
-    </table>
+
+        <%
+            }
+        %>
+    </tbody>
+</table>
 </body>
 </html>
