@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import MovieStore.Model.Cart;
 import MovieStore.Model.dao.*;
 
 public class ConnServlet extends HttpServlet {
@@ -41,6 +42,8 @@ public class ConnServlet extends HttpServlet {
         }
         //session.setAttribute("db", db);
         session.setAttribute("manager", manager);
+        Cart cart = new Cart();
+        session.setAttribute("cart", cart);
         //session.setAttribute("conn", conn);
     }
 

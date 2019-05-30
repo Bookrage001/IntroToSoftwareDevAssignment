@@ -12,7 +12,6 @@ public class Order implements Serializable {
     private BigInteger movieId; // PK
     private int amount;
     private String status;
-    private ArrayList<Movie> movies; // if i get a chance to do a get for these ...
     private Movie movie;
 
     public Order() {
@@ -81,14 +80,6 @@ public class Order implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public void addMovie(Movie movie) {
-        this.movies.add(movie);
-    }
-
-    public void removeMovie(Movie movie) {
-        this.movies.remove(movie);
     }
 
     public Movie getMovie() {

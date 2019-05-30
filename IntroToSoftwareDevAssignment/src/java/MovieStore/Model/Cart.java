@@ -24,13 +24,17 @@ public class Cart implements Serializable {
     }
 
     public void addOrder(Movie movie, int amount) {
-        this.username = "annonomous";
-        Order order = new Order(movie, amount, username);
+        this.username = "anonymous";
+        Order order = new Order(movie, amount, this.username);
         orders.add(order);
     }
 
     public void removeItem(Order order) {
         orders.remove(order);
+    }
+
+    public ArrayList<Order> getOrders(){
+        return orders;
     }
 
     public void setAmount(Movie movie, int amount) {

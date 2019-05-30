@@ -230,3 +230,22 @@ select {
 .refinesearch h3 {
     font-size: 1.2em;
 }
+.cart {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid white;
+    width: 50%;
+
+}
+.cart tbody tr:hover {background-color: #f5f5f5;}
+.cart thead {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .cart tr:nth-child(even) {background-color: #dddddd;}
+  .cart td:last-child {
+      text-align: center;
+  }

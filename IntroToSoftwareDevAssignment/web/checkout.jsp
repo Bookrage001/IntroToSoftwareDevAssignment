@@ -34,19 +34,52 @@
         <div class ="container">
             <%@include file="WEB-INF/Modules/navbar.jspf" %>
             <div id="collection">
-                <%
-                    DBManager db = (DBManager) session.getAttribute("manager");
-                    String[] moviesArray = request.getParameterValues("movieArray");
-                    Cart cart = new Cart();
+            <%-- just some logic to controll the cart --%>
+            <%
+                DBManager db = (DBManager) session.getAttribute("manager");
+                String[] moviesArray = request.getParameterValues("movieArray");
+                Cart cart = (Cart) session.getAttribute("cart");
+                if(moviesArray == null || moviesArray.length == 0 ) {
                     %>
+                    NO ORDERS
                     <%
+                } else {
                     for(String movieId : moviesArray) {
                         Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
-                %>
-                <%=movieId%>,
-                <%
+                        cart.addOrder(movie,1,"anonymous");
                     }
+                    ArrayList<Order> orders = cart.getOrders();
                 %>
+                <table class="cart">
+                    <thead>
+                        <tr><b>
+                            <td>Title</td>
+                            <td>Genre</td>
+                            <td>ReleaseDate</td>
+                            <td>Director</td>
+                            <td>Price</td>
+                            <td></td>
+                        </b></tr>
+                    </thead>
+                    <tbody>
+                        <%   
+                            
+                            for (Order order: orders) {
+                        %>
+                                <tr>
+                                <td><%=order.getMovie().getTitle()%></td>
+                                <td><%=order.getMovie().getGenre()%></td>
+                                <td><%=order.getMovie().getReleaseDate()%></td>
+                                <td><%=order.getMovie().getDirector()%></td>
+                                <td>$<%=order.getMovie().getPrice()%></td>
+                                <td><button>Remove</button></td>
+                                </tr>
+                            <%
+                            }
+                }
+                        %>
+                    </tbody>
+                </table>
             </div>
         </div>
     </content>
