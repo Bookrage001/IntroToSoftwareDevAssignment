@@ -3,6 +3,7 @@
     Created on : May 28, 2019, 4:36:02 PM
     Author     : Chen
 --%>
+<%@page import="javax.xml.registry.infomodel.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +14,7 @@
     </head>
     <body>
         <%
-            User  = (User) session.getAttribute("user");
+            user  = (User) session.getAttribute("user");
         %>
         <table class="account_table">
             <thead>
@@ -28,12 +29,11 @@
             </thead>
             <tbody >
                 <tr>
-                    <td>${student.ID}</td>
-                    <td>${student.name}</td>
-                    <td>${student.dob}</td>
-                    <td>${student.email}</td>
-                    <td>${student.password}</td>
-                    <td>${student.favcol}</td>
+                    <td>${customer.ID}</td>
+                    <td>${customer.name}</td>
+                    <td>${custoemr.dob}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.password}</td>
                 </tr>
             </tbody>
         </table>

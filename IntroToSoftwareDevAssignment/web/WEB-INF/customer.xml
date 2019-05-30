@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/students.xsl"?>
+
+<students xmlns="http://www.uts.edu.au/31284/wsd-students"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-students students.xsd">
+    <customer>
+        <ID>123456</ID>
+        <email>neuer@uts.com</email>
+        <name>Manuel Nueur</name>
+        <password>blahblah123</password>   
+        <dob>1988-03-23</dob>
+       
+    </customer>
+    <customer>  
+        <ID>111222</ID>     
+        <email>Oli.khan@bloggs.com</email>
+        <name>Oliver Khan</name>
+        <password>football555</password>     
+        <dob>1990-11-28</dob>
+        <favoriteColor>#42f4cb</favoriteColor>
+    </custoemr>
+    <custoemr>  
+        <ID>333444</ID>     
+        <email>muller@uts.com</email>
+        <name>Thomas Muller</name>
+        <password>allstars123</password>     
+        <dob>1990-11-28</dob>
+        <favoriteColor>#dcf441</favoriteColor> 
+    </custoemr>
+    <customer>   
+        <ID>555666</ID>    
+        <email>drexler@gmail.com</email>
+        <name>Julian Drexler</name>
+        <password>worldbest777</password>     
+        <dob>1990-11-28</dob>
+        <favoriteColor>#41b2f4</favoriteColor> 
+    </customer>
+    <scustomer> 
+        <ID>777888</ID>      
+        <email>kroos@hotmail.com</email>
+        <name>Tony Kroos</name>
+        <password>happyfeet888</password>     
+        <dob>1990-11-28</dob>
+        <favoriteColor>#41f4ee</favoriteColor> 
+    </customer>
+</custoemr>
+</root>
