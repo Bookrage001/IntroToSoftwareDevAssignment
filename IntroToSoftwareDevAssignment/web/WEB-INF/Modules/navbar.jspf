@@ -6,7 +6,27 @@
     if (true) {
 %>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<script>
+function updateForm() {
+    console.log("Updateing form");
+    
+    var myForm = document.getElementById('moviesArrayForm')
 
+    moviesArray.forEach(function (value) {
+        var hiddenInput = document.createElement('input')
+        console.log(value);
+
+        hiddenInput.type = 'hidden'
+        hiddenInput.name = 'myarray[]'
+        hiddenInput.value = value
+
+        myForm.appendChild(hiddenInput)
+    })
+    myForm.submit();
+}
+</script>
+    <form action="checkout.jsp" method="get" id="moviesArrayForm">
+    </form>
     <div align="right" class="loginStatus">Logged in as: 
     <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
     </div>
@@ -17,10 +37,11 @@
     <div class="nav-right">
     <a href="AddMovie.jsp" style="border-left: 1px solid black">Add Movie</a>
     <a href="logout.jsp">Logout</a>
-    <a href="Orders.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a>
+    <input type="image" onClick="updateForm()"  src="Images/Cart.png" form="form1" value="Submit" height="15" width="15" padding="10%" alt="check out" />
+    <%-- <a href="Orders.jsp" > --%>
+    <%-- <img type="button" src="Images/Cart.png" onClick="updateForm()" height="15" width="15"> Cart </a> --%>
     </div>
 </div>
-    
 
 <% } else {%>
 

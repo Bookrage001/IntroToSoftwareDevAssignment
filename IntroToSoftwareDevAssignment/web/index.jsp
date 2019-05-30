@@ -19,6 +19,18 @@
         <title>Home Page</title>
     </head>
     <body align="center">
+    <script>
+    var moviesArray = [];
+    function addMovie(movieId){
+        console.log(movieId);
+        if (moviesArray == undefined || moviesArray == null) {
+            moviesArray[0] = movieId;
+        } else if (! moviesArray.includes(movieId)) {
+            moviesArray.push(movieId);
+        }
+        console.log(moviesArray);
+    }
+    </script>
         <div class="container">
             <header align="left">
                 <div id="Logoposition">
@@ -36,27 +48,27 @@
                 <div id="refine">
                     <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
                 </div>
-                <div id="movies">
-                    <c:set var="Movies">
-                        <Movies>
-                            <%
-                                //Add new session for all books
-                                DBManager db = (DBManager) session.getAttribute("manager");
-                                ArrayList<Movie> list = db.getMovies();
-                                for (Movie movies : list) {
-                                    request.setAttribute("movies", movies);
-                            %>
-                            <movie id="${movies.ID}">
-                                <title>${movies.title}</title>
-                                <price>${movies.price}</price>
-                            </movie>
-                            <%}%>
-
-                        </Movies>
-                    </c:set>
-
-                    <c:import url="WEB-INF/Data/movies.xsl" var="moviesxslt"/>
-                    <x:transform xml="${Movies}" xslt="${moviesxslt}"/>
+                <div class="movie-area ">
+                    <%
+                        //Add new session for all books
+                        DBManager db = (DBManager) session.getAttribute("manager");
+                        ArrayList<Movie> list = db.getMovies();
+                        for (Movie movie : list) {
+                    %>
+                    <div style="padding:20px" >
+                        <img class="movieimg" img='' />
+                        <%-- TOOD why is there no poster on the movies object --%>
+                        <div align="center">
+                            <%=movie.getTitle()%>
+                            <div class="Moviebtncontainer" style="text-align:center">
+                                <%-- $<%=moive.getPrice()%> --%>
+                            </div>
+                            <div>
+                                <button onclick="addMovie( <%=movie.getID()%>)" class="fa fa-cart-plus"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>
