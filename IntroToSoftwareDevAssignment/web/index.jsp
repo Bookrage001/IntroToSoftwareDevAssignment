@@ -22,26 +22,27 @@
             <div id="refine">
                 <%@include file="WEB-INF/Modules/filter.jspf" %>
             </div>
-            <div id="movies">
-                 <%
+            <div class="movie-area">
+                <%
                     //Add new session for all books
                     DBManager db = (DBManager) session.getAttribute("manager");
                     ArrayList<Movie> list = db.getMovies();
                     for (Movie movies : list) {
                 %>
-            <form method="post" action="movieDetails.jsp">
-                <tr>
-                    <td><input type="hidden" name="movieID" value="<%= movies.getID()%>"></td>
-                    <td><%= movies.getID()%></td>
-                    <td><%= movies.getTitle()%></td>
-                    <td><%= movies.getPrice()%></td>   
-                    <td><button type="submit">details</button></td>
-                </tr>
-            </form>
-
-            <%
-                }
-            %>
+                <form method="post" action="movieDetails.jsp">
+                    <div style="padding:20px" >
+                        <img class="movieimg" img='' />
+                        <div align="center">
+                            <input type="hidden" name="movieID" value="<%= movies.getID()%>">
+                            <%= movies.getTitle()%> <br>
+                            $ <%= movies.getPrice()%> AUD
+                        </div>
+                        <button type="submit">details</button>
+                    </div>
+                </form>
+                <%
+                    }
+                %>
             </div>
         </div>
     </div>

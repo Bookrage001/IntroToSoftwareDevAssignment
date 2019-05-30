@@ -26,27 +26,7 @@
             <div class="row">
                 <%@include file="WEB-INF/Modules/staffManagement.jspf" %>
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-                   <div id="movies">
-                 <%
-                    //Add new session for all books
-                    DBManager db = (DBManager) session.getAttribute("manager");
-                    ArrayList<Movie> list = db.getMovies();
-                    for (Movie movies : list) {
-                %>
-            <form method="post" action="deleteMovie.jsp">
-                <tr>
-                    <td><input type="hidden" name="movieID" value="<%= movies.getID()%>"></td>
-                    <td><%= movies.getID()%></td>
-                    <td><%= movies.getTitle()%></td>
-                    <td><%= movies.getPrice()%></td>   
-                    <td><button type="submit">Delete</button></td>
-                </tr>
-            </form>
-
-            <%
-                }
-            %>
-            </div>
+                    <%@include file="WEB-INF/Modules/deleteMovie.jspf" %>
                 </div>
             </div>
         </div>

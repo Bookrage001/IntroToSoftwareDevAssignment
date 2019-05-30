@@ -29,22 +29,27 @@
                 <%@include file="WEB-INF/Modules/filter.jspf" %>
             </div>
             <div id="movies">
-                <% 
-                String mov = request.getParameter("movieID");
-                int movieID = Integer.parseInt(mov);
-                //Add new session for all books
-                DBManager db = (DBManager) session.getAttribute("manager");
-                Movie move = db.getMovieDetails(movieID);
-                
-            %>
-            
-            <p><%= mov %></p>
-            <p><%= move.getDirector() %></p>
-            <p><%= move.getTitle() %></p>
-            <p><%= move.getSynopsis() %></p>
-            <p><%= move.getReleaseDate() %></p>
-            <p><%= move.getGenre() %></p>
-            <p><%= move.getID() %></p>
+                <%
+                    String mov = request.getParameter("movieID");
+                    int movieID = Integer.parseInt(mov);
+                    //Add new session for all books
+                    DBManager db = (DBManager) session.getAttribute("manager");
+                    Movie move = db.getMovieDetails(movieID);
+
+                %>
+                <div style="padding: 20px;">
+                    <div style="float:left; text-align: justify; width: 450px;">
+                        <h4><b> Title:</b> <%= move.getTitle()%></h4><br>
+                        <h5><b> Genre:</b> <%= move.getGenre()%></h5><br>
+                        <h5><b> Director: </b> <%= move.getDirector()%></h5><br>
+                        <h5><b> Release Date: </b> <%= move.getReleaseDate()%></h5> <br> 
+                        <h5><b> Price: $</b> <%= move.getPrice()%></h5> <br> 
+                        <h5><b> Synopsis:<br> </b> <%= move.getSynopsis()%></h5> <br> 
+                    </div>
+                    <div>
+                        <img class="movieimg" src="Images/posters/ENDGAME.jpg"  style="float:right; width: 260px; height: 320px"/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

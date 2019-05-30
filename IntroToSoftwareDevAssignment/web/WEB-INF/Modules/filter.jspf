@@ -16,18 +16,18 @@
     <h1>Refine:</h1>
     <div>
         <h3>Genres:</h3>
-        <li name="Action"><a href="filter.jsp">Action</a></li>
-        <li name="Adventure"><a href="">Adventure</a></li>
-        <li name="Family"><a href="">Family</a></li>
-        <li name="Fantasy"><a href="">Fantasy</a></li>
-        <li name="Scifi"><a href="">Sci-fi</a></li>
-        <li name="Thriller"><a href="">Thriller</a></li>
+        <li name="Action">Action</li>
+        <li name="Adventure">Adventure</li>
+        <li name="Family">Family</li>
+        <li name="Fantasy">Fantasy</li>
+        <li name="Scifi">Sci-fi</li>
+        <li name="Thriller">Thriller</li>
     </div>
     <div style="padding-top: 10px;">
         <h3>Price:</h3>
-        <li><a href="">$0 - $10</a></li>
-        <li><a href="">$10 - $30</a></li>
-        <li><a href="">$30 - $50</a></li>
-        <li><a href="">Over $50</a></li>
+        <li>$0 - $10</li>
+        <li>$10 - $30</li>
+        <li>$30 - $50</li>
+        <li>Over $50</li>
     </div>
 </div>

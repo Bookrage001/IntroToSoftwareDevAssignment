@@ -27,28 +27,28 @@
             <div id="refine">
                 <%@include file="WEB-INF/Modules/filter.jspf" %>
             </div>
-            <div id="movies">
-                <c:set var="Movies">
-                    <Movies>
-                        <%
-                            //Add new session for all books
-                            String keyword = request.getParameter("keyword");
-                            DBManager db = (DBManager) session.getAttribute("manager");
-                            ArrayList<Movie> list = db.searchMovie(keyword);
-                            for (Movie movies : list) {
-                                request.setAttribute("movies", movies);
-                        %>
-                        <movie id="${movies.ID}">
-                            <title>${movies.title}</title>
-                            <price>${movies.price}</price>
-                        </movie>
-                        <%}%>
-
-                    </Movies>
-                </c:set>
-
-                <c:import url="WEB-INF/Data/movies.xsl" var="moviesxslt"/>
-                <x:transform xml="${Movies}" xslt="${moviesxslt}"/>
+            <div class="movie-area">
+                <%
+                    //Add new session for all books
+                    String keyword = request.getParameter("keyword");
+                    DBManager db = (DBManager) session.getAttribute("manager");
+                    ArrayList<Movie> list = db.searchMovie(keyword);
+                    for (Movie movies : list) {
+                %>
+                <form method="post" action="movieDetails.jsp">
+                    <div style="padding:20px" >
+                        <img class="movieimg" img='' />
+                        <div align="center">
+                            <input type="hidden" name="movieID" value="<%= movies.getID()%>">
+                            <%= movies.getTitle()%> <br>
+                            $ <%= movies.getPrice()%> AUD
+                        </div>
+                        <button type="submit">details</button>
+                    </div>
+                </form>
+                <%
+                    }
+                %>
             </div>
         </div>
     </div>
