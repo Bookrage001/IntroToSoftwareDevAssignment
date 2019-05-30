@@ -37,12 +37,12 @@
             String postcode = request.getParameter("postcode");
             String suburb = request.getParameter("suburb");
             boolean alreadyExists = db.checkUser(ID);
-            
+         
            
             
-            if (!vd.validateEmail(email)) {
-                session.setAttribute("EmptyErr", "Email format is incorrect");
-                response.sendRedirect("register.jsp");
+           if (!vd.validateEmail(email) || !vd.validateName(firstName) || !vd.validateName(lastName) || !vd.validatePostcode(postcode)) {
+                session.setAttribute("EmptyErr", "One or more of the fields you entered are invalid");
+               response.sendRedirect("register.jsp");
             } else if (ID.isEmpty() || password.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || postcode.isEmpty() || suburb.isEmpty())
             {
                session.setAttribute("EmptyErr", "One or more of the fields are empty");               
@@ -57,7 +57,7 @@
             else
                     {
                             db.addUser(ID, password, email,firstName,lastName,address,postcode,suburb);
-            response.sendRedirect("login.jsp"); 
+            response.sendRedirect("index.jsp"); 
                         
                     }
             //addUser(String ID, String email, String password, String firstName, String lastName,String address, String postcode, String suburb)

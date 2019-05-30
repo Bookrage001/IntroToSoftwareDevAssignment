@@ -75,6 +75,15 @@ public class User implements Serializable {
         return password;
     }
 
+     public String getUsername() {
+         if (username!= null) {
+        return username;
+         }
+         else
+             return "user";
+    }
+    
+     
     public void setPassword(String password) {
         this.password = password;
     }

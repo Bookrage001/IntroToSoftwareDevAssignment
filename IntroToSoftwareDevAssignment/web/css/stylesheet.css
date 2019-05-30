@@ -35,6 +35,7 @@ header {
 
 #Logoposition {
     display: inline;
+    max-width: 200px;
 }
 
 #movies {
@@ -229,4 +230,8 @@ select {
 
 .refinesearch h3 {
     font-size: 1.2em;
+}
+
+.boxed {
+  border: 1px solid green ;
 }

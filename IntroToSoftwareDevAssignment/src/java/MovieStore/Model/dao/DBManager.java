@@ -100,5 +100,30 @@ public class DBManager {
     public void deleteMovie(int movieID) throws SQLException {
         st.executeUpdate("DELETE FROM MOVIES WHERE ID ='" + movieID + "'");
     }
+    
+     public String[] getDetails(String username) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '"+username+"'");
+        
+        while (rs.next()) {
+            String userid = rs.getString(1);
+
+            if (userid.equals(username)) {
+                String email = rs.getString(3);
+                String firstname = rs.getString(4);
+                String lastname = rs.getString(5);
+                String address = rs.getString(6);
+                String suburb = rs.getString(7);
+                String postcode = rs.getString(8);
+               
+                String[] detailsArray = new String[]{email, firstname, lastname, address, suburb, postcode}; 
+                
+                return detailsArray;
+
+             
+            }
+     
+    }
+        return null;
+    }
 
 }

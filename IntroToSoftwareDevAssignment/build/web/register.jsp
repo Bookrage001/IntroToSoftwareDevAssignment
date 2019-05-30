@@ -7,8 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
-<link href="Design/stylesheet.css" rel="stylesheet" type="text/css"/>
-
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,10 +17,10 @@
        
         <div style="margin-top:5%"></div>
         <h1>Enter your details to Register: </h1>
-        <div id="Logoposition">
-            <img src="Design/Images/RaiMovieLogoBlue.png" class="SigninLogo">
+        <div id="Logoposition" class="logo">
+            <img src="Images/RaiMovieLogoBlue.png" style="width:500px;height:100px;">
         </div>
-        <div>
+        <div class = container>
             <form action="registerAction.jsp" method="POST">
                 <h1>Registration</h1>
                 <table align="center">
@@ -59,15 +58,14 @@
                 <br>
                 <br>
                 <tr>
-                    <td></td><td><input type="submit" value="Register"</td>
+                    <td></td><td><input type="submit" value="Register"></td>
                 </tr> 
             </form>
             <p><c:if test="${EmptyErr!=null}"><c:out value="${EmptyErr}"/></c:if></p>
            
         
         </div>
-
-
+             
         <p>Already have a username/password?</p>
         <p> <font color=blue><a href="login.jsp">Return to login page</a></p>
         

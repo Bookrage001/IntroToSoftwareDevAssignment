@@ -74,7 +74,7 @@ public class DBManager {
     
     
     //update a student details in the database
-    public void updateStudent(String username, String email, String first_name, String last_name, String address, String postcode, String suburb) throws SQLException {
+    public void updateUser(String username, String email, String address, String postcode, String suburb) throws SQLException {
          //st.executeUpdate(“UPDATE <your db> SET EMAIL='" + email + "‘”);
          
          //WILL CHANGE THE INFO OF THE USER WHERE THEY HAVEN'T LEFT THE FIELDS BLANK
@@ -85,34 +85,17 @@ public class DBManager {
            {}
            else
          {
-             st.executeUpdate("UPDATE USERS SET EMAIL= '"+email+"',"
-                     + "WHERE USERNAME = '"+username+"'");
+             st.executeUpdate("UPDATE USERS SET EMAIL= '"+email+"' WHERE USERNAME= '"+username+"'");
+           
          }
            
-        //If first_name is not left blank
-           if (first_name.isEmpty())
-           {}
-           else
-         {
-             st.executeUpdate("UPDATE USERS SET FIRST_NAME= '"+first_name+"'',"
-                     + "WHERE USERNAME = '"+username+"'");
-           
-         //If last_name is not left blank
-           if (last_name.isEmpty())
-           {}
-           else
-         {
-             st.executeUpdate("UPDATE USERS SET LAST_NAME= '"+last_name+"',"
-                     + "WHERE USERNAME = '"+username+"'");
-         }
            
                //If adress is not left blank
            if (address.isEmpty())
            {}
            else
          {
-             st.executeUpdate("UPDATE USERS SET ADDRESS= '"+address+"'',"
-                     + "WHERE USERNAME = '"+username+"'");
+              st.executeUpdate("UPDATE USERS SET ADDRESS= '"+address+"' WHERE USERNAME= '"+username+"'");
          }
            
               //If postcode is not left blank
@@ -120,16 +103,14 @@ public class DBManager {
            {}
            else
          {
-             st.executeUpdate("UPDATE USERS SET SUBURB= '"+suburb+"',"
-                     + "WHERE USERNAME = '"+username+"'");
+             st.executeUpdate("UPDATE USERS SET SUBURB= '"+suburb+"' WHERE USERNAME= '"+username+"'");
            
                      //If postcode is not left blank
            if (postcode.isEmpty())
            {}
            else
          {
-             st.executeUpdate("UPDATE USERS SET POSTCODE= '"+postcode+"',"
-                     + "WHERE USERNAME = '"+username+"'");
+             st.executeUpdate("UPDATE USERS SET POSTCODE= '"+postcode+"' WHERE USERNAME= '"+username+"'");
          
          
          
@@ -138,18 +119,41 @@ public class DBManager {
     }
          }
          }
-    }
+    
     
     
     
     
     
     //delete a student from the database
-    public void deleteStudent(String username) throws SQLException{
+    public void deleteUser(String username) throws SQLException{
         
-        st.executeUpdate("UPDATE USERS SET STATUS= 'cancelled',"
-                     + "WHERE USERNAME= '"+username+"'");
+        st.executeUpdate("UPDATE USERS SET STATUS= 'cancelled' WHERE USERNAME= '"+username+"'");
+        st.executeUpdate("UPDATE ORDERS SET STATUS= 'cancelled' WHERE USERNAME= '"+username+"'");
 
+    }
+    
+       public void getDetails(String username) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '");
+        while (rs.next()) {
+            String userid = rs.getString(1);
+
+            if (userid.equals(username)) {
+                String email = rs.getString(3);
+                String firstname = rs.getString(4);
+                String lastname = rs.getString(5);
+                String address = rs.getString(6);
+                String suburb = rs.getString(7);
+                String postcode = rs.getString(8);
+               
+                String[] detailsArray = new String[]{email, firstname, lastname, address, suburb, postcode}; 
+                
+                
+
+             
+            }
+     
+    }
     }
 }
 
