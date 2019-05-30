@@ -8,19 +8,41 @@
 <%@page import="MovieStore.Model.UserActivity"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Deleted Activity</title>
+        <title>Activity Deleted!</title>
     </head>
+    <div class="container">
+        <header align="left">
+            <div id="Logoposition">
+                <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+            </div>
+
+            <div id="Search">
+                <%@include file="WEB-INF/Modules/search.jspf"%>
+            </div>
+        </header>
+    </div>
+
+    <content>
+        <div class ="container">
+            <%@include file="WEB-INF/Modules/navbar.jspf" %>
+        </div>
+    </content>
     <body>
-        <%  
-            UserActivity activity = (UserActivity) session.getAttribute("activity");
-            
-            DBManager db = (DBManager)session.getAttribute("manager");
-            db.deleteActivity(activity.getLogId());
-            
+        <%
+            String actID = request.getParameter("LogId");
+            int LogId = Integer.parseInt(actID);
+            //Add new session for all activity
+            DBManager db = (DBManager) session.getAttribute("manager");
+            db.deleteActivity(LogId);
+
         %>
+
+        <p>This activity has been successfully removed from your log!</p>
+        <p>Click <a href="userActivity.jsp">here</a> to return back to your user activity!</p>
 
     </body>
 </html>

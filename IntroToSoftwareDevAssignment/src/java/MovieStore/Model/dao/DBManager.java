@@ -136,6 +136,6 @@ public class DBManager {
     // Delete Activity from Log
     public void deleteActivity(int logId) throws SQLException {
         //code for delete-operation
-        st.executeQuery("DELETE FROM LOG WHERE LOGID ='" + logId + "'");
+        st.executeUpdate("DELETE FROM LOG WHERE LOGID =" + logId);
     }
 }

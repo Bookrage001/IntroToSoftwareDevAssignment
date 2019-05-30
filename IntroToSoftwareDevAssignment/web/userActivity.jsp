@@ -48,17 +48,17 @@
 
     </head>
 
-    <body align="center">
-        <div class="container">
-            <header align="left">
-                <div id="Logoposition">
-                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-                </div>
-                <div class="container">
-                    <%@include file="WEB-INF/Modules/search.jspf"%>
-                </div>
-            </header>
-        </div>
+    <div class="container">
+        <header align="left">
+            <div id="Logoposition">
+                <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+            </div>
+
+            <div id="Search">
+                <%@include file="WEB-INF/Modules/search.jspf"%>
+            </div>
+        </header>
+    </div>
 
     <content>
         <div class ="container">
