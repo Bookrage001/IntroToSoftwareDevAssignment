@@ -44,6 +44,24 @@ public class DBManager {
         }
         return movies;
     }
+    
+    public Movie getMovieDetails(int id) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM MOVIES WHERE MOVIE_ID =" + id);
+
+        while (rs.next()) {
+            int movieID = rs.getInt(1);
+            String title = rs.getString(2);
+            String genre = rs.getString(3);
+            String releaseDate = rs.getString(4);
+            String director = rs.getString(5);
+            String synopsis = rs.getString(6);
+            double price = rs.getDouble(7);
+            int copies = rs.getInt(8);
+
+            return new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies);
+        }
+        return null;
+    }
 
     //Add movies. simple query
     public void addMovie(int movieID, String title, String genre, String releaseDate,
@@ -75,8 +93,25 @@ public class DBManager {
         return movies;
     }   
     
-    //Retrieve the Movie details using a specific movie id
-    
+    public ArrayList<Movie> filterGenre(String keyword) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM MOVIES WHERE GENRE = '" + keyword + "'");
+
+        ArrayList<Movie> movies = new ArrayList();
+
+        while (rs.next()) {
+            int movieID = rs.getInt(1);
+            String title = rs.getString(2);
+            String genre = rs.getString(3);
+            String releaseDate = rs.getString(4);
+            String director = rs.getString(5);
+            String synopsis = rs.getString(6);
+            double price = rs.getDouble(7);
+            int copies = rs.getInt(8);
+
+            movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies));
+        }
+        return movies;
+    }    
     
     public void UpdateMovie(int movieID, String title, String genre, String releaseDate,
             String director, String synopsis, double price, int copies) {
@@ -84,7 +119,7 @@ public class DBManager {
     }
 
     public void deleteMovie(int movieID) throws SQLException {
-        st.executeUpdate("DELETE FROM MOVIES WHERE ID ='" + movieID + "'");
+        st.executeUpdate("DELETE FROM MOVIES WHERE MOVIE_ID =" + movieID);
     }
     
 }

@@ -1,3 +1,9 @@
+<%-- 
+    Document   : movieDetails
+    Created on : 29/05/2019, 11:15:17 PM
+    Author     : mcant
+--%>
+
 <%@page import="java.util.*"%>
 <%@page import="MovieStore.Model.*"%>
 <%@page import="MovieStore.Model.dao.*"%>
@@ -23,25 +29,22 @@
                 <%@include file="WEB-INF/Modules/filter.jspf" %>
             </div>
             <div id="movies">
-                 <%
-                    //Add new session for all books
-                    DBManager db = (DBManager) session.getAttribute("manager");
-                    ArrayList<Movie> list = db.getMovies();
-                    for (Movie movies : list) {
-                %>
-            <form method="post" action="movieDetails.jsp">
-                <tr>
-                    <td><input type="hidden" name="movieID" value="<%= movies.getID()%>"></td>
-                    <td><%= movies.getID()%></td>
-                    <td><%= movies.getTitle()%></td>
-                    <td><%= movies.getPrice()%></td>   
-                    <td><button type="submit">details</button></td>
-                </tr>
-            </form>
-
-            <%
-                }
+                <% 
+                String mov = request.getParameter("movieID");
+                int movieID = Integer.parseInt(mov);
+                //Add new session for all books
+                DBManager db = (DBManager) session.getAttribute("manager");
+                Movie move = db.getMovieDetails(movieID);
+                
             %>
+            
+            <p><%= mov %></p>
+            <p><%= move.getDirector() %></p>
+            <p><%= move.getTitle() %></p>
+            <p><%= move.getSynopsis() %></p>
+            <p><%= move.getReleaseDate() %></p>
+            <p><%= move.getGenre() %></p>
+            <p><%= move.getID() %></p>
             </div>
         </div>
     </div>

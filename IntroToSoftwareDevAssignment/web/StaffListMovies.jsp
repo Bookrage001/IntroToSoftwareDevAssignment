@@ -1,13 +1,17 @@
-<%@page import="java.util.*"%>
-<%@page import="MovieStore.Model.*"%>
-<%@page import="MovieStore.Model.dao.*"%>
-<%@ page pageEncoding="UTF-8" contentType="text/html" %>
-<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%-- 
+    Document   : deleteMovie
+    Created on : 30/05/2019, 11:28:56 AM
+    Author     : mcant
+--%>
 
+<%@page import="MovieStore.Model.Movie"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.dao.DBManager"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Home Page</title>
+        <title>Add Movie Listing</title>
     <div class="searchContainer">
         <div id="Logoposition">
             <img src="Images/RaiMovieLogoBlue.png" id="Logo">
@@ -15,27 +19,27 @@
         <%@include file="WEB-INF/Modules/search.jspf"%>
     </div>
 </head>
-<body align="center">
+<body>
     <div class ="container">
         <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="collection">
-            <div id="refine">
-                <%@include file="WEB-INF/Modules/filter.jspf" %>
-            </div>
-            <div id="movies">
+            <div class="row">
+                <%@include file="WEB-INF/Modules/staffManagement.jspf" %>
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                   <div id="movies">
                  <%
                     //Add new session for all books
                     DBManager db = (DBManager) session.getAttribute("manager");
                     ArrayList<Movie> list = db.getMovies();
                     for (Movie movies : list) {
                 %>
-            <form method="post" action="movieDetails.jsp">
+            <form method="post" action="deleteMovie.jsp">
                 <tr>
                     <td><input type="hidden" name="movieID" value="<%= movies.getID()%>"></td>
                     <td><%= movies.getID()%></td>
                     <td><%= movies.getTitle()%></td>
                     <td><%= movies.getPrice()%></td>   
-                    <td><button type="submit">details</button></td>
+                    <td><button type="submit">Delete</button></td>
                 </tr>
             </form>
 
@@ -43,7 +47,11 @@
                 }
             %>
             </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
 </body>
 </html>
