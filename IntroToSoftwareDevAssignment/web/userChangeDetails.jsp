@@ -17,7 +17,7 @@
         //User user = (User)session.getAttribute("loginAction");
 
         String username;
-        User user = (User) session.getAttribute("userlogin");
+        User user = (User) session.getAttribute("userLogin");
         username = user.getUsername();
         session.setAttribute("userlogin", user);
         DBManager db = (DBManager) session.getAttribute("manager");

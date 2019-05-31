@@ -16,7 +16,7 @@
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <%
-    User user = (User) session.getAttribute("user");
+    User user = (User) session.getAttribute("userLogin");
     if (user != null) {
 %>
 <div align="right" class="loginStatus">Logged in as: 

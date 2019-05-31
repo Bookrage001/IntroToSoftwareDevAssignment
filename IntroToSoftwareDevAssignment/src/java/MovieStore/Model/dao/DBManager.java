@@ -154,7 +154,7 @@ public class DBManager {
             double price, int copies, String poster) throws SQLException {
 
         st.executeUpdate("INSERT INTO MOVIES VALUES (" + movieID + ",'" + title + "','" + genre + "','" + releaseDate
-                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ",+'" + poster + "')");
+                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ", '" + poster + "')");
     }
 
     // Creates an Arraylist of movies containing a specific keyword and storing it
