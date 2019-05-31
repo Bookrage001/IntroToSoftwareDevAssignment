@@ -113,9 +113,23 @@ public class DBManager {
         return movies;
     }    
     
-    public void UpdateMovie(int movieID, String title, String genre, String releaseDate,
-            String director, String synopsis, double price, int copies) {
+    public boolean isMovie(int movieID) throws SQLException{
+        ResultSet rs = st.executeQuery("SELECT * FROM MOVIE WHERE MOVIE_ID = " + movieID);
+        while (rs.next()) {
+            String id = rs.getString(1);
 
+            if (id.equals(movieID)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public void UpdateMovie(int movieID, String title, String genre, String releaseDate,
+            String director, String synopsis, double price, int copies) throws SQLException {
+           st.executeUpdate("UPDATE MOVIES SET TITLE = '" + title + "', GENRE = '" + genre +
+                "', RELEASE_DATE = '" + releaseDate + "', DIRECTOR = '" + director + "', SYNOPSIS = '" + synopsis +
+                "', PRICE = " + price + ", COPIES = " + copies + " WHERE MOVIE_ID = " + movieID);     
     }
 
     public void deleteMovie(int movieID) throws SQLException {

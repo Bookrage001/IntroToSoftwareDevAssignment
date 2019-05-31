@@ -18,10 +18,10 @@
                     <a href="AddMovie.jsp"><i class="fa fa-file-video-o"></i>Add Movie Listing</a>
                 </li> 
                 <li>
-                    <a href="#"><i class="fa fa-film"></i> Edit Movie Listing <span>30</span></a>
+                    <a href="staffEditMovie.jsp"><i class="fa fa-edit"></i> Edit Movie Listing <span>30</span></a>
                 </li>
                 <li>
-                    <a href="StaffDeleteMovies.jsp"><i class="fa fa-trash"></i> Delete Movies <span>30</span></a>
+                    <a href="staffDeleteMovies.jsp"><i class="fa fa-trash"></i> Delete Movie Listing <span>30</span></a>
                 </li>               
                 <li>
                     <a href="#"><i class="fa fa-group"></i>Manage Customers <span>57</span></a>
