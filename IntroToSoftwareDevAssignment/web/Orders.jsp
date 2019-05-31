@@ -8,7 +8,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.io.*" %>
 
-<% String msFilePath = application.getRealPath("WEB-INF");%>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
@@ -40,6 +39,7 @@
         });
     });
 </script>
+
 <body align="center">
     <div class="container">
         <header align="left">
@@ -68,4 +68,5 @@
     </div>
 </content>
 </body>
+<jsp:include page="/ConnServlet" flush="true" />
 </html>
