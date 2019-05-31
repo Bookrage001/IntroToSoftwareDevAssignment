@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import MovieStore.Model.User;
 import MovieStore.Model.UserActivity;
-import java.sql.Connection;
+
 import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
@@ -378,6 +378,19 @@ public class DBManager {
             String activity = rs.getString(4);
 
             return new UserActivity(logId, username, status, activity);
+        }
+        return null;
+    }
+
+    public Long getMaxNumber(String table, String column_name) {
+        try {
+            ResultSet rs = st.executeQuery("SELECT MAX(" + column_name + ") FROM " + table);
+            while (rs.next()) {
+                Long longInt = rs.getLong(1);
+                return longInt;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
