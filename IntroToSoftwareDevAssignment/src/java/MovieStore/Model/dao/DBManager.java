@@ -87,8 +87,7 @@ public class DBManager {
         BigInteger OrderId = BigInteger.valueOf(intOrderId);
         BigInteger movieId = BigInteger.valueOf(intmovieId);
         try {
-            st.execute("INSERT INTO ORDERS VALUES(" + OrderId + ",'" + username + "','" + movieId + "','" + amount
-                    + "','" + status + ")");
+            st.execute("INSERT INTO ORDERS (ORDER_ID, MOVIE_ID, USERNAME, STATUS, AMOUNT) VALUES(" + OrderId + "," + movieId + ",'" + username + "','" + status + "'," + amount + ")");
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println(e);
@@ -415,7 +414,7 @@ public class DBManager {
                 return longInt;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null,"getMaxNumber" + ex);
         }
         return null;
     }
