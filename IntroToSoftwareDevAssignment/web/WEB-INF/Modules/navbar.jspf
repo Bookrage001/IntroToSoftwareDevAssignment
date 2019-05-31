@@ -1,0 +1,56 @@
+<!-- any content can be specified here e.g.: -->
+<%@ page pageEncoding="UTF-8" %>
+<%@page import="MovieStore.Model.*"%>
+<%@page import="MovieStore.Model.dao.*"%>
+<html>
+    <body>
+        <%
+            User user = (User) session.getAttribute("userLogin");
+        %>
+        <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+        <% if (user != null) {%>
+        <div align="right" class="loginStatus">Logged in as: <%=user.getUsername()%><br>
+        </div>
+        <% } else { %>
+        <div align="right" class="loginStatus">
+        Not logged in
+        </div>
+        <% } %>
+        <% if (user!=null) {
+            if (user.getType().contains("user")) {%>
+        <div class="nav">
+            <a href="index.jsp"> Home</a> 
+            <a href="#"> Best Sellers </a> 
+            <a href="#"> New Releases </a> 
+            <div class="nav-right">
+                <a href="login.jsp" style="border-left: 1px solid black">My Account</a>
+                <a href="logout.jsp">Logout</a>
+                <a href="#" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+            </div>
+        </div>
+        <% } else {%>
+        <div class="nav">
+            <a href="index.jsp"> Home</a> 
+            <a href="#"> Best Sellers </a> 
+            <a href="#"> New Releases </a> 
+            <a href="UserManagement.jsp"> User Management</a>
+            <div class="nav-right">
+                <a href="login.jsp" style="border-left: 1px solid black">My Account</a>
+                <a href="logout.jsp">Logout</a>
+                <a href="#" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+            </div>
+        </div>
+        <% }} else { %>
+        <div class="nav">
+            <a href="index.jsp"> Home</a> 
+            <a href="#"> Best Sellers </a> 
+            <a href="#"> New Releases </a>
+            <a href="UserManagement.jsp"> User Management</a>
+            <div class="nav-right">
+                <a href="login.jsp" style="border-left: 1px solid black">Login</a>
+                <a href="register.jsp" style="border-left: 1px solid black">Register</a>
+            </div>
+        </div>
+        <% } %>
+    </body>
+</html>

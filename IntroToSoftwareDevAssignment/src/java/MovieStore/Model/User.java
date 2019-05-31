@@ -1,15 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MovieStore.Model;
 
 import java.io.Serializable;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
+/**
+ *
+ * @author Hayley
+ */
 public class User implements Serializable {
 
-    
     private String username;
     private String password;
     private String email;
@@ -20,7 +21,6 @@ public class User implements Serializable {
     private String postcode;
     private String type;
     private String status;
-       
 
     public User(String username, String password, String email, String firstname, String lastname, String address, String suburb, String postcode, String type, String status) {
         this.username = username;
@@ -34,9 +34,10 @@ public class User implements Serializable {
         this.type = type;
         this.status = status;
     }
-    
-    public User() { }
-    
+
+    public User() {
+    }
+
     public boolean matchUsername(String username) {
         return this.username.equals(username.trim());
     }
@@ -44,29 +45,13 @@ public class User implements Serializable {
     public boolean matchPassword(String password) {
         return this.password.equals(password.trim());
     }
-    
-    public String getEmail() {
-        return email;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
-        public String getfirstname() {
-        return firstname;
-    }
-
-    public void setfirstname(String firstname) {
-        this.firstname = firstname;
-    }
-    
-    public String getlastname() {
-        return lastname;
-    }
-
-    public void setlastname(String lastname) {
-        this.lastname = lastname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -77,12 +62,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstname() {
@@ -140,5 +125,5 @@ public class User implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-        
+
 }

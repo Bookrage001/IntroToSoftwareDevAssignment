@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="Design/stylesheet.css" rel="stylesheet" type="text/css"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +15,7 @@
     <body>    
         <div style="margin-top:5%"></div>
         <div id="Logoposition">
-            <img src="Images/RaiMovieLogoBlue.png" id="Logo"/>
+            <img src="Design/Images/RaiMovieLogoBlue.png" class="SigninLogo">
         </div>
         <div>
             <form action="index.jsp" method="POST">
@@ -25,12 +25,12 @@
                         <td>
                             Username: <input type="text" name="username">
                         </td>
-                        <td>Email: <input type="text" name="Email"> </td>
+                        <td>Email: <input type="text" name="email"> </td>
                     </tr>
                     <table align="center">
                         <tr>
                             <td>
-                                Password: <input type="text" name="Password">
+                                Password: <input type="text" name="password">
                             </td>
                             <td>
                                 Confirm password: <input type="text" name="ConfirmPassword">
@@ -41,16 +41,16 @@
                 </table>
                 <table align="center">
                     <tr>
-                        <td>First Name: <input type="text" name="FirstName"> Last Name: <input type="text" name="LastName"> </td>
+                        <td>First Name: <input type="text" name="Firstname"> Last Name: <input type="text" name="Lastname"> </td>
 
                     </tr>
                 </table>
                 <table align="center">
                     <tr>
                         <td>Address: <input type="text" name="Address"> </td>
+                        <td>Suburb:<input type="text" name="Suburb" style="width: 60px"> </td>
                         <td>Post Code:<input type="text" name="PostCode" style="width:50px"> 
-                        <td>Suburb:<input type="text" name="username" style="width: 60px"> </td>
-                    </tr>
+                     </tr>
                 </table>
                 <br>
                 <br>

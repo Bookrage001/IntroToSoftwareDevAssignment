@@ -230,3 +230,11 @@ select {
 .refinesearch h3 {
     font-size: 1.2em;
 }
+
+#users {
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 10px;
+    width:100%;
+    padding: 5px;
+}
