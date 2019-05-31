@@ -52,10 +52,8 @@
 <content>
     <div class ="container">
         <%@include file="WEB-INF/Modules/navbar.jspf" %>
-        <div id="collection">
-            <div id="users" align="center">
+        <div id="staffManagement" align="center">
                 <%@include file="WEB-INF/Modules/staffManagement.jspf" %>
-            </div>
         </div>
     </div>
 </content>
