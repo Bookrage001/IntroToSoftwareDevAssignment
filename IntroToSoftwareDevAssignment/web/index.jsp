@@ -49,6 +49,7 @@
                     </form>
                     <div>
                         <form method="post" action="checkout.jsp">
+                            <input type="hidden" name="movieID" value="<%= movies.getID()%>">
                             <button type="submit" class="fa fa-cart-plus">Add to Cart</button>
                         </form>
                     </div>

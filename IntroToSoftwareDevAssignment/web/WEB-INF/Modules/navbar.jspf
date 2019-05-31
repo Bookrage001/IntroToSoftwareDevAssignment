@@ -17,6 +17,7 @@
 <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
 <!-- CUSTOM CSS -->
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <div align="right" class="loginStatus">Logged in as: 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -33,10 +34,9 @@
         <a href="login">Login</a>
         <a href="logout.jsp">Logout</a>
         <a href="userMyAccount.jsp">My Account</a>
-        <a href="Orders.jspf" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+        <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
 </div>
-
 
 <% } else {%>
 

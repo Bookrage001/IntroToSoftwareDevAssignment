@@ -8,22 +8,38 @@ import java.util.ArrayList;
 public class Order implements Serializable {
 
     private BigInteger orderId;
-    private String username; //PK
-    private BigInteger movieId; //PK
+    private String username; // PK
+    private BigInteger movieId; // PK
     private int amount;
     private String status;
-    private ArrayList<Movie> movies; // if i get a chance to do a get for these ...
+    private Movie movie;
 
     public Order() {
     }
 
-    //MARK CHANGED THIS ORDER
+    // As BigInteger
     public Order(BigInteger orderId, BigInteger movieId, int amount, String username, String status) {
         this.orderId = orderId;
         this.username = username;
         this.movieId = movieId;
         this.amount = amount;
         this.status = status;
+    }
+
+    // As Intager
+    public Order(int orderId, int movieId, int amount, String username, String status) {
+        this.orderId = BigInteger.valueOf(orderId);
+        this.movieId = BigInteger.valueOf(movieId);
+        this.username = username;
+        this.amount = amount;
+        this.status = status;
+    }
+
+    public Order(Movie movie, int amount, String username) {
+        this.movie = movie;
+        this.status = "In Cart";
+        this.amount = amount;
+        this.username = username;
     }
 
     public BigInteger getOrderId() {
@@ -66,4 +82,11 @@ public class Order implements Serializable {
         this.status = status;
     }
 
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
 }
