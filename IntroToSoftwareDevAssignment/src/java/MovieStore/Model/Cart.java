@@ -21,25 +21,6 @@ public class Cart implements Serializable {
     DBManager db;
 
     public Cart() {
-
-        try {
-            this.db = new DBManager(conn);
-            this.connector = new DBConnector();
-        } catch (SQLException ex) {
-            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public void save() {
-        for (Order order : orders) {
-            try {
-                db.addOrder(id, username, order.getMovie().getID(), order.getAmount(), "Saved");
-            } catch (SQLException ex) {
-                Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
     }
 
     public Cart(ArrayList<Order> orders) {

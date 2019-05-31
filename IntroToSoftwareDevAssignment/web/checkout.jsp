@@ -86,6 +86,7 @@
                             %>
                     </tbody>
                 </table>
+                <button action="save.jsp">Save</button>
                 <form>
                 <%
                 } else {
