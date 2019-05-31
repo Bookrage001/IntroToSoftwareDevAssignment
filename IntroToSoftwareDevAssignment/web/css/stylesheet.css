@@ -28,7 +28,8 @@ header {
 }
 
 #Logoposition {
-    float: left;
+    width: 30%;
+    height: 15%;
 }
 
 .search{
