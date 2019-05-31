@@ -17,10 +17,10 @@
             <div align="center">
                 <xsl:value-of select="title"/>
                 <div class="Moviebtncontainer" style="text-align:center">
-                    $ <xsl:value-of select="price"/>
+                    $                    <xsl:value-of select="price"/>
                 </div>
-                <div>   
-                    <button class="fa fa-cart-plus"> Add to Cart</button>
+                <div>
+                    <button onclick=(); class="fa fa-cart-plus"> Add to Cart</button>
                 </div>
             </div>
         </div>

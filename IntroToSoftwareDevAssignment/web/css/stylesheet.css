@@ -17,12 +17,14 @@ body {
 }
 
 header {
-    background-color: rbga(0,0,0,1);
+    background-color: rbga(0, 0, 0, 1);
     border-bottom: 0;
 }
-.searchContainer{
+
+.searchContainer {
     display: auto;
 }
+
 #Logo {
     max-width: 250px;
 }
@@ -32,14 +34,15 @@ header {
     height: 15%;
 }
 
-.search{
+.search {
     margin: 10px;
 }
 
 .search button {
-  border: none;
-  cursor: pointer;
+    border: none;
+    cursor: pointer;
 }
+
 .caption {
     padding: 10px;
 }
@@ -193,7 +196,9 @@ header {
     font-family: Arial;
 }
 
+
 /******Style for Home.jsp******/
+
 * {
     box-sizing: border-box;
 }
@@ -226,4 +231,4 @@ form.example::after {
     content: "";
     clear: both;
     display: table;
-}           
+}

@@ -6,9 +6,14 @@
 package MovieStore.Model.dao;
 
 import MovieStore.Model.Movie;
+import MovieStore.Model.Order;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import MovieStore.Model.User;
 import MovieStore.Model.UserActivity;
 import java.sql.Connection;
+import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -46,6 +51,46 @@ public class DBManager {
         return movies;
     }
 
+    /*
+     *
+     * @Param BigInteger orderId
+     * 
+     * @Param String username;
+     * 
+     * @Param BigInteger movieId;
+     * 
+     * @Paramint amount
+     * 
+     * @Param String status
+     * 
+     * @Param ArrayList<Movie> movies
+     */
+    public void addOrder(BigInteger OrderId, String username, BigInteger movieId, int amount, String status)
+            throws SQLException {
+        try {
+            st.execute("INSERT INTO ORDERS VALUES(" + OrderId + ",'" + username + "','" + movieId + "','" + amount
+                    + "','" + status + ")");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println(e);
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public void addOrder(int intOrderId, String username, int intmovieId, int amount, String status)
+            throws SQLException {
+        BigInteger OrderId = BigInteger.valueOf(intOrderId);
+        BigInteger movieId = BigInteger.valueOf(intmovieId);
+        try {
+            st.execute("INSERT INTO ORDERS VALUES(" + OrderId + ",'" + username + "','" + movieId + "','" + amount
+                    + "','" + status + ")");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println(e);
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
     public Movie getMovieDetails(int id) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM MOVIES WHERE MOVIE_ID =" + id);
 
@@ -65,6 +110,7 @@ public class DBManager {
     }
 
     // Add movies. simple query
+
     public void addMovie(int movieID, String title, String genre, String releaseDate, String director, String synopsis,
             double price, int copies) throws SQLException {
 
@@ -139,9 +185,9 @@ public class DBManager {
         st.executeUpdate("DELETE FROM MOVIES WHERE MOVIE_ID =" + movieID);
     }
 
-    //Check user if not null
+    // Check user if not null
     public boolean checkUser(String ID) throws SQLException {
-        //setup the select sql query string
+        // setup the select sql query string
         String fetch = "select * from USERS";
         ResultSet rs = st.executeQuery(fetch);
         while (rs.next()) {
@@ -154,55 +200,61 @@ public class DBManager {
         return false;
     }
 
-    //Add a user-data into the database
-    public void addUser(String Username, String Password, String Email, String First_Name, String Last_Name, String Address, String Suburb, String Postcode) throws SQLException {
-        st.executeUpdate("INSERT INTO USERS VALUES ('" + Username + "', '" + Password + "', '" + Email + "', '" + First_Name + "','" + Last_Name + "','" + Address + "','" + Postcode
-                + "','" + Suburb + "','user','available')");
+    // Add a user-data into the database
+    public void addUser(String Username, String Password, String Email, String First_Name, String Last_Name,
+            String Address, String Suburb, String Postcode) throws SQLException {
+        st.executeUpdate("INSERT INTO USERS VALUES ('" + Username + "', '" + Password + "', '" + Email + "', '"
+                + First_Name + "','" + Last_Name + "','" + Address + "','" + Postcode + "','" + Suburb
+                + "','user','available')");
     }
 
-    //update a student details in the database
-    public void updateUser(String username, String email, String address, String postcode, String suburb) throws SQLException {
-        //st.executeUpdate(“UPDATE <your db> SET EMAIL='" + email + "‘”);
+    // update a student details in the database
+    public void updateUser(String username, String email, String address, String postcode, String suburb)
+            throws SQLException {
+        // st.executeUpdate(“UPDATE <your db> SET EMAIL='" + email + "‘”);
 
-        //WILL CHANGE THE INFO OF THE USER WHERE THEY HAVEN'T LEFT THE FIELDS BLANK
-        //USERNAME CAN NOT BE CHANGED OR HAS TO BE CHANGED SEPERATELY
-        //If username is not left blank
+        // WILL CHANGE THE INFO OF THE USER WHERE THEY HAVEN'T LEFT THE FIELDS BLANK
+        // USERNAME CAN NOT BE CHANGED OR HAS TO BE CHANGED SEPERATELY
+        // If username is not left blank
         if (email.isEmpty()) {
         } else {
             st.executeUpdate("UPDATE USERS SET EMAIL= '" + email + "' WHERE USERNAME= '" + username + "'");
 
         }
 
-        //If adress is not left blank
+        // If adress is not left blank
         if (address.isEmpty()) {
         } else {
             st.executeUpdate("UPDATE USERS SET ADDRESS= '" + address + "' WHERE USERNAME= '" + username + "'");
         }
 
-        //If postcode is not left blank
+        // If postcode is not left blank
         if (suburb.isEmpty()) {
         } else {
             st.executeUpdate("UPDATE USERS SET SUBURB= '" + suburb + "' WHERE USERNAME= '" + username + "'");
 
-            //If postcode is not left blank
+            // If postcode is not left blank
             if (postcode.isEmpty()) {
             } else {
                 st.executeUpdate("UPDATE USERS SET POSTCODE= '" + postcode + "' WHERE USERNAME= '" + username + "'");
 
-                //st.executeUpdate("UPDATE USERS (USERNAME, EMAIL, FIRST_NAME, LAST_NAME, ADDRESS, POSTCODE, SUBURB, TYPE, STATUS) VALUES ('"+Username+"', '"+Password+"', '"+Email+"', '"+First_Name+"','"+Last_Name+"','"+Address+"','"+Suburb+"','"+Postcode+"','user','available')");
-                //code for update-operation
+                // st.executeUpdate("UPDATE USERS (USERNAME, EMAIL, FIRST_NAME, LAST_NAME,
+                // ADDRESS, POSTCODE, SUBURB, TYPE, STATUS) VALUES ('"+Username+"',
+                // '"+Password+"', '"+Email+"',
+                // '"+First_Name+"','"+Last_Name+"','"+Address+"','"+Suburb+"','"+Postcode+"','user','available')");
+                // code for update-operation
             }
         }
     }
 
-    //delete a student from the database
+    // delete a student from the database
     public void deleteUser(String username) throws SQLException {
 
         st.executeUpdate("UPDATE USERS SET STATUS= 'cancelled' WHERE USERNAME= '" + username + "'");
         st.executeUpdate("UPDATE ORDERS SET STATUS= 'cancelled' WHERE USERNAME= '" + username + "'");
     }
 
-    //Stores all the details in the database linked to the username
+    // Stores all the details in the database linked to the username
     public String[] getDetails(String username) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + username + "'");
 
@@ -217,7 +269,7 @@ public class DBManager {
                 String suburb = rs.getString(7);
                 String postcode = rs.getString(8);
 
-                String[] detailsArray = new String[]{email, firstname, lastname, address, suburb, postcode};
+                String[] detailsArray = new String[] { email, firstname, lastname, address, suburb, postcode };
 
                 return detailsArray;
 
@@ -227,9 +279,10 @@ public class DBManager {
         return null;
     }
 
-    //Find User by username in database
+    // Find User by username in database
     public User findUser(String username, String password) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'");
+        ResultSet rs = st.executeQuery(
+                "SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'");
         while (rs.next()) {
             String userid = rs.getString(1);
             String userpass = rs.getString(2);
@@ -250,17 +303,19 @@ public class DBManager {
         return null;
     }
 
-    //Add Log ID for every login
+    // Add Log ID for every login
     public void createLogin(int logId, String username, String status, String activity) throws SQLException {
-        st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
+        st.executeUpdate(
+                "INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
     }
 
-    //Add Log ID for every logout
+    // Add Log ID for every logout
     public void createLogout(int logId, String username, String status, String activity) throws SQLException {
-        st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
+        st.executeUpdate(
+                "INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
     }
 
-    //Find user log in database
+    // Find user log in database
     public UserActivity getUser(String username) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE USERNAME = '" + username + "'");
         while (rs.next()) {
@@ -278,7 +333,7 @@ public class DBManager {
         return null;
     }
 
-    //Show Log Database
+    // Show Log Database
     public ArrayList<UserActivity> getActivity() throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM LOG");
 
@@ -312,7 +367,7 @@ public class DBManager {
         return act;
     }
 
-    //  Retrive activity log details
+    // Retrive activity log details
     public UserActivity getActivityDetails(int id) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE LOGID =" + id);
 
@@ -329,7 +384,7 @@ public class DBManager {
 
     // Delete Activity from Log
     public void deleteActivity(int logId) throws SQLException {
-        //code for delete-operation
+        // code for delete-operation
         st.executeUpdate("DELETE FROM LOG WHERE LOGID =" + logId);
     }
 }

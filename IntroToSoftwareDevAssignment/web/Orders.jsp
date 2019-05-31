@@ -57,10 +57,9 @@
 <content>
     <div class ="container">
         <%@include file="WEB-INF/Modules/navbar.jspf" %>
+        
         <div id="collection">
-            <div id="refine">
-                <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
-            </div>
+
             <div id="orders">
                 <%@include file="WEB-INF/Modules/Orders.jspf" %>
             </div>
