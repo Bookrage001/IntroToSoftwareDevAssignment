@@ -44,19 +44,34 @@
                 Long LongOrderId = db.getMaxNumber("ORDERS", "ORDER_ID");
                 int OrderId = LongOrderId.intValue();
                 String username = "annonoymous";
+                for (Order order: cart.getOrders()) {
+                    order.setAmount(Integer.parseInt(request.getParameter(order.getMovie().getID()+"")));
+                }
                 if (user != null) {
                     username = user.getUsername();
                 } else {
                     username = "clabuschagne4";
                 }
-                for (Order order: cart.getOrders()) {
-                    // TODO do some validation then purchase the movie
-                    db.addOrder(OrderId + 1, username , order.getMovie().getID(),  order.getAmount(),"Purchased" );
-                }
+                if (cart.checkCopies()) {
+                    for (Order order: cart.getOrders()) {
+                        Movie movie = order.getMovie();
+                        movie.setCopies(movie.getCopies() - order.getAmount());
+                        db.UpdateMovie(movie);
+                        db.addOrder(OrderId + 1, username , movie.getID(),  order.getAmount(),"Purchased" );
+                    }
             %>
                 <h1>Your Order Has Been Placed</h1>
                 <p><a href="index.jsp"> Click Here to go back to the index page</a>
             </div>
+            <%
+                } else {
+            %>
+                <h1>There was an error placing your order</h1>
+                <h2>Please try again or contat the help desk</h2>
+                <p><a href="index.jsp"> Click Here to go back to the index page</a>
+            <%
+                }
+            %>
         </div>
     </content>
 </body>

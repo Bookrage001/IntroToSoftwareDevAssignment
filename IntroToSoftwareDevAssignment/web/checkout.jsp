@@ -71,14 +71,15 @@
                     <tbody>
                         <%   
                             for (Order order: cart.getOrders()) {
+                                Movie movie = order.getMovie();
                         %>
                                 <tr>
-                                <td><%=order.getMovie().getTitle()%></td>
-                                <td><%=order.getMovie().getGenre()%></td>
-                                <td><%=order.getMovie().getReleaseDate()%></td>
-                                <td><%=order.getMovie().getDirector()%></td>
-                                <td><input type="number" value="<%=order.getAmount()%>"  min="1" max="<%=order.getMovie().getCopies()%>" > </td>
-                                <td>$<%=order.getMovie().getPrice()%></td>
+                                <td><%=movie.getTitle()%></td>
+                                <td><%=movie.getGenre()%></td>
+                                <td><%=movie.getReleaseDate()%></td>
+                                <td><%=movie.getDirector()%></td>
+                                <td><input type="number" value="<%=order.getAmount()%>"  min="1" max="<%=movie.getCopies()%>" name="<%=movie.getID()%>"> </td>
+                                <td>$<%=movie.getPrice()%></td>
                                 <td>
                                 <form method="post" action="checkout.jsp">
                                     <input type="hidden" name="removeId" value="<%=order.getMovie().getID()%>">

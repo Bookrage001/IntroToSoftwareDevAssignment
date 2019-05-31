@@ -76,4 +76,12 @@ public class Cart implements Serializable {
         ArrayList<Order> blankList = new ArrayList<Order>();
         orders = blankList;
     }
+    public boolean checkCopies(){
+        for (Order order: this.orders) {
+            if (order.getAmount() > order.getMovie().getCopies()) {
+                    return false;
+                }
+            }
+        return true;
+    } 
 }

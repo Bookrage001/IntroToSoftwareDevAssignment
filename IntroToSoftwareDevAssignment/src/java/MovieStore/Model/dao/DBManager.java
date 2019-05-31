@@ -221,6 +221,12 @@ public class DBManager {
                 + releaseDate + "', DIRECTOR = '" + director + "', SYNOPSIS = '" + synopsis + "', PRICE = " + price
                 + ", COPIES = " + copies + " WHERE MOVIE_ID = " + movieID);
     }
+    // TODD update path
+    public void UpdateMovie(Movie movie) throws SQLException {
+        st.executeUpdate("UPDATE MOVIES SET TITLE = '" + movie.getTitle() + "', GENRE = '" + movie.getGenre() + "', RELEASE_DATE = '"
+                + movie.getReleaseDate() + "', DIRECTOR = '" + movie.getReleaseDate() + "', SYNOPSIS = '" + movie.getReleaseDate() + "', PRICE = " + movie.getPrice()
+                + ", COPIES = " + movie.getCopies() + " WHERE MOVIE_ID = " + movie.getID());
+    }
 
     public void deleteMovie(int movieID) throws SQLException {
         st.executeUpdate("DELETE FROM MOVIES WHERE MOVIE_ID =" + movieID);
