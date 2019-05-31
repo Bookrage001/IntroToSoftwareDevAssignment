@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package MovieStore.Model.dao;
-
-import MovieStore.Model.Movie;
-import MovieStore.Model.Order;
+import MovieStore.Model.*;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,6 +79,7 @@ public class DBManager {
             Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, e);
         }
     }
+    /*
     // Creates an Arraylist of movies containing a specific keyword and storing it
     // to a temporary list
     public ArrayList<Order> getOrders() throws SQLException {
@@ -115,8 +114,7 @@ public class DBManager {
             orders.add(new Order(orderId, movieId, amount , username, status));
         }
         return orders;
-    }
-
+    }*/
     public void addOrder(int intOrderId, String username, int intmovieId, int amount, String status)
             throws SQLException {
         BigInteger OrderId = BigInteger.valueOf(intOrderId);

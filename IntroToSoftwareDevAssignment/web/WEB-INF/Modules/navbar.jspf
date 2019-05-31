@@ -14,22 +14,16 @@
 <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
 <!-- CUSTOM CSS -->
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <%
     User user = (User) session.getAttribute("user");
-    if (user != null) {
+    if (user != null) { if(user.getType().equals("user")) {
 %>
 <div align="right" class="loginStatus">Logged in as: 
     <%= user.getFirstname() + " " + user.getLastname()%><br>
 </div>
 <div class="nav">
     <a href="index.jsp"> Home</a> 
-    <a href="#"> Best Sellers </a> 
-    <a href="#"> New Releases </a> 
-    <div class="nav-right" style="float: right">
-        <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
-        <a href="userRegister.jsp">Register</a>
-        <a href="login.jsp">Login</a>
+    <div class="nav-right">
         <a href="logout.jsp">Logout</a>
         <a href="userMyAccount.jsp">My Account</a>
         <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
@@ -37,44 +31,31 @@
 </div>
 
 <% } else {%>
-
+<div align="right" class="loginStatus">Logged in as: 
+    <%= user.getFirstname() + " " + user.getLastname()%><br>
+</div>
 <div class="nav">
     <a href="index.jsp"> Home</a> 
-    <a href="#"> Best Sellers </a> 
-    <a href="#"> New Releases </a> 
-    <div class="nav-right" style="float: right">
-        <a href="userRegister.jsp">Register</a>
-        <a href="login.jsp">Login</a>
+    <div class="nav-right">
+        <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
         <a href="logout.jsp">Logout</a>
         <a href="userMyAccount.jsp">My Account</a>
         <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
 </div>
+    
+<% }} else { %>
+<div align="right" class="loginStatus">Not logged in</div>
+<div class="nav">
+    <a href="index.jsp"> Home</a> 
+    <a href="#"> Best Sellers </a> 
+    <a href="#"> New Releases </a> 
+    <div class="nav-right">
+    <a href="userRegister.jsp">Register</a>
+    <a href="login.jsp">Login</a>
+</div>
+</div>
 
-<% }%>
 
+<% } %>
 
-<!-- JAVASCRIPTS -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-<script src="js/scripts.js"></script>
-
-<!--Script-->
-<script>
-    $(document).ready(function () {
-        $('.order tr').click(function (event) {
-            if (event.target.type !== 'checkbox') {
-                $(':checkbox', this).trigger('click');
-            }
-        });
-        $("input[type='checkbox']").change(function (e) {
-            if ($(this).is(":checked")) {
-                $(this).closest('tr').addClass("highlight_row");
-            } else {
-                $(this).closest('tr').removeClass("highlight_row");
-            }
-        });
-    });
-</script>

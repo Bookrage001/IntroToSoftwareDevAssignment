@@ -22,8 +22,8 @@ header {
 }
 
 .searchContainer {
-    display: auto;
-    width: 80%;
+    background-color: white;
+    display:inline-block;
 }
 
 #Logo {
@@ -32,7 +32,6 @@ header {
 
 #Logoposition {
     float: left;
-    margin-left: 50px;
 }
 
 .search {
@@ -55,13 +54,6 @@ header {
     float: right;
     width: 79%;
     margin-top: 10px;
-}
-
-#Navbar {
-    width: 90%;
-    float: center;
-    margin-left: 5%;
-    margin-right: 5%
 }
 
 #refine {
@@ -111,6 +103,7 @@ header {
     background-color: #393E46;
     overflow: hidden;
     border: 1px solid black;
+    display:inline;
 }
 
 .nav a {
@@ -118,12 +111,16 @@ header {
     color: white;
     padding: 0.5em;
     text-decoration: none;
-    float: left;
     border-right: 1px solid black;
 }
 
 .nav a:hover {
     background-color: #00adb5;
+    color: white;
+}
+
+.nav left {
+    float:left;
 }
 
 .nav-right {
