@@ -31,7 +31,7 @@
     <div class="nav-right">
         <a href="AddMovie.jsp" style="border-left: 1px solid black">Add Movie</a>
         <a href="logout.jsp">Logout</a>
-        <a href="#" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+        <a href="Orders.jspf" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
 </div>
 

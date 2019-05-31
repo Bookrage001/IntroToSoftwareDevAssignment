@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class Movie implements Serializable{
  
-    private int ID;
+    private int Id;
     private String title;
     private String genre;
     private String releaseDate;
@@ -25,12 +25,12 @@ public class Movie implements Serializable{
     private int copies;
 
     private ArrayList<Movie> list = new ArrayList<Movie>();
-    
     public Movie() {
     }
 
-    public Movie(int ID, String title, String genre, String releaseDate, String director, String synopsis, double price, int copies) {
-        this.ID = ID;
+
+    public Movie(int Id, String title, String genre, String releaseDate, String director, String synopsis, double price, int copies) {
+        this.Id = Id;
         this.title = title;
         this.genre = genre;
         this.releaseDate = releaseDate;
@@ -54,11 +54,11 @@ public class Movie implements Serializable{
     }
 
     public int getID() {
-        return ID;
+        return Id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int Id) {
+        this.Id = Id;
     }
 
     public String getTitle() {
