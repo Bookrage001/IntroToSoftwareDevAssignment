@@ -1,0 +1,57 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="MovieStore.Model.dao.*"%>
+<%@page import="MovieStore.controller.*"%>
+<%@page import="java.util.*"%>
+<%@page import="MovieStore.Model.*" %>
+<%@page import="java.sql.*"%>
+<html>
+    <%
+        DBManager db = (DBManager) session.getAttribute("manager");
+        User me = (User) session.getAttribute("userLogin");
+    %>
+    <body>
+        <form action="searchUser.jsp" method="post">
+        <input type="text" value="${username}" placeholder="Username.." name="username">
+        <a href="searchUser.jsp?userId=${username}>"><button type="submit">Search</button></a></form>        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Suburb</th>
+                    <th>Postcode</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                        Statement st = db.getSt();
+                        ResultSet rs = st.executeQuery("select * from Users");
+                    int i = 0;
+                    while (rs.next()) {%>
+                <tr>
+                    <td><%=rs.getString("username")%></td>
+                    <td><%=rs.getString("password")%></td>
+                    <td><%=rs.getString("email")%></td>
+                    <td><%=rs.getString("first_name")%></td>
+                    <td><%=rs.getString("last_name")%></td>
+                    <td><%=rs.getString("address")%></td>
+                    <td><%=rs.getString("suburb")%></td>
+                    <td><%=rs.getString("postcode")%></td>
+                    <td><%=rs.getString("type")%></td>
+                    <td><a href="UpdateUser.jsp?username=<%=rs.getString("username")%>"><button type="button" class="UpdateUser">Update</button></a></td>
+                    <%if (!rs.getString("username").contains(me.getUsername())) {%>
+                    <td><a href="DeleteUserAction.jsp?username=<%=rs.getString("username")%>"><button type="button" class="DeleteAction">Delete</button></a></td>
+                </tr>
+                <% } %>
+                <% i++;} %>
+            </tbody>
+        </table>
+    </body>
+</html>
