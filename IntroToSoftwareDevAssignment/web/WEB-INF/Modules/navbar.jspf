@@ -20,12 +20,9 @@
     <div align="right" class="loginStatus">Logged in as: 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<% if (request.getParameter("userLogin") != null) {
-    User loggedInUser = (User) session.getAttribute("userLogin");
-    username = loggedInUser.getUsername();
-%>
+
 <div align="right" class="loginStatus">Logged in as: 
-    <%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%> User Name<br>
+    <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
 </div>
 <div class="nav">
     <a href="index.jsp"> Home</a> 
