@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div>
-                    <img class="movieimg" src="Images/posters/ENDGAME.jpg"  style="float:right; width: 260px; height: 320px"/>
+                    <img class="movieimg" src="<%= move.getPoster()%>"  style="float:right; width: 260px; height: 320px"/>
                 </div>
 
             </div>
