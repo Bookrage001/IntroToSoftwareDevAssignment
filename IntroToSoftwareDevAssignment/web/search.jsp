@@ -35,17 +35,25 @@
                     ArrayList<Movie> list = db.searchMovie(keyword);
                     for (Movie movies : list) {
                 %>
-                <form method="post" action="movieDetails.jsp">
-                    <div style="padding:20px" >
-                        <img class="movieimg" img='' />
-                        <div align="center">
-                            <input type="hidden" name="movieID" value="<%= movies.getID()%>">
-                            <%= movies.getTitle()%> <br>
-                            $ <%= movies.getPrice()%> AUD
-                        </div>
-                        <button type="submit">details</button>
+                <div style="padding:20px" >
+                    <form method="post" action="movieDetails.jsp">
+
+                        <button type="submit" style="background: transparent">
+                            <img class="movieimg" src="<%= movies.getPoster()%>"  />
+                            <div align="center">
+                                <input type="hidden" name="movieID" value="<%= movies.getID()%>">
+                                <%= movies.getTitle()%> <br>
+                                $ <%= movies.getPrice()%> AUD
+                            </div>
+                        </button>
+
+                    </form>
+                    <div>
+                        <form method="post" action="checkout.jsp">
+                            <button type="submit" class="fa fa-cart-plus">Add to Cart</button>
+                        </form>
                     </div>
-                </form>
+                </div>
                 <%
                     }
                 %>

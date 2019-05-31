@@ -1,10 +1,7 @@
 <jsp:include page="/ConnServlet" flush="true" />
 <%@ page pageEncoding="UTF-8" %>
-<%
-//    User loggedInUser = (User) session.getAttribute("user");
-//    if (loggedInUser != null) {
-    if (true) {
-%>
+<%@page import="MovieStore.Model.User"%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- PLUGINS CSS STYLE -->
 <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -16,29 +13,43 @@
 <!-- Fancy Box -->
 <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
 <!-- CUSTOM CSS -->
-<link href="css/style.css" rel="stylesheet">
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+<%
+    User user = (User) session.getAttribute("user");
+    if (user != null) {
+%>
 <div align="right" class="loginStatus">Logged in as: 
-    <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
+    <%= user.getFirstname() + " " + user.getLastname()%><br>
 </div>
 <div class="nav">
     <a href="index.jsp"> Home</a> 
     <a href="#"> Best Sellers </a> 
     <a href="#"> New Releases </a> 
-    <div class="nav-right">
-        <a href="AddMovie.jsp" style="border-left: 1px solid black">Add Movie</a>
+    <div class="nav-right" style="float: right">
+        <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
+        <a href="userRegister.jsp">Register</a>
+        <a href="login.jsp">Login</a>
         <a href="logout.jsp">Logout</a>
-        <a href="Orders.jspf" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+        <a href="userMyAccount.jsp">My Account</a>
+        <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
 </div>
 
-
 <% } else {%>
 
-<div align="center"><a href="index.jsp">Index Page</a> | <a href="#">Checkout Page</a> | <a href="register.jsp">Register</a> | <a href="login.jsp">Login</a></div>
+<div class="nav">
+    <a href="index.jsp"> Home</a> 
+    <a href="#"> Best Sellers </a> 
+    <a href="#"> New Releases </a> 
+    <div class="nav-right" style="float: right">
+        <a href="userRegister.jsp">Register</a>
+        <a href="login.jsp">Login</a>
+        <a href="logout.jsp">Logout</a>
+        <a href="userMyAccount.jsp">My Account</a>
+        <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+    </div>
+</div>
 
 <% }%>
 

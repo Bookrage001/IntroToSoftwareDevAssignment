@@ -8,6 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.io.*" %>
 
+
 <% String msFilePath = application.getRealPath("WEB-INF");%>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
@@ -57,10 +58,9 @@
 <content>
     <div class ="container">
         <%@include file="WEB-INF/Modules/navbar.jspf" %>
+        
         <div id="collection">
-            <div id="refine">
-                <%@include file="WEB-INF/Modules/refignSearch.jspf" %>
-            </div>
+
             <div id="orders">
                 <%@include file="WEB-INF/Modules/Orders.jspf" %>
             </div>

@@ -48,13 +48,14 @@
                         <br>
                         <div>
                             <form method="post" action="checkout.jsp">
+                                <input type="hidden" name="movieID" value="<%= movies.getID()%>">
                                 <button type="submit" class="fa fa-cart-plus" style="padding: 16px 32px;">  Add to Cart</button>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <img class="movieimg" src="Images/posters/ENDGAME.jpg"  style="float:right; width: 260px; height: 320px"/>
+                    <img class="movieimg" src="<%= move.getPoster()%>"  style="float:right; width: 260px; height: 320px"/>
                 </div>
 
             </div>

@@ -1,37 +1,33 @@
 
 package MovieStore.Model;
 
-import java.math.BigInteger;
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.math.BigInteger;
 
 public class Order implements Serializable {
 
-    private BigInteger orderId;
-    private String username; //PK
-    private BigInteger movieId; //PK
+    private int orderId;
+    private String username; // PK
     private int amount;
     private String status;
-    private ArrayList<Movie> movies; // if i get a chance to do a get for these ...
+    private Movie movie;
 
     public Order() {
     }
 
-    //MARK CHANGED THIS ORDER
-    public Order(BigInteger orderId, BigInteger movieId, int amount, String username, String status) {
+    // As Intager
+    public Order(int orderId, int amount, String username, String status) {
         this.orderId = orderId;
         this.username = username;
-        this.movieId = movieId;
         this.amount = amount;
         this.status = status;
     }
 
-    public BigInteger getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(BigInteger orderId) {
-        this.orderId = orderId;
+    public Order(Movie movie, int amount, String username) {
+        this.movie = movie;
+        this.status = "In Cart";
+        this.amount = amount;
+        this.username = username;
     }
 
     public String getUsername() {
@@ -42,13 +38,6 @@ public class Order implements Serializable {
         this.username = username;
     }
 
-    public BigInteger getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(BigInteger movieId) {
-        this.movieId = movieId;
-    }
 
     public int getAmount() {
         return amount;
@@ -66,4 +55,19 @@ public class Order implements Serializable {
         this.status = status;
     }
 
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
 }

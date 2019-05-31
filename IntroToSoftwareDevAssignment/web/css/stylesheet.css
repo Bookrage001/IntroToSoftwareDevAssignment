@@ -17,28 +17,33 @@ body {
 }
 
 header {
-    background-color: rbga(0,0,0,1);
+    background-color: rbga(0, 0, 0, 1);
     border-bottom: 0;
 }
-.searchContainer{
+
+.searchContainer {
     display: auto;
+    width: 80%;
 }
+
 #Logo {
     max-width: 250px;
 }
 
 #Logoposition {
     float: left;
+    margin-left: 50px;
 }
 
-.search{
+.search {
     margin: 10px;
 }
 
 .search button {
-  border: none;
-  cursor: pointer;
+    border: none;
+    cursor: pointer;
 }
+
 .caption {
     padding: 10px;
 }
@@ -52,7 +57,12 @@ header {
     margin-top: 10px;
 }
 
-#Navbar {}
+#Navbar {
+    width: 90%;
+    float: center;
+    margin-left: 5%;
+    margin-right: 5%
+}
 
 #refine {
     width: 20%;
@@ -192,23 +202,28 @@ header {
     font-family: Arial;
 }
 
+
 /******Style for Home.jsp******/
+
 * {
     box-sizing: border-box;
 }
 
 form.example input[type=text] {
     padding: 10px;
+    margin-left: 50px;
     font-size: 17px;
     border: 1px solid grey;
-    width: 70%;
+    width: 60%;
     background: #f1f1f1;
     border-radius: 4px;
     margin-top: 25px;
 }
 
 form.example button {
-    width: 10%;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     background: #34495E;
     color: white;
@@ -225,4 +240,4 @@ form.example::after {
     content: "";
     clear: both;
     display: table;
-}           
+}

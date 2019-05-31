@@ -4,6 +4,7 @@
     Author     : mcant
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,6 +51,10 @@
                             <div class="form-group">
                                 <label>Synopsis</label>
                                 <input type="text" class="form-control" name="synopsis">
+                            </div>
+                            <div class="form-group">
+                                <label>Image Location</label>
+                                <input type="text" class="form-control" name="poster">
                             </div>
                         </div>
                         <!-- Movie Details -->
