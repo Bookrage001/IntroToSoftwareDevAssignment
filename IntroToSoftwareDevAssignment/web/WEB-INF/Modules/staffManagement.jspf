@@ -1,4 +1,15 @@
-<%-- any content can be specified here e.g.: --%>
+
+<%@page import="MovieStore.Model.*"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.dao.DBManager"%>
+<%
+    //DBManager db = (DBManager)session.getAttribute("manager");
+    //ArrayList<Movie> movies = db.getMovies();
+    //ArrayList<UserActivity> userActivity = db.getActivity();
+    //ArrayList<User> users = db.getUsers();
+    //ArrayList<Order> orders = db.getOrders();
+    %>
+<link href="css/style.css" rel="stylesheet">
 <%@ page pageEncoding="UTF-8" %>
 <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
     <div class="sidebar">
@@ -18,22 +29,25 @@
                     <a href="AddMovie.jsp"><i class="fa fa-file-video-o"></i>Add Movie Listing</a>
                 </li> 
                 <li>
-                    <a href="staffEditMovie.jsp"><i class="fa fa-edit"></i> Edit Movie Listing <span>30</span></a>
+                    <a href="staffEditMovie.jsp"><i class="fa fa-edit"></i> Edit Movie Listing <span>20</span></a>
                 </li>
                 <li>
-                    <a href="staffDeleteMovies.jsp"><i class="fa fa-trash"></i> Delete Movie Listing <span>30</span></a>
+                    <a href="staffDeleteMovies.jsp"><i class="fa fa-trash"></i> Delete Movie Listing <span>20</span></a>
                 </li>               
                 <li>
-                    <a href="#"><i class="fa fa-group"></i>Manage Customers <span>57</span></a>
+                    <a href="UserManagement.jsp"><i class="fa fa-group"></i>Manage Customers <span>20</span></a>
+                </li>
+                <li>
+                    <a href="userActivity.jsp"><i class="fa fa-group"></i>Manage Customers Activity<span>57</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-cart-arrow-down"></i> Orders<span>23</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                    <a href="logout.jsp"><i class="fa fa-sign-out"></i> Logout</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-trash"></i>Delete Account</a>
+                    <a href="userDelete.jsp"><i class="fa fa-trash"></i>Delete Account</a>
                 </li>
             </ul>
         </div>

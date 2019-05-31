@@ -15,7 +15,7 @@
     %>
     <form method="post" action="deleteMovie.jsp">
         <div style="padding:20px" >
-            <img class="movieimg" img='' />
+            <img class="movieimg" img='<%= movies.getPoster() %>' />
             <div align="center">
                 <input type="hidden" name="movieID" value="<%= movies.getID()%>">
                 <%= movies.getTitle()%> <br>

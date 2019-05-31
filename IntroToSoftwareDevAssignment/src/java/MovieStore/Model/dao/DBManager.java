@@ -20,6 +20,10 @@ public class DBManager {
 
     private Statement st;
 
+    public Statement getSt() {
+        return st;
+    }
+
     public DBManager(Connection conn) throws SQLException {
         st = conn.createStatement();
     }
@@ -40,8 +44,9 @@ public class DBManager {
             String synopsis = rs.getString(6);
             double price = rs.getDouble(7);
             int copies = rs.getInt(8);
+            String poster = rs.getString(9);
 
-            movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies));
+            movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies, poster));
         }
         return movies;
     }
@@ -58,8 +63,9 @@ public class DBManager {
             String synopsis = rs.getString(6);
             double price = rs.getDouble(7);
             int copies = rs.getInt(8);
+            String poster = rs.getString(9);
 
-            return new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies);
+            return new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies, poster);
         }
         return null;
     }
@@ -69,7 +75,7 @@ public class DBManager {
             double price, int copies) throws SQLException {
 
         st.executeUpdate("INSERT INTO MOVIES VALUES (" + movieID + ",'" + title + "','" + genre + "','" + releaseDate
-                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ")");
+                + "','" + director + "','" + synopsis + "'," + price + "," + copies + "Images/posters/nomives.jpg)");
     }
 
     // Creates an Arraylist of movies containing a specific keyword and storing it
@@ -90,8 +96,9 @@ public class DBManager {
             String synopsis = rs.getString(6);
             double price = rs.getDouble(7);
             int copies = rs.getInt(8);
+            String poster = rs.getString(9);
 
-            movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies));
+            movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies, poster));
         }
         return movies;
     }
@@ -110,8 +117,9 @@ public class DBManager {
             String synopsis = rs.getString(6);
             double price = rs.getDouble(7);
             int copies = rs.getInt(8);
+            String poster = rs.getString(9);
 
-            movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies));
+            movies.add(new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies, poster));
         }
         return movies;
     }
@@ -154,10 +162,30 @@ public class DBManager {
         return false;
     }
 
+    //getList of all users
+    public ArrayList<User> getUsers() throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS");
+
+        ArrayList<User> users = new ArrayList();
+
+        while (rs.next()) {
+                String username = rs.getString(1);
+                String password = rs.getString(2);
+                String email = rs.getString(3);
+                String firstname = rs.getString(4);
+                String lastname = rs.getString(5);
+                String address = rs.getString(6);
+                String suburb = rs.getString(7);
+                String postcode = rs.getString(8);
+
+            users.add(new User(username, password, email, firstname, lastname, address, suburb, postcode, "user", "available"));
+        }
+        return users;
+    }
     //Add a user-data into the database
     public void addUser(String Username, String Password, String Email, String First_Name, String Last_Name, String Address, String Suburb, String Postcode) throws SQLException {
         st.executeUpdate("INSERT INTO USERS VALUES ('" + Username + "', '" + Password + "', '" + Email + "', '" + First_Name + "','" + Last_Name + "','" + Address + "','" + Postcode
-                + "','" + Suburb + "','user','available')");
+                + "','" + Suburb + "','User','available')");
     }
 
     //update a student details in the database

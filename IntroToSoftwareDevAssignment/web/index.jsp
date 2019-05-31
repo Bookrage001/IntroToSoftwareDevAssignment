@@ -27,13 +27,18 @@
                     //Add new session for all books
                     DBManager db = (DBManager) session.getAttribute("manager");
                     ArrayList<Movie> list = db.getMovies();
+                    if (list == null) {
+
+                %>
+                <h2>NO MOVIES AVAILABLE!</h2>
+                <%                } else {
                     for (Movie movies : list) {
                 %>
                 <div style="padding:20px" >
                     <form method="post" action="movieDetails.jsp">
 
                         <button type="submit" style="background: transparent">
-                            <img class="movieimg" img='' />
+                            <img class="movieimg" img='<%= movies.getPoster() %>'/>
                             <div align="center">
                                 <input type="hidden" name="movieID" value="<%= movies.getID()%>">
                                 <%= movies.getTitle()%> <br>
@@ -49,6 +54,9 @@
                     </div>
                 </div>
                 <%
+                %>
+
+                <%   }
                     }
                 %>
             </div>
