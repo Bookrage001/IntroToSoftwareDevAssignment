@@ -382,10 +382,17 @@ public class DBManager {
         return null;
     }
 
-    public BigInteger getMaxNumber(String table, String column_name) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT MAX(" + column_name + ") FROM " + table);
-        BigInteger number = BigInteger.valueOf(rs.getInt(1));
-        return number;
+    public Long getMaxNumber(String table, String column_name) {
+        try {
+            ResultSet rs = st.executeQuery("SELECT MAX(" + column_name + ") FROM " + table);
+            while (rs.next()) {
+                Long longInt = rs.getLong(1);
+                return longInt;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     // Delete Activity from Log

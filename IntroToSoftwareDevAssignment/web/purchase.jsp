@@ -6,11 +6,9 @@
 <%@page import="java.util.*"%>
 <%@page import="MovieStore.Model.*"%>
 <%@page import="MovieStore.Model.dao.*"%>
-<%@page import="import java.math.BigInteger"%>
+<%@page import="java.math.BigInteger"%>
 <jsp:include page="/ConnServlet" flush="true" />
 <%@ page pageEncoding="UTF-8" contentType="text/html" %>
-<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="MovieStore.Model.*" %>
 
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
@@ -43,8 +41,8 @@
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
                 Cart cart = (Cart) session.getAttribute("cart");
-                BigInteger ORDER_ID = (BigInteger) db.getMaxNumber("ORDERS", "ORDER_ID");
-                ORDER_ID.add(BigInteger.valueOf(1));
+                Long LongOrderId = db.getMaxNumber("ORDERS", "ORDER_ID");
+                int OrderId = LongOrderId.intValue();
                 String username;
                 if (request.getParameter("userLogin") != null) {
                     User loggedInUser = (User) session.getAttribute("userLogin");
@@ -54,7 +52,7 @@
                 }
                 for (Order order: cart.getOrders()) {
                     // TODO do some validation then purchase the movie
-                    db.addOrder(ORDER_ID, username, order.getMovieId(), order.getAmount(),"Purchased" );
+                    db.addOrder(OrderId + 1, "clabuschagne4", order.getIntMivieId(), order.getAmount(),"Purchased" );
                 }
             %>
                 <h1>Your Order Has Been Placed</h1>
@@ -63,22 +61,4 @@
         </div>
     </content>
 </body>
-<!--Script-->
-<script>
-    $(document).ready(function () {
-        $('.order tr').click(function (event) {
-            if (event.target.type !== 'checkbox') {
-                $(':checkbox', this).trigger('click');
-            }
-        });
-        $("input[type='checkbox']").change(function (e) {
-            if ($(this).is(":checked")) {
-                $(this).closest('tr').addClass("highlight_row");
-            } else {
-                $(this).closest('tr').removeClass("highlight_row");
-            }
-        });
-    });
-</script>
-<jsp:include page="/ConnServlet" flush="true" />
 </html>
