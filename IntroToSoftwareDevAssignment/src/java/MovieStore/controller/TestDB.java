@@ -52,7 +52,7 @@ public class TestDB {
             
             String poster ="Images/posters/nomives.jpg";
 
-            db.addMovie(key, title, genre, releaseDate, director, synopsis, price, copies, poster);
+            db.addMovie(key, title, genre, releaseDate, director, synopsis, price, copies);
             System.out.println("Movie is successfully added to the database");
 
             connector.closeConnection();

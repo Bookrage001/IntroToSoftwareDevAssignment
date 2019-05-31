@@ -116,12 +116,11 @@ public class DBManager {
     }
 
     // Add movies. simple query
-
     public void addMovie(int movieID, String title, String genre, String releaseDate, String director, String synopsis,
-            double price, int copies, String poster) throws SQLException {
+            double price, int copies) throws SQLException {
 
         st.executeUpdate("INSERT INTO MOVIES VALUES (" + movieID + ",'" + title + "','" + genre + "','" + releaseDate
-                + "','" + director + "','" + synopsis + "'," + price + "," + copies + "'" + poster +"')");
+                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ",null)");
     }
 
     // Creates an Arraylist of movies containing a specific keyword and storing it
