@@ -23,7 +23,9 @@
         <div class="container">
             <header align="left">
                 <div id="Logoposition">
-                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+                <a href="index.jsp">
+                    <img src="Images/RaiMovieLogoBlue.png"  id="Logo">
+                    </a>
                 </div>
                 <div id="Search">
                     <%@include file="WEB-INF/Modules/search.jspf"%>
@@ -40,11 +42,11 @@
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
                 Cart cart = (Cart) session.getAttribute("cart");
-                /*if (request.getParameter("removeForm") != null) {
-                    String movieId = request.getParameter("removeForm");
-                    Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
+                if (request.getParameter("removeId") != null) {
+                    int movieId = Integer.parseInt(request.getParameter("removeId"));
+                    Movie movie = db.getMovieDetails(movieId);
                     cart.removeOrder(movie);
-                } else */ 
+                }
                 if (request.getParameter("movieID") != null) {
                     int movieId = Integer.parseInt(request.getParameter("movieID"));
                     Movie movie = db.getMovieDetails(movieId);
@@ -53,7 +55,7 @@
                 if ( cart.getOrders().size() != 0) {
                 
             %>
-                <form action="checkout.jsp" method="POST" id="removeForm">
+                <form method="POST" >
                 <table class="cart">
                     <thead>
                         <tr><b>
@@ -77,15 +79,19 @@
                                 <td><%=order.getMovie().getDirector()%></td>
                                 <td><input type="number" value="<%=order.getAmount()%>"  min="1" max="<%=order.getMovie().getCopies()%>" > </td>
                                 <td>$<%=order.getMovie().getPrice()%></td>
-                                <input type="hidden" name="remove" value="<%=order.getMovie().getID()%>">
-                                <td><button form="moviesArrayForm" value="Submit" form="removeForm">Remove</button></td>
+                                <td>
+                                <form method="post" action="checkout.jsp">
+                                    <input type="hidden" name="removeId" value="<%=order.getMovie().getID()%>">
+                                    <button type="submit">Remove</button>
+                                </form>
+                                </td>
                                 </tr>
                             <%
                             }
                             %>
                     </tbody>
                 </table>
-                <button action="save.jsp">Save</button>
+                <button action="purchase.jsp">Purchase</button>
                 <form>
                 <%
                 } else {
