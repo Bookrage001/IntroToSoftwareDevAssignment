@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
     </head>
-    <body>    
+    <body>  
        
         <div style="margin-top:5%"></div>
         <h1>Enter your details to Register: </h1>
@@ -21,7 +21,7 @@
             <img src="Images/RaiMovieLogoBlue.png" style="width:500px;height:100px;">
         </div>
         <div class = container>
-            <form action="registerAction.jsp" method="POST">
+            <form action="registerAction_1.jsp" method="POST">
                 <h1>Registration</h1>
                 <table align="center">
                     <tr>
@@ -31,7 +31,7 @@
                         <td>Email: <input type="text" name="email"> </td>
                     </tr>
                     <table align="center">
-                        <tr>
+                        <tr>fevsdxczfdvc
                             <td>
                                 Password: <input type="password" name="password">
                             </td>

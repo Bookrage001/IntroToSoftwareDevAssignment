@@ -29,7 +29,7 @@
         session.setAttribute("userlogin",user);
                 DBConnector connector = new DBConnector(); //Create a connection and initialize DB conn-field
             Connection conn = connector.openConnection(); //Get the protected connection instance from DB superclass to share for the application classes
-            DBManager db = new DBManager(conn); //DBManger instance provide users with access to CRUD operations
+           DBManager db = new DBManager(conn); //DBManger instance provide users with access to CRUD operations
             
             
             //String username = "mstrowan3";
