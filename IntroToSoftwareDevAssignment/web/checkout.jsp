@@ -37,21 +37,12 @@
             <%-- just some logic to controll the cart --%>
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
-                String[] moviesArray = request.getParameterValues("movieArray");
                 Cart cart = (Cart) session.getAttribute("cart");
-                String removeMovie = (String) request.getAttribute("remove");
-                if (removeMovie != null) {
-                    Movie movie = db.getMovieDetails(Integer.parseInt(removeMovie));
-                    cart.removeMovie(movie);
-                }
-                if(moviesArray != null || moviesArray.length != 0 || cart.getOrders().size() != 0) {
-                    if (moviesArray != null || moviesArray.length != 0) {
-                        for(String movieId : moviesArray) {
-                            Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
-                            cart.addOrder(movie,1);
-                            }
-                        }
-                %>
+                String[] moviesArray = null;
+                int lenght = request.getParameterValues("movieArray").length;
+                if ( lenght != 0) {
+
+            %>
                 <form action="checkout.jsp" method="POST" id="removeForm">
                 <table class="cart">
                     <thead>
