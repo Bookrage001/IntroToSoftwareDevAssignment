@@ -36,8 +36,6 @@ function updateForm() {
     })
 }
 </script>
-    <form action="checkout.jsp" method="POST" id="moviesArrayForm">
-    </form>
     <div align="right" class="loginStatus">Logged in as: 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -52,7 +50,7 @@ function updateForm() {
     <div class="nav-right">
     <a href="AddMovie.jsp" style="border-left: 1px solid black">Add Movie</a>
     <a href="logout.jsp">Logout</a>
-    <input type="image" onClick="updateForm()"  src="Images/Cart.png" form="moviesArrayForm" value="Submit" height="15" width="15" padding="10%" alt="check out" />
+    <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
 </div>
 

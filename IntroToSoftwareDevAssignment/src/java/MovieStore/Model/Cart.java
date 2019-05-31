@@ -5,13 +5,41 @@ import MovieStore.Model.dao.*;
 import MovieStore.Model.Order;
 import java.io.Serializable;
 import java.util.ArrayList;
+import MovieStore.controller.ConnServlet;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Cart implements Serializable {
     private ArrayList<Order> orders = new ArrayList<Order>();
     private String username;
+    private int id;
+
+    DBConnector connector;
+    Connection conn = connector.openConnection();
+    DBManager db;
 
     public Cart() {
 
+        try {
+            this.db = new DBManager(conn);
+            this.connector = new DBConnector();
+        } catch (SQLException ex) {
+            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void save() {
+        for (Order order : orders) {
+            try {
+                db.addOrder(id, username, order.getMovie().getID(), order.getAmount(), "Saved");
+            } catch (SQLException ex) {
+                Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     public Cart(ArrayList<Order> orders) {
@@ -31,6 +59,14 @@ public class Cart implements Serializable {
         }
     }
 
+    public void addOrder(Movie movie) {
+        if (!exists(movie)) {
+            this.username = "anonymous";
+            Order order = new Order(movie, 1, this.username);
+            orders.add(order);
+        }
+    }
+
     private boolean exists(Movie movie) {
         for (Order order : orders) {
             if (order.getMovie().getID() == movie.getID()) {
@@ -40,7 +76,7 @@ public class Cart implements Serializable {
         return false;
     }
 
-    public void removeMovie(Movie movie) {
+    public void removeOrder(Movie movie) {
         for (Order order : orders) {
             if (order.getMovie().getID() == movie.getID()) {
                 orders.remove(order);
@@ -49,7 +85,11 @@ public class Cart implements Serializable {
     }
 
     public ArrayList<Order> getOrders() {
-        return orders;
+        return this.orders;
+    }
+
+    public boolean isOrders() {
+        return orders.size() == 0;
     }
 
     public void setAmount(Movie movie, int amount) {

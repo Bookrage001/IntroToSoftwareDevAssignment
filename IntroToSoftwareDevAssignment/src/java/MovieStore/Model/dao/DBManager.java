@@ -53,8 +53,6 @@ public class DBManager {
         return movies;
     }
 
-    <<<<<<<HEAD
-
     /*
      *
      * @Param BigInteger orderId
@@ -81,7 +79,19 @@ public class DBManager {
         }
     }
 
-    =======
+    public void addOrder(int intOrderId, String username, int intmovieId, int amount, String status)
+            throws SQLException {
+        BigInteger OrderId = BigInteger.valueOf(intOrderId);
+        BigInteger movieId = BigInteger.valueOf(intmovieId);
+        try {
+            st.execute("INSERT INTO ORDERS VALUES(" + OrderId + ",'" + username + "','" + movieId + "','" + amount
+                    + "','" + status + ")");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println(e);
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
 
     public Movie getMovieDetails(int id) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM MOVIES WHERE MOVIE_ID =" + id);
@@ -102,7 +112,6 @@ public class DBManager {
     }
 
     // Add movies. simple query
-    >>>>>>>origin/master
 
     public void addMovie(int movieID, String title, String genre, String releaseDate, String director, String synopsis,
             double price, int copies) throws SQLException {
@@ -154,27 +163,6 @@ public class DBManager {
         }
         return movies;
     }
-
-    public Movie getMovieDetails(int id) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT * FROM MOVIES WHERE MOVIE_ID =" + id);
-
-        while (rs.next()) {
-            int movieID = rs.getInt(1);
-            String title = rs.getString(2);
-            String genre = rs.getString(3);
-            String releaseDate = rs.getString(4);
-            String director = rs.getString(5);
-            String synopsis = rs.getString(6);
-            double price = rs.getDouble(7);
-            int copies = rs.getInt(8);
-
-            return new Movie(movieID, title, genre, releaseDate, director, synopsis, price, copies);
-        }
-        return null;
-    }
-
-    public void UpdateMovie(int movieID, String title, String genre, String releaseDate, String director,
-            String synopsis, double price, int copies) {
 
     public boolean isMovie(int movieID) throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM MOVIE WHERE MOVIE_ID = " + movieID);

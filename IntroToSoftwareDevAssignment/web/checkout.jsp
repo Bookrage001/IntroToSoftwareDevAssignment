@@ -28,20 +28,31 @@
                 <div id="Search">
                     <%@include file="WEB-INF/Modules/search.jspf"%>
                 </div>
+                <div>
+                    <%@include file="WEB-INF/Modules/navbar.jspf"%>
+                </div>
             </header>
         </div>
     <content>
         <div class ="container">
-            <%@include file="WEB-INF/Modules/navbar.jspf" %>
             <div id="collection">
             <%-- just some logic to controll the cart --%>
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
                 Cart cart = (Cart) session.getAttribute("cart");
-                String[] moviesArray = null;
-                int lenght = request.getParameterValues("movieArray").length;
-                if ( lenght != 0) {
-
+                
+                /*if (request.getParameter("removeForm") != null) {
+                    String movieId = request.getParameter("removeForm");
+                    Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
+                    cart.removeOrder(movie);
+                } else */ 
+                if (request.getParameter("movieId") != null) {
+                    String movieId = request.getParameter("movieId");
+                    Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
+                    cart.addOrder(movie);
+                }
+                if ( cart.getOrders().size() != 0) {
+                
             %>
                 <form action="checkout.jsp" method="POST" id="removeForm">
                 <table class="cart">
@@ -78,14 +89,15 @@
                 <form>
                 <%
                 } else {
-                            %>
-                            NO ORDERS
-                            <a href="index.jsp">Cick here to add some movies</a>
-                            <%
+                %>
+                NO ORDERS
+                <a href="index.jsp">Cick here to add some movies</a>
+                <%
 
                 }
                         %>
             </div>
+            <%= cart.getOrders().size()%>
         </div>
     </content>
 </body>
