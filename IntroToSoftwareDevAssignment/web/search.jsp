@@ -39,7 +39,7 @@
                     <form method="post" action="movieDetails.jsp">
 
                         <button type="submit" style="background: transparent">
-                            <img class="movieimg" img='' />
+                            <img class="movieimg" src="<%= movies.getPoster()%>"  />
                             <div align="center">
                                 <input type="hidden" name="movieID" value="<%= movies.getID()%>">
                                 <%= movies.getTitle()%> <br>

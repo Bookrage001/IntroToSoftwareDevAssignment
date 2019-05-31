@@ -25,7 +25,6 @@
             session.setAttribute("EmptyErr", "Your acount has been cancelled");
             session.invalidate();
             response.sendRedirect("index.jsp");
-
         %>
 
     </body>

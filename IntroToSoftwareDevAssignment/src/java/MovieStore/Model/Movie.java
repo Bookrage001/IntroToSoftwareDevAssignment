@@ -23,13 +23,14 @@ public class Movie implements Serializable{
     private String synopsis;
     private double price;
     private int copies;
+    private String poster;
 
     private ArrayList<Movie> list = new ArrayList<Movie>();
     public Movie() {
     }
 
 
-    public Movie(int Id, String title, String genre, String releaseDate, String director, String synopsis, double price, int copies) {
+    public Movie(int Id, String title, String genre, String releaseDate, String director, String synopsis, double price, int copies, String poster) {
         this.Id = Id;
         this.title = title;
         this.genre = genre;
@@ -38,6 +39,7 @@ public class Movie implements Serializable{
         this.synopsis = synopsis;
         this.price = price;
         this.copies = copies;
+        this.poster = poster;
     }
     
     public Movie getMovieID(int ID){
@@ -51,6 +53,14 @@ public class Movie implements Serializable{
     
     public Movie(ArrayList<Movie> list){
         this.list = list;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public int getID() {

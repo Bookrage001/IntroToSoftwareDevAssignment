@@ -59,7 +59,7 @@
             </div>
         </content>
 
-        <searchcontainer>
+        <searchcontainer style="float: right">
             <%@include file="WEB-INF/Modules/searchActivity.jspf"%>
         </searchcontainer>
 

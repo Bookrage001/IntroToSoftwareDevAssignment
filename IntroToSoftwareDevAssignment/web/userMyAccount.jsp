@@ -18,12 +18,11 @@
         User user = (User) session.getAttribute("userLogin");
 
         String username = user.getUsername();
-        session.setAttribute("userlogin", user);
         DBManager db = (DBManager) session.getAttribute("manager");
 
         //String username = "mstrowan3";
         String[] details = new String[3];
-        details = db.getDetails(username);
+        details = db.getDetails(user.getUsername());
 
 
     %>
@@ -45,14 +44,13 @@
         <div style ="padding-top: 1%"> </div>
         <div name="container1" style="border: 1px solid green;width: 50%;margin:auto;background:white;padding-top:">
 
-            <h1><%= username%></h1>
+            <h1><%= user.getUsername()%></h1>
             <h2><%= details[1]%>  <%= details[2]%></h2>
 
 
 
             <div name="details" style="text-align: left; margin-top:10%; margin-right: 15%;float:right">
                 <form action="userChangeDetails.jsp" method="post">
-                    <%session.setAttribute("details", details);%>
 
                     <p><input type="submit" value="Change Details"></button></p>
                 </form>
