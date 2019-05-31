@@ -6,12 +6,9 @@
 package MovieStore.Model.dao;
 
 import MovieStore.Model.Movie;
-import MovieStore.Model.Order;
+import MovieStore.Model.User;
+import MovieStore.Model.UserActivity;
 import java.sql.Connection;
-import java.math.BigInteger;
-import java.sql.*;
-import java.util.ArrayList;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -159,8 +156,8 @@ public class DBManager {
 
     //Add a user-data into the database
     public void addUser(String Username, String Password, String Email, String First_Name, String Last_Name, String Address, String Suburb, String Postcode) throws SQLException {
-        st.executeUpdate("INSERT INTO USERS VALUES ('" + Username + "', '" + Password + "', '" + Email + "', '" + First_Name + "','" + Last_Name + "','" + Address + "','" + Postcode + 
-                "','" + Suburb + "','user','available')");
+        st.executeUpdate("INSERT INTO USERS VALUES ('" + Username + "', '" + Password + "', '" + Email + "', '" + First_Name + "','" + Last_Name + "','" + Address + "','" + Postcode
+                + "','" + Suburb + "','user','available')");
     }
 
     //update a student details in the database
@@ -230,4 +227,109 @@ public class DBManager {
         return null;
     }
 
+    //Find User by username in database
+    public User findUser(String username, String password) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'");
+        while (rs.next()) {
+            String userid = rs.getString(1);
+            String userpass = rs.getString(2);
+
+            if (userid.equals(username) && userpass.equals(password)) {
+                String email = rs.getString(3);
+                String firstname = rs.getString(4);
+                String lastname = rs.getString(5);
+                String address = rs.getString(6);
+                String suburb = rs.getString(7);
+                String postcode = rs.getString(8);
+                String type = rs.getString(9);
+                String status = rs.getString(10);
+
+                return new User(userid, userpass, email, firstname, lastname, address, suburb, postcode, type, status);
+            }
+        }
+        return null;
+    }
+
+    //Add Log ID for every login
+    public void createLogin(int logId, String username, String status, String activity) throws SQLException {
+        st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
+    }
+
+    //Add Log ID for every logout
+    public void createLogout(int logId, String username, String status, String activity) throws SQLException {
+        st.executeUpdate("INSERT INTO LOG VALUES (" + logId + ", '" + username + "', '" + status + "', '" + activity + "')");
+    }
+
+    //Find user log in database
+    public UserActivity getUser(String username) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE USERNAME = '" + username + "'");
+        while (rs.next()) {
+            String userid = rs.getString(2);
+
+            if (userid.equals(username)) {
+
+                int logId = rs.getInt(1);
+                String status = rs.getString(3);
+                String activity = rs.getString(4);
+
+                return new UserActivity(logId, userid, status, activity);
+            }
+        }
+        return null;
+    }
+
+    //Show Log Database
+    public ArrayList<UserActivity> getActivity() throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG");
+
+        ArrayList<UserActivity> act = new ArrayList();
+
+        while (rs.next()) {
+            int logId = rs.getInt(1);
+            String username = rs.getString(2);
+            String status = rs.getString(3);
+            String activity = rs.getString(4);
+
+            act.add(new UserActivity(logId, username, status, activity));
+        }
+        return act;
+    }
+
+    // Search by date
+    public ArrayList<UserActivity> searchActivity(String keyword) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE ACTIVITY LIKE '%" + keyword + "%'");
+
+        ArrayList<UserActivity> act = new ArrayList();
+
+        while (rs.next()) {
+            int logId = rs.getInt(1);
+            String username = rs.getString(2);
+            String status = rs.getString(3);
+            String activity = rs.getString(4);
+
+            act.add(new UserActivity(logId, username, status, activity));
+        }
+        return act;
+    }
+
+    //  Retrive activity log details
+    public UserActivity getActivityDetails(int id) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM LOG WHERE LOGID =" + id);
+
+        while (rs.next()) {
+            int logId = rs.getInt(1);
+            String username = rs.getString(2);
+            String status = rs.getString(3);
+            String activity = rs.getString(4);
+
+            return new UserActivity(logId, username, status, activity);
+        }
+        return null;
+    }
+
+    // Delete Activity from Log
+    public void deleteActivity(int logId) throws SQLException {
+        //code for delete-operation
+        st.executeUpdate("DELETE FROM LOG WHERE LOGID =" + logId);
+    }
 }
