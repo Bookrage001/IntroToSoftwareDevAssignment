@@ -32,6 +32,7 @@
         <a href="AddMovie.jsp" style="border-left: 1px solid black">Add Movie</a>
         <a href="userRegister.jsp">sign-in</a>
         <a href="logout.jsp">Logout</a>
+        <a href="userMyAccount.jsp">My Account</a>
         <a href="Orders.jspf" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
 </div>

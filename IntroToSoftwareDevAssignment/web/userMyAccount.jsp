@@ -15,7 +15,7 @@
     </head>
     <%
 
-        User user = (User) session.getAttribute("userlogin");
+        User user = (User) session.getAttribute("userLogin");
 
         String username = user.getUsername();
         session.setAttribute("userlogin", user);
