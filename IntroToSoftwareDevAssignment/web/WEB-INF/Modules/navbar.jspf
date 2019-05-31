@@ -9,7 +9,7 @@
         %>
         <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
         <% if (user != null) {%>
-        <div align="right" class="loginStatus">Logged in as: <%=user.getUsername()%><br>
+        <div align="right" class="loginStatus">Logged in as: <%=user.getUser()%><br>
         </div>
         <% } else { %>
         <div align="right" class="loginStatus">
@@ -45,7 +45,6 @@
             <a href="index.jsp"> Home</a> 
             <a href="#"> Best Sellers </a> 
             <a href="#"> New Releases </a>
-            <a href="UserManagement.jsp"> User Management</a>
             <div class="nav-right">
                 <a href="login.jsp" style="border-left: 1px solid black">Login</a>
                 <a href="register.jsp" style="border-left: 1px solid black">Register</a>

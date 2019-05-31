@@ -9,6 +9,7 @@
 <html>
     <%
         DBManager db = (DBManager) session.getAttribute("manager");
+        User me = (User) session.getAttribute("userLogin");
     %>
     <body>
         <form action="searchUser.jsp" method="post">
@@ -44,9 +45,11 @@
                     <td><%=rs.getString("suburb")%></td>
                     <td><%=rs.getString("postcode")%></td>
                     <td><%=rs.getString("type")%></td>
-                    <td><a href="DeleteUserAction.jsp?username=<%=rs.getString("username")%>"><button type="button" class="DeleteAction">Delete</button></a></td>
                     <td><a href="UpdateUser.jsp?username=<%=rs.getString("username")%>"><button type="button" class="UpdateUser">Update</button></a></td>
+                    <%if (!rs.getString("username").contains(me.getUsername())) {%>
+                    <td><a href="DeleteUserAction.jsp?username=<%=rs.getString("username")%>"><button type="button" class="DeleteAction">Delete</button></a></td>
                 </tr>
+                <% } %>
                 <% i++;} %>
             </tbody>
         </table>

@@ -7,6 +7,7 @@
 
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <%
+    User me = (User) session.getAttribute("userLogin");
     String username = request.getParameter("username");
     DBManager db = (DBManager) session.getAttribute("manager");
     Statement stm = db.getSt();
@@ -36,7 +37,7 @@ Last name:<br>
 <br>
 Email Id:<br>
 <input type="email" name="email" value="<%=rs.getString("email")%>">
-<br><br>
+<br>
 Address:<br>
 <input type="text" name="address" value="<%=rs.getString("address")%>">
 <br>
@@ -46,8 +47,14 @@ Suburb:<br>
 Postcode:<br>
 <input type="text" name="postcode" value="<%=rs.getString("postcode")%>">
 <br>
+<% if(me.getType().equals("admin")) {%>
 Type:<br>
-<input type="text" name="type" value="<%=rs.getString("type")%>">
+<select name="type">
+<option value="admin">admin</option>
+<option value="staff">staff</option>
+<option value="user">user</option>
+</select>
+<% } %>
 <br>
 <input type="submit" value="submit">
 </form>
