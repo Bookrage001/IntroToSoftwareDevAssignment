@@ -43,13 +43,13 @@
     </content>
 
     <%
-        User user = (User) session.getAttribute("userLogin");
         String username = user.getUsername();
         DBManager db = (DBManager) session.getAttribute("manager");
         int logId = (new Random()).nextInt(999999);
         String activity = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy").format(new java.util.Date());
         db.createLogout(logId, username, "Signed Out", activity);
         session.invalidate();
+        response.sendRedirect("index.jsp");
     %>
     <p class="outline">You have been logged out. Click <a class="link" href="index.jsp">here</a> to return to the home page.</p>
 </body>

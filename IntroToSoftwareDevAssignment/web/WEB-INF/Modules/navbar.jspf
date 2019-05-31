@@ -1,10 +1,7 @@
 <jsp:include page="/ConnServlet" flush="true" />
 <%@ page pageEncoding="UTF-8" %>
-<%
-//    User loggedInUser = (User) session.getAttribute("user");
-//    if (loggedInUser != null) {
-    if (true) {
-%>
+<%@page import="MovieStore.Model.User"%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- PLUGINS CSS STYLE -->
 <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -19,10 +16,12 @@
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
     <div align="right" class="loginStatus">Logged in as: 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+<%
+    User user = (User) session.getAttribute("user");
+    if (user != null) {
+%>
 <div align="right" class="loginStatus">Logged in as: 
-    <%--<%= loggedInUser.getFirstName() + " " + loggedInUser.getLastName()%>--%> User Name<br>
+    <%= user.getFirstname() + " " + user.getLastname()%><br>
 </div>
 <div class="nav">
     <a href="index.jsp"> Home</a> 

@@ -43,16 +43,17 @@
                 Cart cart = (Cart) session.getAttribute("cart");
                 Long LongOrderId = db.getMaxNumber("ORDERS", "ORDER_ID");
                 int OrderId = LongOrderId.intValue();
+                String user = (User) request.getParameter("user");
                 String username;
-                if (request.getParameter("userLogin") != null) {
-                    User loggedInUser = (User) session.getAttribute("userLogin");
-                    username = loggedInUser.getUsername();
+                if (user.getUsername() != null) {
+                    User loggedInUser = (User) session.getAttribute("user");
+                    username = user.getUsername();
                 } else {
                     username = "clabuschagne4";
                 }
                 for (Order order: cart.getOrders()) {
                     // TODO do some validation then purchase the movie
-                    db.addOrder(OrderId + 1, username , order.getIntMivieId(), order.getAmount(),"Purchased" );
+                    db.addOrder(OrderId + 1, username , order.getIntMovieId(), order.getAmount(),"Purchased" );
                 }
             %>
                 <h1>Your Order Has Been Placed</h1>

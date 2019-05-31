@@ -17,14 +17,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
         <title>Login Welcome</title>
     </head>
-    <%
-        User user = (User) session.getAttribute("userLogin");
-        String username = user.getUsername();
-        DBManager db = (DBManager) session.getAttribute("manager");
-        int logId = (new Random()).nextInt(999999);
-        String activity = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy").format(new java.util.Date());
-        db.createLogin(logId, username, "Signed In", activity);
-    %>
+    
 
     <body align="center">
         <div class="container">
@@ -44,6 +37,14 @@
             <%@include file="WEB-INF/Modules/navbar.jspf" %>
         </div>
     </content>
+    <%
+        
+        String username = user.getUsername();
+        DBManager db = (DBManager) session.getAttribute("manager");
+        int logId = (new Random()).nextInt(999999);
+        String activity = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy").format(new java.util.Date());
+        db.createLogin(logId, username, "Signed In", activity);
+    %>
 
     <% if (user != null) {%>        
     <h1>Hello, <%= user.getFirstname()%></h1> 
@@ -53,7 +54,6 @@
 
 
     <%
-        session.setAttribute("user", user);
     %>
 
     <button class="button" type="button" onclick="location.href = 'index.jsp'" > Main Page </button>

@@ -101,7 +101,7 @@ public class DBManager {
     }
     public ArrayList<Order> getOrders(User user) throws SQLException {
         String keyword = user.getUsername().toUpperCase();
-        ResultSet rs = st.executeQuery("SELECT top 100 FROM ORDERS WHERE UPPER(USERNAME) LIKE '%" + keyword + "%'')");
+        ResultSet rs = st.executeQuery("SELECT * FROM ORDERS WHERE UPPER(USERNAME) LIKE '%" + keyword + "%'");
 
         ArrayList<Order> orders = new ArrayList();
 
