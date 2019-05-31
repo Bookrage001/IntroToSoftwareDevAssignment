@@ -39,17 +39,20 @@
                 DBManager db = (DBManager) session.getAttribute("manager");
                 String[] moviesArray = request.getParameterValues("movieArray");
                 Cart cart = (Cart) session.getAttribute("cart");
-                if(moviesArray == null || moviesArray.length == 0 ) {
-                    %>
-                    NO ORDERS
-                    <%
-                } else {
-                    for(String movieId : moviesArray) {
-                        Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
-                        cart.addOrder(movie,1,"anonymous");
-                    }
-                    ArrayList<Order> orders = cart.getOrders();
+                String removeMovie = (String) request.getAttribute("remove");
+                if (removeMovie != null) {
+                    Movie movie = db.getMovieDetails(Integer.parseInt(removeMovie));
+                    cart.removeMovie(movie);
+                }
+                if(moviesArray != null || moviesArray.length != 0 || cart.getOrders().size() != 0) {
+                    if (moviesArray != null || moviesArray.length != 0) {
+                        for(String movieId : moviesArray) {
+                            Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
+                            cart.addOrder(movie,1);
+                            }
+                        }
                 %>
+                <form action="checkout.jsp" method="POST" id="removeForm">
                 <table class="cart">
                     <thead>
                         <tr><b>
@@ -57,29 +60,40 @@
                             <td>Genre</td>
                             <td>ReleaseDate</td>
                             <td>Director</td>
-                            <td>Price</td>
+                            <td>Amount</td>
+                            <td>Price(1)</td>
                             <td></td>
                         </b></tr>
                     </thead>
                     <tbody>
                         <%   
-                            
-                            for (Order order: orders) {
+                            for (Order order: cart.getOrders()) {
                         %>
                                 <tr>
                                 <td><%=order.getMovie().getTitle()%></td>
                                 <td><%=order.getMovie().getGenre()%></td>
                                 <td><%=order.getMovie().getReleaseDate()%></td>
                                 <td><%=order.getMovie().getDirector()%></td>
+                                <td><input type="number" value="<%=order.getAmount()%>"  min="1" max="<%=order.getMovie().getCopies()%>" > </td>
                                 <td>$<%=order.getMovie().getPrice()%></td>
-                                <td><button>Remove</button></td>
+                                <input type="hidden" name="remove" value="<%=order.getMovie().getID()%>">
+                                <td><button form="moviesArrayForm" value="Submit" form="removeForm">Remove</button></td>
                                 </tr>
                             <%
                             }
-                }
-                        %>
+                            %>
                     </tbody>
                 </table>
+                <form>
+                <%
+                } else {
+                            %>
+                            NO ORDERS
+                            <a href="index.jsp">Cick here to add some movies</a>
+                            <%
+
+                }
+                        %>
             </div>
         </div>
     </content>

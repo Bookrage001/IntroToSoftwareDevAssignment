@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Cart implements Serializable {
-    private ArrayList<Order> orders;
+    private ArrayList<Order> orders = new ArrayList<Order>();
     private String username;
 
     public Cart() {
@@ -24,16 +24,31 @@ public class Cart implements Serializable {
     }
 
     public void addOrder(Movie movie, int amount) {
-        this.username = "anonymous";
-        Order order = new Order(movie, amount, this.username);
-        orders.add(order);
+        if (!exists(movie)) {
+            this.username = "anonymous";
+            Order order = new Order(movie, amount, this.username);
+            orders.add(order);
+        }
     }
 
-    public void removeItem(Order order) {
-        orders.remove(order);
+    private boolean exists(Movie movie) {
+        for (Order order : orders) {
+            if (order.getMovie().getID() == movie.getID()) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public ArrayList<Order> getOrders(){
+    public void removeMovie(Movie movie) {
+        for (Order order : orders) {
+            if (order.getMovie().getID() == movie.getID()) {
+                orders.remove(order);
+            }
+        }
+    }
+
+    public ArrayList<Order> getOrders() {
         return orders;
     }
 
