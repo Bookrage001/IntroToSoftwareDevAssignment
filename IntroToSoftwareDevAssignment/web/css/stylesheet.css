@@ -4,12 +4,6 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 
-
-/* 
-    Created on : 11/04/2019, 6:09:39 PM
-    Author     : sean
-*/
-
 body {
     font-family: Verdana;
     font-size: 0.8em;
@@ -18,23 +12,38 @@ body {
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
+    width: 95%;
+    margin: auto;
 }
 
-content {}
-
 header {
-    background-color: white;
+    background-color: rbga(0, 0, 0, 1);
     border-bottom: 0;
 }
 
+.searchContainer {
+    display: auto;
+}
+
 #Logo {
-    max-width: 200px;
+    max-width: 250px;
 }
 
 #Logoposition {
-    display: inline;
+    float: left;
+}
+
+.search {
+    margin: 10px;
+}
+
+.search button {
+    border: none;
+    cursor: pointer;
+}
+
+.caption {
+    padding: 10px;
 }
 
 #movies {
@@ -46,31 +55,6 @@ header {
     margin-top: 10px;
 }
 
-.MovieSearch {
-    padding: 0.3em;
-    background-color: #222831;
-    border-radius: 10px;
-    font-family: Verdana;
-    font-size: 0.8em;
-}
-
-.MovieSearch table button {
-    background-color: #00adb5;
-    color: white;
-    padding: 0.3em;
-    border: none;
-}
-
-.MovieSearch input,
-select {
-    border: 1px solid black;
-}
-
-.MovieSearch label {
-    color: white;
-    font-size: 0.8em;
-}
-
 #Navbar {}
 
 #refine {
@@ -78,18 +62,6 @@ select {
     float: left;
     border: 1px solid #dfdcdc;
     display: inline-block;
-}
-
-#RefineSearch {}
-
-#Search {
-    display: inline-block;
-    position: relative;
-    margin-left: 3%;
-}
-
-.caption {
-    padding: 10px;
 }
 
 .price {
@@ -223,29 +195,39 @@ select {
     font-family: Arial;
 }
 
-.refinesearch li {
-    font-size: 0.8em;
+
+/******Style for Home.jsp******/
+
+* {
+    box-sizing: border-box;
 }
 
-.refinesearch h3 {
-    font-size: 1.2em;
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 70%;
+    background: #f1f1f1;
+    border-radius: 4px;
+    margin-top: 25px;
 }
-.cart {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid white;
-    width: 50%;
 
-}
-.cart tbody tr:hover {background-color: #f5f5f5;}
-.cart thead {
-    background-color: #4CAF50;
+form.example button {
+    width: 10%;
+    padding: 10px;
+    background: #34495E;
     color: white;
-  }
-  .cart tr:nth-child(even) {background-color: #dddddd;}
-  .cart td:last-child {
-      text-align: center;
-  }
+    font-size: 17px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #E67E22;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
