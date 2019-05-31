@@ -10,6 +10,7 @@ public class Order implements Serializable {
     private BigInteger orderId;
     private String username; // PK
     private BigInteger movieId; // PK
+    private int IntMivieId; // PK
     private int amount;
     private String status;
     private Movie movie;
@@ -30,6 +31,7 @@ public class Order implements Serializable {
     public Order(int orderId, int movieId, int amount, String username, String status) {
         this.orderId = BigInteger.valueOf(orderId);
         this.movieId = BigInteger.valueOf(movieId);
+        this.IntMivieId = movieId;
         this.username = username;
         this.amount = amount;
         this.status = status;
@@ -88,5 +90,13 @@ public class Order implements Serializable {
 
     public void setMovie(Movie movie) {
         this.movie = movie;
+    }
+
+    public int getIntMivieId() {
+        return IntMivieId;
+    }
+
+    public void setIntMivieId(int intMivieId) {
+        IntMivieId = intMivieId;
     }
 }
