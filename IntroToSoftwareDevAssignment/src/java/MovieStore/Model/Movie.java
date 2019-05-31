@@ -5,47 +5,60 @@
  */
 package MovieStore.Model;
 
-import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+
 
 /**
  *
  * @author Mark Galulu
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement()
-public class Movie {
-
-    @XmlAttribute 
-    private String id;
+public class Movie implements Serializable{
+ 
+    private int Id;
     private String title;
     private String genre;
     private String releaseDate;
     private String director;
-    private String sympnosis;
-    private String price;
-    private String copies;
+    private String synopsis;
+    private double price;
+    private int copies;
 
+    private ArrayList<Movie> list = new ArrayList<Movie>();
     public Movie() {
     }
 
-    public Movie(String id, String title, String genre, String releaseDate, String director, String sympnosis, String price, String copies) {
-        this.id = id;
+
+    public Movie(int Id, String title, String genre, String releaseDate, String director, String synopsis, double price, int copies) {
+        this.Id = Id;
         this.title = title;
         this.genre = genre;
         this.releaseDate = releaseDate;
         this.director = director;
-        this.sympnosis = sympnosis;
+        this.synopsis = synopsis;
         this.price = price;
         this.copies = copies;
     }
-
     
-    public String getId() {
-        return id;
+    public Movie getMovieID(int ID){
+        for(Movie movie : list){
+            if(getID() == ID){
+                return movie;
+            }
+        }
+        return null;
+    }
+    
+    public Movie(ArrayList<Movie> list){
+        this.list = list;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public int getID() {
+        return Id;
+    }
+
+    public void setID(int Id) {
+        this.Id = Id;
     }
 
     public String getTitle() {
@@ -80,29 +93,27 @@ public class Movie {
         this.director = director;
     }
 
-    public String getSympnosis() {
-        return sympnosis;
+    public String getSynopsis() {
+        return synopsis;
     }
 
-    public void setSympnosis(String sympnosis) {
-        this.sympnosis = sympnosis;
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public String getCopies() {
+    public int getCopies() {
         return copies;
     }
 
-    public void setCopies(String copies) {
+    public void setCopies(int copies) {
         this.copies = copies;
     }
-    
-       
 }

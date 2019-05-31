@@ -12,6 +12,7 @@
         User me = (User) session.getAttribute("userLogin");
     %>
     <body>
+        <br>
         <form action="searchUser.jsp" method="post">
         <input type="text" value="${username}" placeholder="Username.." name="username">
         <a href="searchUser.jsp?userId=${username}>"><button type="submit">Search</button></a></form>        
