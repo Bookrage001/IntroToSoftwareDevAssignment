@@ -1,10 +1,15 @@
-<%@page import="java.util.*"%>
-<%@page import="MovieStore.Model.*"%>
-<%@page import="MovieStore.Model.dao.*"%>
-<%@ page pageEncoding="UTF-8" contentType="text/html" %>
+<%-- 
+    Document   : search.jsp
+    Created on : 28/05/2019, 7:19:51 PM
+    Author     : mcant
+--%>
+
+<%@page import="MovieStore.Model.Movie"%>
+<%@page import="MovieStore.Model.dao.DBManager" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.util.*"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<!DOCTYPE html>
 <html>
     <head>
         <title>Home Page</title>
@@ -25,8 +30,9 @@
             <div class="movie-area">
                 <%
                     //Add new session for all books
+                    String keyword = request.getParameter("keyword");
                     DBManager db = (DBManager) session.getAttribute("manager");
-                    ArrayList<Movie> list = db.getMovies();
+                    ArrayList<Movie> list = db.searchMovie(keyword);
                     for (Movie movies : list) {
                 %>
                 <form method="post" action="movieDetails.jsp">
