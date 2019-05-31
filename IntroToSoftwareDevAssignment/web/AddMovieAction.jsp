@@ -35,10 +35,10 @@
                             double price = Double.parseDouble(sPrice);
                             String sCopies = request.getParameter("copies");
                             int copies = Integer.parseInt(sCopies);
-                            String poster = "";
+                            String poster = request.getParameter("poster");
 
                             DBManager db = (DBManager) session.getAttribute("manager");
-                            db.addMovie(movieID, title, genre, releaseDate, director, synopsis, price, copies);
+                            db.addMovie(movieID, title, genre, releaseDate, director, synopsis, price, copies,poster);
                         %>
 
                         <p>MovieID: <%=movieID%></p>

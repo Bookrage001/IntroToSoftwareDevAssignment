@@ -52,6 +52,10 @@
                                 <label>Synopsis</label>
                                 <input type="text" class="form-control" name="synopsis">
                             </div>
+                            <div class="form-group">
+                                <label>Image Location</label>
+                                <input type="text" class="form-control" name="poster">
+                            </div>
                         </div>
                         <!-- Movie Details -->
                         <div class="widget">

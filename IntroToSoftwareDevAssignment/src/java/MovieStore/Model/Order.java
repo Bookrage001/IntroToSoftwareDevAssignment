@@ -6,9 +6,8 @@ import java.math.BigInteger;
 
 public class Order implements Serializable {
 
-    private BigInteger orderId;
+    private int orderId;
     private String username; // PK
-    private BigInteger movieId; // PK
     private int amount;
     private String status;
     private Movie movie;
@@ -16,19 +15,9 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    // As BigInteger
-    public Order(BigInteger orderId, BigInteger movieId, int amount, String username, String status) {
-        this.orderId = orderId;
-        this.username = username;
-        this.movieId = movieId;
-        this.amount = amount;
-        this.status = status;
-    }
-
     // As Intager
-    public Order(int orderId, int movieId, int amount, String username, String status) {
-        this.orderId = BigInteger.valueOf(orderId);
-        this.movieId = BigInteger.valueOf(movieId);
+    public Order(int orderId, int amount, String username, String status) {
+        this.orderId = orderId;
         this.username = username;
         this.amount = amount;
         this.status = status;
@@ -41,14 +30,6 @@ public class Order implements Serializable {
         this.username = username;
     }
 
-    public BigInteger getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(BigInteger orderId) {
-        this.orderId = orderId;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -57,13 +38,6 @@ public class Order implements Serializable {
         this.username = username;
     }
 
-    public BigInteger getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(BigInteger movieId) {
-        this.movieId = movieId;
-    }
 
     public int getAmount() {
         return amount;
@@ -89,8 +63,19 @@ public class Order implements Serializable {
         this.movie = movie;
     }
 
-    public int getIntMovieId() {
-        String movieIdString = new String(this.getMovieId().toByteArray());
-        return Integer.parseInt(movieIdString);
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 }
