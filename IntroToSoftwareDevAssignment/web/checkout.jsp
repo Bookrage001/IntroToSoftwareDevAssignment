@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
+    Document   : checkout.jsp
     Created on : 04/04/2019, 12:32:01 PM
-    Author     : Sean
+    Author     : Caleb
 --%>
 <%@page import="java.util.*"%>
 <%@page import="MovieStore.Model.*"%>

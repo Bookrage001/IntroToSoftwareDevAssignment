@@ -25,6 +25,7 @@
     User user = db.findUser(username, password);
     if (user != null) {
         session.setAttribute("userLogin", user);
+        session.setAttribute("user", user);
         response.sendRedirect("loginWelcome.jsp");
     } else {
         session.setAttribute("existErr", "User profile does not exist!");
