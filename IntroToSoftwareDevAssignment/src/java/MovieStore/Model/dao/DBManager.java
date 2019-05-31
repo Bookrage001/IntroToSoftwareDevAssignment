@@ -69,17 +69,52 @@ public class DBManager {
      * @Param String status
      * 
      * @Param ArrayList<Movie> movies
+     * Depreciated
      */
     public void addOrder(BigInteger OrderId, String username, BigInteger movieId, int amount, String status)
             throws SQLException {
         try {
-            st.execute("INSERT INTO ORDERS VALUES(" + OrderId + ",'" + username + "','" + movieId + "','" + amount
-                    + "','" + status + ")");
+            st.execute("INSERT INTO ORDERS (ORDER_ID, MOVIE_ID, USERNAME, STATUS, AMOUNT) VALUES(" + OrderId + "," + movieId + ",'" + username + "','" + status + "'," + amount + ")");
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println(e);
             Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, e);
         }
+    }
+    // Creates an Arraylist of movies containing a specific keyword and storing it
+    // to a temporary list
+    public ArrayList<Order> getOrders() throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM ORDERS FETCH FIRST 100 ROWS ONLY");
+
+        ArrayList<Order> orders = new ArrayList();
+
+        while (rs.next()) {
+            BigInteger orderId = new BigInteger(rs.getInt("ORDER_ID")+"");
+            BigInteger movieId = new BigInteger(rs.getInt("MOVIE_ID")+"");
+            String  username = rs.getString("USERNAME");
+            String status = rs.getString("STATUS");
+            int amount = rs.getInt("AMOUNT");
+
+            orders.add(new Order(orderId, movieId, amount , username, status));
+        }
+        return orders;
+    }
+    public ArrayList<Order> getOrders(User user) throws SQLException {
+        String keyword = user.getUsername().toUpperCase();
+        ResultSet rs = st.executeQuery("SELECT top 100 FROM ORDERS WHERE UPPER(USERNAME) LIKE '%" + keyword + "%'')");
+
+        ArrayList<Order> orders = new ArrayList();
+
+        while (rs.next()) {
+            BigInteger orderId = new BigInteger(rs.getInt("ORDER_ID")+"");
+            BigInteger movieId = new BigInteger(rs.getInt("MOVIE_ID")+"");
+            String  username = rs.getString("USERNAME");
+            String status = rs.getString("STATUS");
+            int amount = rs.getInt("AMOUNT");
+
+            orders.add(new Order(orderId, movieId, amount , username, status));
+        }
+        return orders;
     }
 
     public void addOrder(int intOrderId, String username, int intmovieId, int amount, String status)
