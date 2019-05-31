@@ -1,7 +1,6 @@
 package MovieStore.Model;
 
 import MovieStore.Model.Movie;
-import MovieStore.Model.dao.*;
 import MovieStore.Model.Order;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -71,5 +70,10 @@ public class Cart implements Serializable {
                 break;
             }
         }
+    }
+
+    public void deleteCart() {
+        ArrayList<Order> blankList = new ArrayList<Order>();
+        orders = blankList;
     }
 }

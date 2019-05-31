@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import MovieStore.Model.User;
 import MovieStore.Model.UserActivity;
-import java.sql.Connection;
+
 import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
@@ -380,6 +380,12 @@ public class DBManager {
             return new UserActivity(logId, username, status, activity);
         }
         return null;
+    }
+
+    public BigInteger getMaxNumber(String table, String column_name) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT MAX(" + column_name + ") FROM " + table);
+        BigInteger number = BigInteger.valueOf(rs.getInt(1));
+        return number;
     }
 
     // Delete Activity from Log

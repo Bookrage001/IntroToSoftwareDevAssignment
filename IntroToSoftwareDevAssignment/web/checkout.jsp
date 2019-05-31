@@ -55,7 +55,7 @@
                 if ( cart.getOrders().size() != 0) {
                 
             %>
-                <form method="POST" >
+                <form method="POST" action="purchase.jsp">
                 <table class="cart">
                     <thead>
                         <tr><b>
