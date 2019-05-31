@@ -8,29 +8,9 @@
 <html>
     <head>
         <title>Home Page</title>
-    </head>
-    <body align="center">
-    <script>
-    var moviesArray = [];
-    function addMovie(movieId){
-        console.log(movieId);
-        if (moviesArray == undefined || moviesArray == null) {
-            moviesArray[0] = movieId;
-        } else if (! moviesArray.includes(movieId)) {
-            moviesArray.push(movieId);
-        }
-        console.log(moviesArray);
-    }
-    </script>
-        <div class="container">
-            <header align="left">
-                <div id="Logoposition">
-                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-                </div>
-                <div id="Search">
-                    <%@include file="WEB-INF/Modules/search.jspf"%>
-                </div>
-            </header>
+    <div class="searchContainer">
+        <div id="Logoposition">
+            <img src="Images/RaiMovieLogoBlue.png" id="Logo">
         </div>
         <%@include file="WEB-INF/Modules/search.jspf"%>
     </div>
@@ -64,6 +44,7 @@
                     </form>
                     <div>
                         <form method="post" action="checkout.jsp">
+                            <input type="hidden" name="movieID" value="<%= movies.getID()%>">
                             <button type="submit" class="fa fa-cart-plus">Add to Cart</button>
                         </form>
                     </div>

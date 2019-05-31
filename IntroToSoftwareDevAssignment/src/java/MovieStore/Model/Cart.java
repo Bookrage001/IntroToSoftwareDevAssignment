@@ -5,20 +5,11 @@ import MovieStore.Model.dao.*;
 import MovieStore.Model.Order;
 import java.io.Serializable;
 import java.util.ArrayList;
-import MovieStore.controller.ConnServlet;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Cart implements Serializable {
     private ArrayList<Order> orders = new ArrayList<Order>();
     private String username;
     private int id;
-
-    DBConnector connector;
-    Connection conn = connector.openConnection();
-    DBManager db;
 
     public Cart() {
     }

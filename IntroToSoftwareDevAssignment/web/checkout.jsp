@@ -40,15 +40,14 @@
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
                 Cart cart = (Cart) session.getAttribute("cart");
-                
                 /*if (request.getParameter("removeForm") != null) {
                     String movieId = request.getParameter("removeForm");
                     Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
                     cart.removeOrder(movie);
                 } else */ 
-                if (request.getParameter("movieId") != null) {
-                    String movieId = request.getParameter("movieId");
-                    Movie movie = db.getMovieDetails(Integer.parseInt(movieId));
+                if (request.getParameter("movieID") != null) {
+                    int movieId = Integer.parseInt(request.getParameter("movieID"));
+                    Movie movie = db.getMovieDetails(movieId);
                     cart.addOrder(movie);
                 }
                 if ( cart.getOrders().size() != 0) {
@@ -94,11 +93,9 @@
                 NO ORDERS
                 <a href="index.jsp">Cick here to add some movies</a>
                 <%
-
                 }
-                        %>
+                %>
             </div>
-            <%= cart.getOrders().size()%>
         </div>
     </content>
 </body>
