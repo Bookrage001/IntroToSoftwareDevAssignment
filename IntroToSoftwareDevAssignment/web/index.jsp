@@ -6,18 +6,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
-    <head>
-        <title>Home Page</title>
-    <div class="searchContainer">
-        <div id="Logoposition">
-            <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-        </div>
-        <%@include file="WEB-INF/Modules/search.jspf"%>
-    </div>
-</head>
+    <title>Home Page</title>
+    <%@include file="WEB-INF/Modules/header.jspf" %>
 <body align="center">
     <div class ="container">
-        <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="collection">
             <div id="refine">
                 <%@include file="WEB-INF/Modules/filter.jspf" %>

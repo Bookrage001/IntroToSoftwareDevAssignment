@@ -23,6 +23,7 @@ header {
 
 .searchContainer {
     display: auto;
+    width: 80%;
 }
 
 #Logo {
@@ -30,8 +31,8 @@ header {
 }
 
 #Logoposition {
-    width: 30%;
-    height: 15%;
+    float: left;
+    margin-left: 50px;
 }
 
 .search {
@@ -56,7 +57,12 @@ header {
     margin-top: 10px;
 }
 
-#Navbar {}
+#Navbar {
+    width: 90%;
+    float: center;
+    margin-left: 5%;
+    margin-right: 5%
+}
 
 #refine {
     width: 20%;
@@ -205,16 +211,19 @@ header {
 
 form.example input[type=text] {
     padding: 10px;
+    margin-left: 50px;
     font-size: 17px;
     border: 1px solid grey;
-    width: 70%;
+    width: 60%;
     background: #f1f1f1;
     border-radius: 4px;
     margin-top: 25px;
 }
 
 form.example button {
-    width: 10%;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     background: #34495E;
     color: white;

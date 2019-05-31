@@ -25,7 +25,9 @@
         <div class="container">
             <header align="left">
                 <div id="Logoposition">
-                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+                    <a href="index.jsp">
+                        <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+                    </a>
                 </div>
 
                 <div id="Search">
@@ -38,7 +40,6 @@
     <content>
         <div class ="container">
             <%@include file="WEB-INF/Modules/navbar.jspf" %>
-            <div id="collection"/>
         </div>
     </content>
 
@@ -49,7 +50,6 @@
         String activity = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy").format(new java.util.Date());
         db.createLogout(logId, username, "Signed Out", activity);
         session.invalidate();
-        response.sendRedirect("index.jsp");
     %>
     <p class="outline">You have been logged out. Click <a class="link" href="index.jsp">here</a> to return to the home page.</p>
 </body>
