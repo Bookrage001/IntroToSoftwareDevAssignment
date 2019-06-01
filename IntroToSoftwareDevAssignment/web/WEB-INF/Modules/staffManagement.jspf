@@ -41,7 +41,7 @@
                     <a href="userActivity.jsp"><i class="fa fa-group"></i>Manage Customers Activity<span>57</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-cart-arrow-down"></i> Orders<span>23</span></a>
+                    <a href="checkout.jsp"><i class="fa fa-cart-arrow-down"></i> Orders<span>23</span></a>
                 </li>
                 <li>
                     <a href="logout.jsp"><i class="fa fa-sign-out"></i> Logout</a>

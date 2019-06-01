@@ -20,10 +20,17 @@ public class Order implements Serializable {
     public Order(int orderId, int movieId, int amount, String username, String status) {
         this.orderId = orderId;
         this.username = username;
-        this.amount = amount;
         this.status = status;
         this.movieId = movieId;
     }
+
+    public Order(int orderId, String username, int amount, String status, Movie movie) {
+        this.orderId = orderId;
+        this.username = username;
+        this.amount = amount;
+        this.status = status;
+        this.movie = movie;
+    }     
 
     public Order(Movie movie, int amount, String username) {
         this.movieId = movie.getID();
@@ -73,4 +80,6 @@ public class Order implements Serializable {
     public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
+
+    
 }

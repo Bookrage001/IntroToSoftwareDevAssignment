@@ -81,6 +81,7 @@ public class DBManager {
     }
     // Creates an Arraylist of movies containing a specific keyword and storing it
     // to a temporary list
+    
     public ArrayList<Order> getOrders() throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM ORDERS FETCH FIRST 100 ROWS ONLY");
 
@@ -152,7 +153,7 @@ public class DBManager {
             double price, int copies, String poster) throws SQLException {
 
         st.executeUpdate("INSERT INTO MOVIES VALUES (" + movieID + ",'" + title + "','" + genre + "','" + releaseDate
-                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ",+'" + poster + "')");
+                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ", '" + poster + "')");
     }
 
     // Creates an Arraylist of movies containing a specific keyword and storing it

@@ -14,12 +14,7 @@
         <title>Home Page</title>
     </head>
     <%
-        //User user = (User)session.getAttribute("loginAction");
-
-        String username;
-        User user = (User) session.getAttribute("userlogin");
-        username = user.getUsername();
-        session.setAttribute("userlogin", user);
+        String username = (String)session.getAttribute("username");
         DBManager db = (DBManager) session.getAttribute("manager");
 
         String[] details = new String[3];
@@ -32,14 +27,10 @@
                 <div id="Logoposition">
                     <img src="Images/RaiMovieLogoBlue.png" id="Logo">
                 </div>
-
             </header>
         </div>
-
         <div class ="container">
             <%@include file="WEB-INF/Modules/navbar.jspf" %>
-
-
         </div>
         <div style ="padding-top: 1%"> </div>
         <div name="container1" style="border: 1px solid green;width: 50%;margin:auto;background:white;padding-top:">
