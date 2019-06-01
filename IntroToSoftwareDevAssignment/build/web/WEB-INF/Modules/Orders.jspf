@@ -1,0 +1,57 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.io.*" %>
+<%@page import="MovieStore.Model.dao.*"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.Order"%>
+<%@page import="MovieStore.Model.Movie"%>
+<div>
+
+    <table>
+        <thead>
+            <tr>
+                <td>ORDER ID</td>
+                <td>MOVIE ID</td>
+                <td>USERNAME</td>
+                <td>AMOUNT</td>
+                <td>STATUS</td>
+            </tr>
+        </thead>
+        <form>
+        <tbody>
+            <%
+                DBManager db = (DBManager) session.getAttribute("manager");
+                    ArrayList<Order> orders = db.getOrders();
+                    for (Order order : orders) {
+
+            %>
+
+            <tr>
+                <td><%= order.getOrderId()%></td>
+                <td><%= order.getMovieId()%></td>
+                <td><%= order.getUsername()%></td>
+                <td><%= order.getAmount()%></td>
+                <% if (user.getType() == "user") { %>
+                    <td><%= order.getStatus()%></td>
+                <% } else { %>
+                    <td>
+                    <select>
+                    <% 
+                        String[] eqArray = {"Pending", "Arrived", "Purchased",  "Boxed", "On Hold", "On Order"};
+                    %><%
+                        for(int count=0; count< 6; count++) { 
+                    %>
+                        <option value="<%= eqArray[count] %>" <%=(eqArray[count].equals(order.getStatus()))?"selected":"" %> ><%= eqArray[count] %></option>  
+                    <% } %>
+                    </select>
+                <% } %>
+            </tr>
+            <%
+                }
+            %>
+        </tbody>
+        </form> 
+    </table>
+</div>
+

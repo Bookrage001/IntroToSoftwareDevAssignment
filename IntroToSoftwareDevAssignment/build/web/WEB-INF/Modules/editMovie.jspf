@@ -1,0 +1,29 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="MovieStore.Model.Movie"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="MovieStore.Model.dao.DBManager"%>
+<%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="movie-area">
+    <%
+        //Add new session for all books
+        DBManager db = (DBManager) session.getAttribute("manager");
+        ArrayList<Movie> list = db.getMovies();
+        for (Movie movies : list) {
+    %>
+    <form method="post" action="editMovie.jsp">
+        <div style="padding:20px" >
+            <img class="movieimg" src="<%= movies.getPoster()%>" />
+            <div align="center">
+                <input type="hidden" name="movieID" value="<%= movies.getID()%>">
+                <%= movies.getTitle()%> <br>
+                $ <%= movies.getPrice()%> AUD
+            </div>
+            <button type="submit" class="fa fa-edit"> Edit</button>
+        </div>
+    </form>
+    <%
+        }
+    %>
+</div>

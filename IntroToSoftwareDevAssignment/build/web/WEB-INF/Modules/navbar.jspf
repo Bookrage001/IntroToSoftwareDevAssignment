@@ -1,0 +1,65 @@
+<jsp:include page="/ConnServlet" flush="true" />
+<%@ page pageEncoding="UTF-8" %>
+<%@page import="MovieStore.Model.User"%>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- PLUGINS CSS STYLE -->
+<link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+<!-- Font Awesome -->
+<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- CUSTOM CSS -->
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<%
+    User user = null;
+    if (session.getAttribute("user") != null) {
+        user = (User) session.getAttribute("user");
+    }
+    if (user != null) { 
+        if(user.getType().equals("user")) {
+%>
+<content>
+    <div align="right" class="loginStatus">Logged in as: 
+        <%= user.getFirstname() + " " + user.getLastname()%><br>
+    </div>
+    <div class="nav">
+        <a href="index.jsp"> Home</a> 
+        <a href="#"> Best Sellers </a> 
+        <a href="#"> New Releases </a> 
+        <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
+        <a href="logout.jsp">Logout</a>
+        <a href="userMyAccount.jsp">My Account</a>
+        <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+    </div>
+</content>
+<% } else {%>
+<content>
+    <div align="right" class="loginStatus">Logged in as: 
+        <%= user.getFirstname() + " " + user.getLastname()%><br>
+    </div>
+    <div class="nav">
+        <a href="index.jsp"> Home </a> 
+        <a href="AddMovie.jsp"> Management </a>
+        <a href="logout.jsp"> Logout </a>
+        <a href="userMyAccount.jsp"> My Account </a>
+        <a href="#"> Best Sellers </a> 
+        <a href="#"> New Releases </a> 
+        <a href="userRegister.jsp"> Register </a>
+        <a href="login.jsp"> Login </a>
+        <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a>
+    </div>
+</content>
+<% }} else { %>
+<content>
+    <div align="right" class="loginStatus">Not logged in</div>
+    <div class="nav">
+        <a href="index.jsp"> Home</a> 
+        <a href="#"> Best Sellers </a> 
+        <a href="#"> New Releases </a> 
+        <a href="userRegister.jsp">Register</a>
+        <a href="login.jsp">Login</a>
+    </div>
+</content>
+
+<% } %>
+
