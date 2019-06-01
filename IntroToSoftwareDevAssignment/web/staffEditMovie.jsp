@@ -3,19 +3,15 @@
     Created on : 31/05/2019, 8:00:11 AM
     Author     : mcant
 --%>
-
+<!-- Bootstrap -->
+<link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Delete Movie Listing</title>
-    <div class="searchContainer">
-        <div id="Logoposition">
-            <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-        </div>
-        <%@include file="WEB-INF/Modules/search.jspf"%>
-    </div>
 </head>
+    <%@include file="WEB-INF/Modules/header.jspf" %>
 <body>
     <div class ="container">
         <%@include file="WEB-INF/Modules/navbar.jspf" %>

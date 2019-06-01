@@ -18,50 +18,53 @@
 <div align="right" class="loginStatus">Logged in as: 
     <%= user.getFirstname() + " " + user.getLastname()%><br>
 </div>
-<div class="nav">
-    <a href="index.jsp"> Home</a> 
-    <div class="nav-right">
-    <a href="#"> Best Sellers </a> 
-    <a href="#"> New Releases </a> 
-    <div class="nav-right" style="float: right">
-        <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
-        <a href="logout.jsp">Logout</a>
-        <a href="userMyAccount.jsp">My Account</a>
-        <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+<content>
+    <div class="nav">
+        <a href="index.jsp"> Home</a> 
+        <div class="nav-right">
+        <a href="#"> Best Sellers </a> 
+        <a href="#"> New Releases </a> 
+        <div class="nav-right" style="float: right">
+            <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
+            <a href="logout.jsp">Logout</a>
+            <a href="userMyAccount.jsp">My Account</a>
+            <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+        </div>
     </div>
-</div>
-
+</content>
 <% } else {%>
-<div align="right" class="loginStatus">Logged in as: 
-    <%= user.getFirstname() + " " + user.getLastname()%><br>
-</div>
-<div class="nav">
-    <a href="index.jsp"> Home</a> 
-    <div class="nav-right">
-        <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
-        <a href="logout.jsp">Logout</a>
-        <a href="userMyAccount.jsp">My Account</a>
-    <a href="#"> Best Sellers </a> 
-    <a href="#"> New Releases </a> 
-    <div class="nav-right" style="float: right">
+<content>
+    <div align="right" class="loginStatus">Logged in as: 
+        <%= user.getFirstname() + " " + user.getLastname()%><br>
+    </div>
+    <div class="nav">
+        <a href="index.jsp"> Home</a> 
+        <div class="nav-right">
+            <a href="AddMovie.jsp" style="border-left: 1px solid black">Management</a>
+            <a href="logout.jsp">Logout</a>
+            <a href="userMyAccount.jsp">My Account</a>
+        <a href="#"> Best Sellers </a> 
+        <a href="#"> New Releases </a> 
+        <div class="nav-right" style="float: right">
+            <a href="userRegister.jsp">Register</a>
+            <a href="login.jsp">Login</a>
+            <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
+        </div>
+    </div>
+</content>
+<% }} else { %>
+<content>
+    <div align="right" class="loginStatus">Not logged in</div>
+    <div class="nav">
+        <a href="index.jsp"> Home</a> 
+        <a href="#"> Best Sellers </a> 
+        <a href="#"> New Releases </a> 
+        <div class="nav-right">
         <a href="userRegister.jsp">Register</a>
         <a href="login.jsp">Login</a>
-        <a href="checkout.jsp" ><img src="Images/Cart.png" height="15" width="15"> Cart </a> 
     </div>
-</div>
-    
-<% }} else { %>
-<div align="right" class="loginStatus">Not logged in</div>
-<div class="nav">
-    <a href="index.jsp"> Home</a> 
-    <a href="#"> Best Sellers </a> 
-    <a href="#"> New Releases </a> 
-    <div class="nav-right">
-    <a href="userRegister.jsp">Register</a>
-    <a href="login.jsp">Login</a>
-</div>
-</div>
-
+    </div>
+</content>
 
 <% } %>
 

@@ -3,7 +3,8 @@
     Created on : 30/05/2019, 11:28:56 AM
     Author     : mcant
 --%>
-
+<!-- Bootstrap -->
+<link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
 <%@page import="MovieStore.Model.Movie"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="MovieStore.Model.dao.DBManager"%>
