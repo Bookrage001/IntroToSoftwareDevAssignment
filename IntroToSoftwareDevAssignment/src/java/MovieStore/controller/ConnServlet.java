@@ -1,5 +1,7 @@
 package MovieStore.controller;
 
+import MovieStore.Model.Cart;
+import MovieStore.Model.dao.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -10,9 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import MovieStore.Model.Cart;
-import MovieStore.Model.dao.*;
 
 public class ConnServlet extends HttpServlet {
 
@@ -42,10 +41,10 @@ public class ConnServlet extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        // session.setAttribute("db", db);
+        session.setAttribute("db", db);
         session.setAttribute("manager", manager);
         session.setAttribute("cart", cart);
-        // session.setAttribute("conn", conn);
+        session.setAttribute("conn", conn);
     }
 
     @Override // Destroy the servlet and release the resources of the application
