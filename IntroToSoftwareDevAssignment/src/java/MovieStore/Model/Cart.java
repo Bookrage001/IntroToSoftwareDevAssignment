@@ -1,12 +1,16 @@
 package MovieStore.Model;
 
-import MovieStore.Model.Movie;
-import MovieStore.Model.Order;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class Cart implements Serializable {
-    private ArrayList<Order> orders = new ArrayList<Order>();
+    private List<Order> orders = new ArrayList<Order>();
     private String username;
     private int id;
 
@@ -48,14 +52,18 @@ public class Cart implements Serializable {
     }
 
     public void removeOrder(Movie movie) {
+        Order removeOrder = null;
         for (Order order : orders) {
-            if (order.getMovie().getID() == movie.getID()) {
-                orders.remove(order);
+            if (order.getMovieId() == movie.getID()) {
+                removeOrder = order;
             }
+        }
+        if (removeOrder != null){
+            orders.remove(removeOrder);
         }
     }
 
-    public ArrayList<Order> getOrders() {
+    public List<Order> getOrders() {
         return this.orders;
     }
 

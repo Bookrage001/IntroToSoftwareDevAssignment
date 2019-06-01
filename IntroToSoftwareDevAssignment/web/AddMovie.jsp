@@ -4,21 +4,15 @@
     Author     : mcant
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!-- Bootstrap -->
+<link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Add Movie Listing</title>
-    <div class="searchContainer">
-        <div id="Logoposition">
-            <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-        </div>
-        <%@include file="WEB-INF/Modules/search.jspf"%>
-    </div>
-</head>
+    <title>Add Movie Listing</title>
+    <%@include file="WEB-INF/Modules/header.jspf" %>
 <body>
     <div class ="container">
-        <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="collection">
             <div class="row">
                 <%@include file="WEB-INF/Modules/staffManagement.jspf" %>

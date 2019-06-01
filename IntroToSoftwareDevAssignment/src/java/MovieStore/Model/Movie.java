@@ -126,4 +126,8 @@ public class Movie implements Serializable{
     public void setCopies(int copies) {
         this.copies = copies;
     }
+    @Override
+    public String toString(){
+        return title + ": " + copies;
+    }
 }

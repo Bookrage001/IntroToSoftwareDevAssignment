@@ -6,35 +6,15 @@
 <%@page import="java.util.*"%>
 <%@page import="MovieStore.Model.*"%>
 <%@page import="MovieStore.Model.dao.*"%>
-<jsp:include page="/ConnServlet" flush="true" />
 <%@ page pageEncoding="UTF-8" contentType="text/html" %>
-<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="MovieStore.Model.*" %>
 
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 <html>
     <head>
         <title>Home Page</title>
     </head>
+    <%@include file="WEB-INF/Modules/header.jspf"%>
     <body align="center">
-        <div class="container">
-            <header align="left">
-                <div id="Logoposition">
-                <a href="index.jsp">
-                    <img src="Images/RaiMovieLogoBlue.png"  id="Logo">
-                    </a>
-                </div>
-                <div id="Search">
-                    <%@include file="WEB-INF/Modules/search.jspf"%>
-                </div>
-                <div>
-                    <%@include file="WEB-INF/Modules/navbar.jspf"%>
-                </div>
-            </header>
-        </div>
     <content>
         <div class ="container">
             <div id="collection">
@@ -42,11 +22,6 @@
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
                 Cart cart = (Cart) session.getAttribute("cart");
-                if (request.getParameter("removeId") != null) {
-                    int movieId = Integer.parseInt(request.getParameter("removeId"));
-                    Movie movie = db.getMovieDetails(movieId);
-                    cart.removeOrder(movie);
-                }
                 if (request.getParameter("movieID") != null) {
                     int movieId = Integer.parseInt(request.getParameter("movieID"));
                     Movie movie = db.getMovieDetails(movieId);
@@ -55,7 +30,7 @@
                 if ( cart.getOrders().size() != 0) {
                 
             %>
-                <form method="POST" action="purchase.jsp">
+                <form method="POST" action="purchase.jsp" id="cart">
                 <table class="cart">
                     <thead>
                         <tr><b>
@@ -73,6 +48,9 @@
                             for (Order order: cart.getOrders()) {
                                 Movie movie = order.getMovie();
                         %>
+                        <form method="POST" action="removeMovieAction.jsp" id="remove">
+                            <input type="hidden" name="movieId" value="<%=order.getMovie().getID()%>">
+                        </form>
                                 <tr>
                                 <td><%=movie.getTitle()%></td>
                                 <td><%=movie.getGenre()%></td>
@@ -80,19 +58,18 @@
                                 <td><%=movie.getDirector()%></td>
                                 <td><input type="number" value="<%=order.getAmount()%>"  min="1" max="<%=movie.getCopies()%>" name="<%=movie.getID()%>"> </td>
                                 <td>$<%=movie.getPrice()%></td>
-                                <td>
-                                <form method="post" action="checkout.jsp">
-                                    <input type="hidden" name="removeId" value="<%=order.getMovie().getID()%>">
-                                    <button type="submit">Remove</button>
-                                </form>
-                                </td>
+                                <td><form method="POST" action="removeMovieAction.jsp" id="remove">
+                                        <input type="hidden" name="movieId" value="<%=order.getMovie().getID()%>">
+                                        <button form="remove" type="submit" value="Submit" onClick="console.log('I have been clicked')" >Remove</button>
+                                    </form>
+                                    </td>
                                 </tr>
                             <%
                             }
                             %>
                     </tbody>
                 </table>
-                <button action="purchase.jsp">Purchase</button>
+                <button form="cart">Purchase</button>
                 <form>
                 <%
                 } else {
@@ -106,22 +83,5 @@
         </div>
     </content>
 </body>
-<!--Script-->
-<script>
-    $(document).ready(function () {
-        $('.order tr').click(function (event) {
-            if (event.target.type !== 'checkbox') {
-                $(':checkbox', this).trigger('click');
-            }
-        });
-        $("input[type='checkbox']").change(function (e) {
-            if ($(this).is(":checked")) {
-                $(this).closest('tr').addClass("highlight_row");
-            } else {
-                $(this).closest('tr').removeClass("highlight_row");
-            }
-        });
-    });
-</script>
 <jsp:include page="/ConnServlet" flush="true" />
 </html>

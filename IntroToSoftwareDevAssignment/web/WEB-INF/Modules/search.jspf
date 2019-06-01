@@ -4,5 +4,35 @@
     <form class="example" action="search.jsp" method="post">
         <input type="text" placeholder="Search.." name="keyword">
         <button type="submit"><i class="fa fa-search"></i></button>
+        <script>
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+            console.log("Deprecated");
+        </script>
     </form>
 </div>

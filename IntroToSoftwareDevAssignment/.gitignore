@@ -1,4 +1,5 @@
 /build*
 build*
 /IntroToSoftwareDevAssignment/build*
+/IntroToSoftwareDevAssignment/nbproject*
 /dist/
