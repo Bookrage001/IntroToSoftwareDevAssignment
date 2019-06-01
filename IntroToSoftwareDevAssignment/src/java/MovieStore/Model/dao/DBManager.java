@@ -8,12 +8,15 @@ import MovieStore.Model.*;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import MovieStore.Model.Movie;
+import MovieStore.Model.Order;
 import MovieStore.Model.User;
 import MovieStore.Model.UserActivity;
-
 import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -82,14 +85,15 @@ public class DBManager {
     /*
     // Creates an Arraylist of movies containing a specific keyword and storing it
     // to a temporary list
+    
     public ArrayList<Order> getOrders() throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM ORDERS FETCH FIRST 100 ROWS ONLY");
 
         ArrayList<Order> orders = new ArrayList();
 
         while (rs.next()) {
-            BigInteger orderId = new BigInteger(rs.getInt("ORDER_ID")+"");
-            BigInteger movieId = new BigInteger(rs.getInt("MOVIE_ID")+"");
+            int orderId = rs.getInt("ORDER_ID");
+            int movieId = rs.getInt("MOVIE_ID");
             String  username = rs.getString("USERNAME");
             String status = rs.getString("STATUS");
             int amount = rs.getInt("AMOUNT");
@@ -105,8 +109,8 @@ public class DBManager {
         ArrayList<Order> orders = new ArrayList();
 
         while (rs.next()) {
-            BigInteger orderId = new BigInteger(rs.getInt("ORDER_ID")+"");
-            BigInteger movieId = new BigInteger(rs.getInt("MOVIE_ID")+"");
+            int orderId = rs.getInt("ORDER_ID");
+            int movieId = rs.getInt("MOVIE_ID");
             String  username = rs.getString("USERNAME");
             String status = rs.getString("STATUS");
             int amount = rs.getInt("AMOUNT");
@@ -152,7 +156,7 @@ public class DBManager {
             double price, int copies, String poster) throws SQLException {
 
         st.executeUpdate("INSERT INTO MOVIES VALUES (" + movieID + ",'" + title + "','" + genre + "','" + releaseDate
-                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ",+'" + poster + "')");
+                + "','" + director + "','" + synopsis + "'," + price + "," + copies + ", '" + poster + "')");
     }
 
     // Creates an Arraylist of movies containing a specific keyword and storing it

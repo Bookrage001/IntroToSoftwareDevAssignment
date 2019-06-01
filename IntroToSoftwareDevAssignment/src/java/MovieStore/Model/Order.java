@@ -2,7 +2,6 @@
 package MovieStore.Model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class Order implements Serializable {
 
@@ -10,20 +9,31 @@ public class Order implements Serializable {
     private String username; // PK
     private int amount;
     private String status;
+    private int movieId;
     private Movie movie;
+    
 
     public Order() {
     }
 
     // As Intager
-    public Order(int orderId, int amount, String username, String status) {
+    public Order(int orderId, int movieId, int amount, String username, String status) {
+        this.orderId = orderId;
+        this.username = username;
+        this.status = status;
+        this.movieId = movieId;
+    }
+
+    public Order(int orderId, String username, int amount, String status, Movie movie) {
         this.orderId = orderId;
         this.username = username;
         this.amount = amount;
         this.status = status;
-    }
+        this.movie = movie;
+    }     
 
     public Order(Movie movie, int amount, String username) {
+        this.movieId = movie.getID();
         this.movie = movie;
         this.status = "In Cart";
         this.amount = amount;
@@ -70,4 +80,6 @@ public class Order implements Serializable {
     public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
+
+    
 }
