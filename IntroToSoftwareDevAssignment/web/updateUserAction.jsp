@@ -27,7 +27,7 @@
             String postcode = request.getParameter("postcode");
             String suburb = request.getParameter("suburb");
 
-            if (!vd.validatePostcode(postcode)) {
+            if (!vd.validateEmail(email) || !vd.validatePostcode(postcode)) {
                 session.setAttribute("detailsErr", "One or more of the fields you entered are invalid");
                 response.sendRedirect("userChangeDetails.jsp");
             } else {

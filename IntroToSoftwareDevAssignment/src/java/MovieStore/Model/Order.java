@@ -6,7 +6,7 @@ import java.math.BigInteger;
 
 public class Order implements Serializable {
 
-    private int orderId;
+    private BigInteger orderId;
     private String username; // PK
     private int amount;
     private String status;
@@ -16,12 +16,21 @@ public class Order implements Serializable {
     }
 
     // As Intager
-    public Order(int orderId, int amount, String username, String status) {
+
+    public Order(BigInteger orderId, String username, String status, Movie movie) {
+        this.orderId = orderId;
+        this.username = username;
+        this.status = status;
+        this.movie = movie;
+    }
+
+    public Order(BigInteger orderId, String username, int amount, String status, Movie movie) {
         this.orderId = orderId;
         this.username = username;
         this.amount = amount;
         this.status = status;
-    }
+        this.movie = movie;
+    }     
 
     public Order(Movie movie, int amount, String username) {
         this.movie = movie;
@@ -63,11 +72,13 @@ public class Order implements Serializable {
         this.movie = movie;
     }
 
-    public int getOrderId() {
+    public BigInteger getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(int orderId) {
+    public void setOrderId(BigInteger orderId) {
         this.orderId = orderId;
     }
+
+    
 }
