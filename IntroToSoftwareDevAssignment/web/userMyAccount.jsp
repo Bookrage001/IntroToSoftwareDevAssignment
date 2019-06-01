@@ -30,9 +30,9 @@
 
         </div>
         <%
-            String username = user.getUsername();
+            
             DBManager db = (DBManager) session.getAttribute("manager");
-
+            String username = user.getUsername();
             //String username = "mstrowan3";
             String[] details = new String[3];
             details = db.getDetails(user.getUsername());
@@ -49,7 +49,7 @@
 
             <div name="details" style="text-align: left; margin-top:10%; margin-right: 15%;float:right">
                 <form action="userChangeDetails.jsp" method="post">
-
+                   <% session.setAttribute("username", user.getUsername());%>
                     <p><input type="submit" value="Change Details"></button></p>
                 </form>
                 <form action="userDelete.jsp" method="post">

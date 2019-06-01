@@ -25,7 +25,7 @@ Author : George
     String suburb = request.getParameter("suburb");
     boolean alreadyExists = db.checkUser(ID);
         
-    if (!vd.validatePostcode(postcode)) {
+    if (!vd.validateEmail(email) || !vd.validatePostcode(postcode)) {
         session.setAttribute("EmptyErr", "One or more of the fields you entered are invalid");
         response.sendRedirect("userRegister.jsp");
     } else if (ID.isEmpty() || password.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || postcode.isEmpty() || suburb.isEmpty()) {

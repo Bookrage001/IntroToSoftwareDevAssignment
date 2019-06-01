@@ -10,8 +10,8 @@ Author : husei
 <title>Register</title>
     <div style="margin-top:5%"></div>
     <h1>Enter your details to Register: </h1>
-    <div class="logo">
-        <img  id="Logoposition" src="Images/RaiMovieLogoBlue.png">
+    <div class="logo" >
+        <img  id="Logoposition" style="width: 40%"src="Images/RaiMovieLogoBlue.png">
     </div>
     <div class = container>
         <form action="userRegisterAction.jsp" method="POST">

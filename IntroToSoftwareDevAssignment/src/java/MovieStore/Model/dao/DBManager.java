@@ -83,6 +83,7 @@ public class DBManager {
     }
     // Creates an Arraylist of movies containing a specific keyword and storing it
     // to a temporary list
+    
     public ArrayList<Order> getOrders() throws SQLException {
         ResultSet rs = st.executeQuery("SELECT * FROM ORDERS FETCH FIRST 100 ROWS ONLY");
 
