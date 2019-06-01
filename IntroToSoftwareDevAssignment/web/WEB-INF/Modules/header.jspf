@@ -2,22 +2,22 @@
     <%@page import="MovieStore.Model.*"%>
     <%@page import="MovieStore.Model.dao.*"%>
     <%@page import="MovieStore.controller.ConnServlet"%>
-    <div class="searchContainer">
-        <div id="Logoposition">
-            <a href="index.jsp">
-                <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-            </a>
-        </div>
-        <div class="search">
-            <form class="example" action="search.jsp" method="post">
-                <input type="text" placeholder="Search.." name="keyword">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-    </div>
-<body align="center">
     <div class ="container">
-        <%@include file="navbar.jspf"%>
+        <div class="collection">
+            <div id="Logoposition">
+                <a href="index.jsp">
+                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
+                </a>
+            </div>
+            <div class="search">
+                <form class="example" action="search.jsp" method="post">
+                    <input type="text" placeholder="Search.." name="keyword">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <%@include file="navbar.jspf"%>
+        </div>
     </div>
-</body>
 </head>

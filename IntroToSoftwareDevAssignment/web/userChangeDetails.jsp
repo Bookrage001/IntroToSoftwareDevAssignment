@@ -9,11 +9,15 @@
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+<!-- Bootstrap -->
+<link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <html>
+    <%@include file="WEB-INF/Modules/header.jspf" %>
     <head>
         <title>Home Page</title>
     </head>
     <%
+    
         String username = (String)session.getAttribute("username");
         DBManager db = (DBManager) session.getAttribute("manager");
 
@@ -22,15 +26,7 @@
 
     %>
     <body align="center">
-        <div class="container">
-            <header align="left">
-                <div id="Logoposition">
-                    <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-                </div>
-            </header>
-        </div>
         <div class ="container">
-            <%@include file="WEB-INF/Modules/navbar.jspf" %>
         </div>
         <div style ="padding-top: 1%"> </div>
         <div name="container1" style="border: 1px solid green;width: 50%;margin:auto;background:white;padding-top:">

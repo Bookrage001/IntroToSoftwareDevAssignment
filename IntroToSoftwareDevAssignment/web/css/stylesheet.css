@@ -55,6 +55,10 @@ header {
     width: 79%;
     margin-top: 10px;
 }
+.movie-tiles {
+    background-color: white;
+    padding:20px
+}
 
 #refine {
     width: 20%;
@@ -100,32 +104,23 @@ content {
 }
 
 .nav {
-    background-color: #393E46;
+    background: #393E46;
     overflow: hidden;
     border: 1px solid black;
     display:inline;
+    width: 80%;
+    height: 20px;
 }
 
 .nav a {
     font-family: Verdana;
-    color: white;
-    color: #34495E;
     padding: 0.5em;
     text-decoration: none;
-    border-right: 1px solid black;
 }
 
 .nav a:hover {
     background-color: #00adb5;
     color: white;
-}
-
-.nav left {
-    float:left;
-}
-
-.nav-right {
-    float: right;
 }
 
 .movie-area {

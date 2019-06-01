@@ -7,6 +7,7 @@
 <%@page import="MovieStore.Model.Order"%>
 <%@page import="MovieStore.Model.Movie"%>
 <div>
+
     <table>
         <thead>
             <tr>
@@ -17,6 +18,7 @@
                 <td>STATUS</td>
             </tr>
         </thead>
+        <form>
         <tbody>
             <%
                 DBManager db = (DBManager) session.getAttribute("manager");
@@ -30,11 +32,26 @@
                 <td><%= order.getMovieId()%></td>
                 <td><%= order.getUsername()%></td>
                 <td><%= order.getAmount()%></td>
-                <td><%= order.getStatus()%></td>
+                <% if (user.getType() == "user") { %>
+                    <td><%= order.getStatus()%></td>
+                <% } else { %>
+                    <td>
+                    <select>
+                    <% 
+                        String[] eqArray = {"Pending", "Arrived", "Purchased",  "Boxed", "On Hold", "On Order"};
+                    %><%
+                        for(int count=0; count< 6; count++) { 
+                    %>
+                        <option value="<%= eqArray[count] %>" <%=(eqArray[count].equals(order.getStatus()))?"selected":"" %> ><%= eqArray[count] %></option>  
+                    <% } %>
+                    </select>
+                <% } %>
             </tr>
             <%
                 }
             %>
         </tbody>
+        </form> 
     </table>
 </div>
+

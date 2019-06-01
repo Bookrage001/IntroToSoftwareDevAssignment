@@ -6,8 +6,7 @@ Author : husei
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
-<%@include file="WEB-INF/Modules/header.jspf" %>
+    <%@include file="WEB-INF/Modules/header.jspf" %>
 <title>Register</title>
     <div style="margin-top:5%"></div>
     <h1>Enter your details to Register: </h1>

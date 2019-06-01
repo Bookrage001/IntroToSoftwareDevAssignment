@@ -9,12 +9,6 @@
 <html>
     <head>
         <title>Home Page</title>
-    <datalist id="Genres">
-        <option value="Action">
-        <option value="Sci-Fi">
-        <option value="Horror">
-        <option value="Comedy">
-    </datalist>
 </head>
 <script>
     $(document).ready(function () {
@@ -33,22 +27,11 @@
     });
 </script>
 <body align="center">
-    <div class="container">
-        <header align="left">
-            <div id="Logoposition">
-                <img src="Images/RaiMovieLogoBlue.png" id="Logo">
-            </div>
-
-            <div id="Search">
-                <%@include file="WEB-INF/Modules/search.jspf"%>
-            </div>
-    </div>
-</header>
+    <%@include file="WEB-INF/Modules/header.jspf" %>
 </header>
 
 <content>
     <div class ="container">
-        <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="staffManagement" style="float: left">
             <%@include file="WEB-INF/Modules/ManagementCustomer.jspf" %>
         </div>

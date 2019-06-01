@@ -14,7 +14,6 @@
     <%@include file="WEB-INF/Modules/header.jspf" %>
 <body>
     <div class ="container">
-        <%@include file="WEB-INF/Modules/navbar.jspf" %>
         <div id="collection">
             <div class="row">
                 <%@include file="WEB-INF/Modules/staffManagement.jspf" %>

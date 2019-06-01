@@ -10,7 +10,7 @@
     <%@include file="WEB-INF/Modules/header.jspf" %>
     <body align="center">
         <div class ="container">
-            <div id="collection">
+            <div class="collection">
                 <div id="refine">
                     <%@include file="WEB-INF/Modules/filter.jspf" %>
                 </div>
@@ -26,7 +26,7 @@
                     <%                } else {
                         for (Movie movies : list) {
                     %>
-                    <div style="padding:20px" >
+                    <div class="movie-tiles">
                         <form method="post" action="movieDetails.jsp">
 
                             <button type="submit" style="background: transparent">
