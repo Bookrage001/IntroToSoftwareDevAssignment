@@ -11,7 +11,10 @@
 <!-- CUSTOM CSS -->
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
 <%
-    User user = (User) session.getAttribute("user");
+    User user = null;
+    if (session.getAttribute("user") != null) {
+        user = (User) session.getAttribute("user");
+    }
     if (user != null) { 
         if(user.getType().equals("user")) {
 %>
